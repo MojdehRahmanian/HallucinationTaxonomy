@@ -1,0 +1,1297 @@
+"""<think>
+We are going to design a UML Class Diagram based on the given exercise.
+ We have the following entities: Client, BicycleModel, Bicycle, Store, Reservation, and Rental.
+
+ Let's break down the requirements:
+
+ 1. **Client**:
+    - Attributes: national id number (NIN, unique), tax identification number (TIN, unique), name, address.
+    - Constraints: 
+        - NIN and TIN must be unique.
+        - All clients must have at least a TIN and a name.
+
+ 2. **BicycleModel**:
+    - Attributes: name (unique), type (enum: road, mountain, bmx, hybrid), number of gears.
+    - Constraints: name is unique.
+
+ 3. **Bicycle**:
+    - Attributes: unique identifying number, model (reference to BicycleModel).
+    - Constraints: unique identifying number.
+
+ 4. **Store**:
+    - Attributes: name (unique), address (both mandatory).
+
+ 5. **Reservation**:
+    - Attributes: 
+        - which client (Client),
+        - pick-up day (date),
+        - which bike model (BicycleModel),
+        - pick-up store (Store).
+    - Note: When a reservation is made, we store these.
+
+ 6. **Rental** (when a bike is picked up and returned):
+    - When picked up: the actual bike (Bicycle) that was picked up must be stored.
+    - When returned: the return date is stored.
+    - We might also want to link the rental to the reservation? The requirement does not explicitly say, but it's common to have a rental from a reservation.
+
+ However, note that the requirement says:
+   - Reservation stores: client, pick-up day, model, and store.
+   - When picked up, we store the actual bike.
+
+ So, we can think of two approaches:
+   a. The Rental is linked to the Reservation? Meaning we might have a foreign key to Reservation in Rental?
+   b. Alternatively, the Rental might be created without a reservation? But the problem only states that rentals occur from reservations? 
+
+ But note: the requirement says "when a reservation is made" and then "when a bike is picked up". So, the rental is the fulfillment of a reservation.
+
+ However, the requirement does not say that every rental must come from a reservation. But in the context, it's a reservation-based system.
+
+ Let's assume that a Rental is the result of a Reservation? But the problem says: when a bike is picked up, we store the actual bike. In the reservation, we only have the model, but at rental we know the specific bicycle.
+
+ We can design:
+
+   - Reservation class: which might become an active rental? And when the rental is done (bike returned), we record the return date? But then we have two separate events.
+
+ Alternatively, we can have:
+
+   - Reservation: for a future rental. It stores the intended details.
+
+   - Rental: when a bike is actually rented. It would include:
+        - the actual bike (Bicycle),
+        - the store from which it was picked up (we have that in reservation, but might change? or we can rely on reservation?),
+        - the client (from reservation?),
+        - the start date (the pick-up date, which is the same as the reservation's pick-up day? but could it be different?),
+        - and then the return date.
+
+ Since the requirement does not explicitly link a rental to a reservation, we have two options:
+
+    Option 1: Independent Rental and Reservation. But then how can we know which reservation led to a rental?
+
+    Option 2: Make Rental extend from Reservation (by having a reference to the Reservation) or include the Reservation? Alternatively, a Reservation can be associated with a Rental when the bike is picked up.
+
+ Given the requirement: "when a bike is picked up, the actual bike that was picked up must be stored in the database", we can assume that at the time of pickup we create a Rental, and we know the Reservation (because we are fulfilling it). So we can have:
+
+   - Reservation has a status? (maybe not required, but we can model an association)
+
+   Proposed associations:
+
+   - A Client can have many Reservations and many Rentals.
+   - A Store can have many Reservations (as pick-up store) and many Rentals (as pick-up store and return store? but the requirement only says that for the return we store the date, not the store? however, we assume the same store?).
+
+   But note: the requirement for return says only the return date. So we assume the bike is returned to the same store? If multiple stores, then we would need a return store. However, the requirement does not specify. Let's stick to same store? Since it's a rental, it's common to return to the same store. So we can store the return date and that's it? Or do we need to know the return store? 
+
+   The problem says: "when a bike is returned, the return date should be stored in the database." 
+
+   So in our Rental class, we record:
+
+      - The rental has a start date (the pick-up date) and a return date (when returned). Also, the bicycle, and the store (the store where the bike is rented from, and hence returned to the same store?).
+
+   But wait: the Reservation stores the intended pick-up store. The Rental would use that store? But when returning, it might be a different store? The requirement does not specify. We'll assume same store for simplicity.
+
+   Alternatively, if we want to allow return to other stores, we would need to store the return store. But the requirement does not say. We'll do:
+
+        Rental:
+            - start date (pick-up date)
+            - return date (if returned)
+            - bicycle (the actual bike rented)
+            - store (the store from which it was rented) -> and hence we return to the same store?
+            - client? -> which client rented it? But we have the reservation? 
+
+   But note: the Reservation already has the client. So if we have a Rental that is linked to a Reservation, then we don't need to duplicate the client.
+
+   However, what if a rental is made without a reservation? The problem does not specify. We assume that all rentals come from reservations? The problem does not say that, but it only talks about reservations and then when the bike is picked up. So we must design the system accordingly.
+
+   We'll design:
+
+      - Reservation: 
+            - client (Client) [mandatory]
+            - pickUpDate (date) [mandatory]
+            - model (BicycleModel) [mandatory]
+            - store (Store) [mandatory]
+
+      - Rental: 
+            - reservation (Reservation) [this way, we know client, intended model, intended pick-up date, and intended store? but then we have the actual bike? and we also record the return date? and we might override the pick-up date?]
+
+      But wait: the reservation says "when will he pick up the bike", but the actual pick-up might be on a different day? We are not forced to record the actual pick-up day? 
+
+   However, the requirement for rental says: when a bike is picked up, we need to store the actual bike. It does not say the actual pick-up date? It only says the return date later.
+
+   So, what dates are stored?
+        Reservation: intended pick-up date (day)
+        Rental: 
+            - Might have an actual pick-up date? Or do we use the reservation date? 
+            - Return date 
+
+   The requirement does not require the actual pick-up date? But it's common. However, the problem says: "when a reservation is made, ... when will he pick up the bike (day)" -> that's the intended.
+
+   And when a bike is returned, the return date. So we might assume that the rental period is from the intended pick-up day until the return date? But if the customer picks up the bike later? Then we need to record the actual date.
+
+   Since the requirement is not explicit, let's stick to what is said:
+
+        In reservation: we store the intended pick-up day.
+
+        In rental: we store the actual bike and the return date.
+
+   But then how do we know the rental period? We might use the intended pick-up day as the start? But if the actual pick-up day is stored? The problem only requires storing the actual bike at pick-up. So we can record the rental as:
+
+        - linked to the reservation? 
+        - the actual bike (Bicycle) 
+        - and the return date.
+
+   The start date of the rental is the intended pick-up date? But then if the customer picks up later, the system would charge from the intended pick-up day? That might be acceptable.
+
+   But the requirement says: "when a reservation is made, the following data must be known: ... when will he pick up the bike". So at reservation, we know the intended pick-up date. At rental, we assign a bike and then when returned we record the return date.
+
+   Therefore, we can design:
+
+        Rental:
+            - reservation: Reservation (each reservation can only be rented once? or can it be that a reservation is not rented? so it's a 0..1 to 1? meaning Rental is optional for Reservation? but every rental must come from a reservation? so we have: Reservation can be related to at most one Rental? and a Rental must be linked to exactly one Reservation)
+
+            - actualBicycle: Bicycle (the one that was actually rented, which must be of the model specified in the reservation? but we are not enforcing that in the class diagram? we can assume that the business logic ensures that)
+
+            - returnDate: Date (optional, because the bike might not be returned yet)
+
+        But note: the reservation model specifies a model, but the rental might use a bike of that model? How do we enforce? That's business logic. We don't enforce in the diagram.
+
+   Alternatively, without linking to the reservation? Then we would have to duplicate the client? and the store? and the start date? So linking to the reservation is more efficient.
+
+   Let's go with:
+
+        Reservation --1---0..1-- Rental
+
+        Meaning: A Reservation may result in one Rental (and one at most? because you can only pick up one bike per reservation? But what if a reservation is for multiple bikes? The problem doesn't say. It only says: "which bike model he wants" (singular). So one bike per reservation.
+
+        So: Reservation (1) to (0..1) Rental? Why 0..1? Because the reservation might not have been picked up yet.
+
+        Alternatively, we might have: Reservation (1) to (*) Rental? But that doesn't make sense because one reservation for one bike becomes one rental.
+
+        So: one-to-one? with the rental being optional? because at the moment of reservation, there's no rental.
+
+   We'll model:
+
+        - A Reservation has zero or one Rental (meaning if it has been picked up, then one rental).
+        - A Rental must be associated with exactly one Reservation.
+
+   Now, what about the store? The Rental store is the same as the reservation store? We can get it via the reservation. So we don't store it again? Unless we allow the rental to happen at a different store? The requirement does not specify. We'll assume same store? So we can derive the store from the reservation.
+
+   Similarly, the client is via reservation.
+
+   Therefore, the Rental class:
+
+        Attributes:
+          - returnDate: Date? (if null, then not returned? but the problem says: when returned, store the return date.)
+
+        Relationships:
+          - one-to-one with Reservation (mandatory)
+          - one link to the actual bicycle (Bicycle) which is mandatory.
+
+   But note: the actual bicycle must be of the model that was reserved? We cannot enforce that in the class diagram, but we will have the model from the reservation. And the bicycle has a model. So we can check that.
+
+   Now, what about the pick-up date? We don't have an actual pick-up date? Only return date? So the rental period would be (reservation.pickUpDate to rental.returnDate). But if the customer picks up late, that would be inaccurate. However, the problem says that the reservation stores the intended day.
+
+   We must decide: do we need an actual pick-up date? The requirement does not specify. So we won't store it.
+
+   Let's summarize the classes:
+
+   Class: Client
+      Attributes:
+        - NIN: String (unique, optional? but the requirement says: must be different for every client and at least TIN and name -> so NIN is optional? but must be unique if exists? however, the requirement says "every client" has NIN and TIN? It says: "The NIN and TIN must be different for every client and all clients should have at least a TIN and a name." -> so TIN is mandatory, NIN might be optional? But it says: "The NIN and TIN must be different for every client" -> meaning both NIN and TIN are unique? and if a client doesn't have an NIN? Then we must have a way to avoid duplicates? However, the requirement is not clear on that. Better to have:
+
+            All clients have TIN (mandatory, unique) and name (mandatory). 
+            NIN is optional, but if present must be unique.
+
+        So:
+
+            Client:
+                - nin: String? (unique: true, not null: false)   [if null, then we don't have? but we must ensure no two clients have the same TIN? so TIN is the primary key?]
+                - tin: String (unique: true, not null: true)
+                - name: String (not null: true)
+                - address: String? [optional? because the requirement says "store the ... name and address for every client", but it doesn't say mandatory? only TIN and name are mandatory]
+
+        We'll assume address is optional.
+
+   Class: BicycleModel
+        - name: String (unique, not null)
+        - type: String (or we can use an Enum: road, mountain, bmx, hybrid) -> we can model as String and note constraint.
+        - gears: int
+
+   Class: Bicycle
+        - id: String (or long, unique, not null)
+        - model: BicycleModel (mandatory)
+
+   Class: Store
+        - name: String (unique, not null)
+        - address: String (not null)
+
+   Class: Reservation
+        - client: Client (mandatory)
+        - pickUpDate: Date (mandatory)
+        - model: BicycleModel (mandatory)
+        - store: Store (mandatory)
+        - rental: Rental? (optional, one-to-one) but we can model as an association in the other direction? (prefer direction from Rental to Reservation)
+
+        But we don't need to put rental inside Reservation? we can let the Rental have a link to Reservation? and then from Reservation we can navigate to Rental? but in the class diagram, we can just have an association from Rental to Reservation.
+
+        We don't have to show both? We'll model the association in one direction? from Rental to Reservation.
+
+   Class: Rental
+        Attributes:
+            - returnDate: Date? (optional, represents when the bicycle was returned)
+        Relationships:
+            - reservation: Reservation (1 and only 1) -> so we know the client, the intended pick-up date, the model (intended) and the store (pick-up store)
+            - bicycle: Bicycle (1, mandatory) -> the actual bicycle rented
+
+   Now, let's think about multiplicity of associations:
+
+      Client:
+        - has many reservations? -> 0 to many (0 because a new client might not have made a reservation yet)
+        - has many rentals? (via the reservations? which is in Rental? so we don't have a direct link) -> we can get the rentals via the reservations? so we don't need a direct association from Client to Rental.
+
+      However, in Reservation:
+
+          Client -- Reservation: 1 client has many reservations? Yes, a client can make multiple reservations over time? -> multiplicity: Client 1..* Reservation? And a Reservation is for one client? Then: Client 1 --- * Reservation
+
+      BicycleModel:
+          - For Reservation: one model can be reserved in many reservations? -> multiplicity: BicycleModel 1 -- * Reservation
+          - For Bicycle: one model has many bicycles? -> BicycleModel 1 -- * Bicycle
+
+      Store:
+          - Reservation: one store can be the pick-up store for many reservations? -> Store 1 -- * Reservation
+
+          How about Rental? The rental doesn't store the store? because we get it via reservation. So no direct link.
+
+      Bicycle:
+          - In Rental: one bicycle can be rented multiple times? (over time) -> so a bicycle can have many rentals? But each rental is for one bike? then: Bicycle 1 -- * Rental? 
+
+          However, note: at a given time, a bicycle might be rented only once? But a rental is for a bicycle for a period. The same bicycle can be rented again after being returned. So: 
+                Bicycle 1 --- * Rental
+
+      Reservation and Rental:
+          - Reservation 1 --- 0..1 Rental (because a reservation leads to at most one rental? and a rental is linked to exactly one reservation)
+
+          We can model as:
+
+             Reservation "0..1" -- "1" Rental
+
+          Meaning: a Rental must be linked to one Reservation, and a Reservation can be linked to zero or one Rental.
+
+   Now, we'll write the PlantUML code.
+
+   We'll include:
+
+     - Classes: Client, BicycleModel, Bicycle, Store, Reservation, Rental.
+     - Enums: if needed? for BicycleModel type? we can use an enum.
+
+   Let's define:
+
+     enum BicycleType {
+        road
+        mountain
+        bmx
+        hybrid
+     }
+
+   Then BicycleModel will have: type: BicycleType
+
+   Multiplicity:
+
+      Client "1" -- "*" Reservation : client
+      BicycleModel "1" -- "*" Reservation : model
+      Store "1" -- "*" Reservation : store
+      Reservation "1" -- "0..1" Rental : is fulfilled by
+      Rental "1" -- "*" Bicycle : bicycle
+      BicycleModel "1" -- "*" Bicycle : model
+
+   However, note: Rental is linked to a bicycle and a reservation? and via the reservation we get the model? but the rental might assign a bicycle of that model? So we don't have a direct link to the model? We need only the bicycle and then the reservation leads to the model.
+
+   We might also need an association between Rental and Store? Actually, no, because we get the store from the reservation.
+
+   But what about the same bicycle being rented at two different stores? We don't store the current store? The rental store is via the reservation. And when returned, we assume same store? but we don't store the return store.
+
+   So our diagram:
+
+   Classes:
+
+      class Client {
+        - nin: String [unique, not null? probably we should mark as id]
+        - tin: String [unique, not null]
+        - name: String [not null]
+        - address: String?
+      }
+
+      class BicycleModel {
+        - name: String [unique, not null]
+        - type: BicycleType
+        - gears: int
+      }
+
+      class Bicycle {
+        - id: String [unique, not null]
+      }
+
+      class Store {
+        - name: String [unique, not null]
+        - address: String [not null]
+      }
+
+      class Reservation {
+        - pickUpDate: Date
+      }
+
+      class Rental {
+        - returnDate: Date?
+      }
+
+   Associations:
+
+      Client --> Reservation: 1 -> * (with label: client)
+      BicycleModel --> Reservation: 1 -> * (label: model)
+      Store --> Reservation: 1 -> * (label: store)
+
+      Reservation --> Rental: 1 -> 0..1 (label: ? or "fulfills") but we'll have an association with an arrow? and we can label with role? if needed, but PlantUML defaults.
+
+      Alternatively, without label? we can use the multiplicities to indicate.
+
+      However, note: for Rental, we have:
+
+          Reservation "1" <-- "0..1" Rental  (meaning Rental has a mandatory reservation? so we can draw the link from Reservation to Rental and mark multiplicity 0..1 at the Rental end? but it would be:
+
+            Reservation "1" - "0..1" Rental : reservation
+
+          But the direction? In the diagram, we might want to show the navigation? 
+
+      Also: 
+
+          Rental --> Bicycle: 1 -> * (but actually, one rental is for one bicycle? So: Rental 1 -- 1 Bicycle (each rental has one bicycle? and a bicycle can have many rentals? over time)
+
+          Correction: we just said: 
+              Bicycle 1 -- * Rental: because a bicycle can be rented multiple times.
+
+          So: 
+              Rental -- Bicycle: multiplicity is * (for Rental) to 1 (for Bicycle) -> meaning a Bicycle is rented in multiple Rentals? but each Rental is for one Bicycle? 
+              So: 
+                  Bicycle "1" -- "*" Rental : bicycle
+
+          Similarly, we have:
+
+              BicycleModel 1 -- * Bicycle : model
+
+   Now, let's code in PlantUML:
+
+   We'll use:
+
+      @startuml
+      ' Enums
+      enum BicycleType {
+         road
+         mountain
+         bmx
+         hybrid
+      }
+
+      class Client {
+         - nin: String [unique, optional]
+         - tin: String [unique, mandatory]
+         - name: String [mandatory]
+         - address: String [optional]
+      }
+
+      class BicycleModel {
+         - name: String [unique]
+         - type: BicycleType
+         - gears: Integer
+      }
+
+      class Bicycle {
+         - id: String [unique]
+      }
+
+      class Store {
+         - name: String [unique, mandatory]
+         - address: String [mandatory]
+      }
+
+      class Reservation {
+         - pickUpDate: Date
+      }
+
+      class Rental {
+         - returnDate: Date?
+      }
+
+      ' Associations:
+
+      Client "1" -- "*" Reservation : client
+      BicycleModel "1" -- "*" Reservation : model
+      Store "1" -- "*" Reservation : store
+      Reservation "1" -- "0..1" Rental : >
+      Bicycle "1" -- "*" Rental : bicycle
+      BicycleModel "1" -- "*" Bicycle : model
+
+      @enduml
+
+   However, the association between Reservation and Rental: we have to be careful? In PlantUML, the multiplicity is written next to the class? 
+
+   Actually, in PlantUML we can do:
+
+        Class01 "1" -- "*" Class02 : label
+
+   But for the one to zero or one? we can:
+
+        Reservation "1" -- "0..1" Rental
+
+   But also note: the arrow direction? How do we show that Rental has a reference to a Reservation? 
+
+   We don't enforce direction in the diagram? We just show the association with multiplicities.
+
+   Alternatively, we can make it unidirectional? and we are only showing the multiplicities.
+
+   However, we might want to show the navigability? The requirement doesn't specify if we must show direction? 
+
+   If we want to show that Rental knows the Reservation? we can:
+
+        Reservation <-- Rental
+
+   But since we are showing multiplicities? we can:
+
+        Reservation "1" <-- "0..1" Rental
+
+   Meaning: Reservation is connected to 0..1 Rental? and Rental to 1 Reservation? and the arrow pointing to Reservation? meaning that Rental has a link to Reservation.
+
+   We'll go with:
+
+        Reservation "1" <-- "0..1" Rental : "reservation"
+
+   And:
+
+        BicycleModel "1" *-- "*" Bicycle : "model"   (composition? or aggregation? actually, if we delete a model, we don't necessarily delete the bicycles? So aggregation? plain association is fine)
+
+   We are not using compositions? because a bicycle can exist without a model? but we have the model attribute as mandatory? and if the model is deleted? we don't know. To avoid, we assume model exists? So we use simple association.
+
+   Similarly, we show:
+
+        Bicycle "1" *-- "*" Rental : "is rented in"   -> but actually, one bicycle has many rentals? and one rental has one bicycle? This association is from Bicycle to Rental? but we also have Rental to Bicycle? 
+
+        We can write:
+
+            Bicycle "1" - "*" Rental
+
+        and on the Rental side: we have an attribute bicycle? 
+
+        Alternatively, we can make it explicit:
+
+            Rental }-- Bicycle : bicycle
+
+        meaning composition? or just association? This is just an association.
+
+   Let me rearrange the associations:
+
+        Client owns Reservation: 1 to many? so:
+
+          Client "1" - "*" Reservation
+
+        Similarly: 
+
+          Store "1" - "*" Reservation
+
+          BicycleModel "1" - "*" Reservation
+
+          Reservation "0..1" <- "1" Rental   (meaning: Rental has a mandatory reservation? and a reservation might or might not have a rental)
+
+          BicycleModel "1" - "*" Bicycle   (a model has many bicycles)
+
+          Rental -> "*" Bicycle : we have the bicycle in rental? but wait, we have:
+
+            A Rental is for one bicycle? and a bicycle can be in many rentals? So:
+
+            Rental "1" --> "*" Bicycle? No, it's:
+
+            Bicycle "1" -- "*" Rental   (multiplicity: bicycle:1, rental:*)
+
+            But we need to show the association from Rental to Bicycle? because Rental has a bicycle? 
+
+            So we can:
+
+                Rental -- Bicycle : "bicycle" > 
+
+            Meaning: each Rental has one bicycle? We can write:
+
+                Rental "1" -- "1" Bicycle : bicycle
+
+            Wait, each rental has one bicycle? and a bicycle can be in multiple rentals? Then:
+
+                Rental "1" -- "*" Bicycle : no, that would mean one rental has many bicycles? Which is not the case.
+
+            Actually:
+
+                A Rental is for one bicycle? So multiplicity at Bicycle side: every bicycle can be in multiple rentals? so *.
+
+                And a rental has one bicycle? so at rental end: 1.
+
+                So: Bicycle "1" - "*" Rental: which is drawn in PlantUML by:
+
+                      Bicycle "1" -- "*" Rental : rentedIn ?
+
+                But how do we show that Rental has an attribute 'bicycle'? We can just name the association.
+
+            Alternatively, we can label the association:
+
+                Rental -- bicycle : rents > 
+                Rental *- Bicycle   # composition? not necessary.
+
+            I think we are overcomplicating. We'll write:
+
+                Rental "1" - "1" Bicycle : bicycle   (if we think one rental has one bicycle) but then we must note that a bicycle can be in multiple rentals? So multiplicity:
+
+                    1 Rental is associated to 1 bicycle? But a bicycle is associated to many rentals? So:
+
+                      Rental "1" -- "*" Bicycle   => wrong? because then one rental has many bicycles? not.
+
+                Correction:
+
+                      Rental (one) has one bicycle? and the same bicycle might be in many rentals? So the multiplicity at Bicycle is *? and at Rental is 1? so:
+
+                         Bicycle "*" <-- "1" Rental
+
+                But we can write:
+
+                         Rental -- Bicycle : bicycle
+                         with multiplicity: Rental 1 --- * Bicycle? That wouldn't be right.
+
+                We must write:
+
+                         Rental -- Bicycle : bicycle
+                         multiplicity: Rental end: 1, Bicycle end: *
+
+            Let me define:
+
+                  Rental has one bicycle? so: Rental class has an attribute (or association) to Bicycle with multiplicity 1.
+                  Bicycle has multiple rentals? so: Bicycle is associated with many Rental? with multiplicity *.
+
+            Therefore, the association:
+
+                  Rental "1" -- "1" Bicycle   would be incorrect? because it would mean one bicycle per rental? and one rental per bicycle? which is not.
+
+            We write:
+
+                  Bicycle "1" - "*" Rental   : bicycle  -> meaning for each Bicycle, there can be many Rental? and for each Rental, there is exactly one Bicycle? 
+
+            How to represent? 
+
+                  In PlantUML, we can write:
+
+                      Rental *-- Bicycle : bicycle
+
+            This would be a composition? meaning the bicycle is part of the rental? not exactly.
+
+            We can write:
+
+                      Rental --> "1" Bicycle
+                      Bicycle "*" <-- Rental
+
+            Or in one line:
+
+                  Rental "1" *-- "1" Bicycle : bicycle   -> no, because that does not show the * cardinality? 
+
+            Actually, we are getting confused. The specification:
+
+                  Each Rental is for one Bicycle? (so at Rental end: 1)
+                  Each Bicycle can be rented multiple times? (so at Bicycle end: *)
+
+            Therefore, we write:
+
+                  Bicycle "1" -- "*" Rental : bicycle
+
+            But what label? We would like to say that the Rental has an attribute 'bicycle'. We can have the label "bicycle" on the Rental side? 
+
+            Alternatively: we can write on the Rental side: "bicycle" and the multiplicities:
+
+                  Rental "1 bicycle" -- "*" Bicycle 
+
+            Or:
+
+                  Bicycle "1" -- "* rental" Rental : bicycle
+
+            Actually, it's a matter of preference.
+
+            In PlantUML, we write:
+
+                  Rental -- Bicycle : bicycle
+                  Bicycle *-right- Rental   # ??? 
+
+            How about:
+
+                  Bicycle "1" - "*" Rental : bicycle
+
+            This means: from Bicycle to Rental: 1 to many? and from Rental to Bicycle? many to one? Actually, in UML, multiplicity on the opposite end? 
+
+            In PlantUML, if we write:
+
+                  ClassA "1" -- "many" ClassB
+
+            it means: ClassA has many (multiplicity on the ClassB end) and ClassB has one? Let me check: 
+
+                  "1" is attached to ClassA? meaning every ClassB is connected to 1 ClassA? and "many" is attached to ClassB? meaning every ClassA is connected to many ClassB.
+
+            Example: 
+
+                  Customer "1" -- "*" Order
+
+            means: a Customer has many Orders, and each Order has one Customer.
+
+            Therefore, in our case:
+
+                  Bicycle "1" -- "*" Rental 
+
+            would mean: a Bicycle has many Rentals, and each Rental has one Bicycle? That's what we want.
+
+            But the label? We can put the label on the association? How about:
+
+                  Bicycle "1" -- "*" Rental : isRentedIn
+
+            and we don't have to show the attribute? because the attribute 'bicycle' is inside Rental? This model doesn't show that? It's showing the abstract relationship.
+
+            Alternatively, we can show that Rental has an attribute:
+
+            We can model Rental as:
+
+                  class Rental {
+                    - returnDate: Date?
+                    - bicycle: Bicycle   [since one]
+                  }
+
+            Then we do not need to show the association again? Or we do? 
+
+            We are designing a class diagram? We can either show as attributes or as associations? but it's better to show as associations? because we are already showing the classes.
+
+            We are showing the association between classes? and then the attributes may or may not include references to other classes? 
+
+            We can omit? because the association already implies the attribute. But if we want to show both? it's redundant.
+
+            Since we are showing associations? we can omit the reference attributes? (like Reservation in Rental is not shown as attribute? but we have the association)
+
+            So let me rework: 
+
+                We'll have the main attributes? and we won't show the reference attributes? because they are represented by associations.
+
+            But what attributes are in Rental? 
+
+                  - returnDate: Date
+                  - and then we have a reference to reservation? and to bicycle? which we are showing via associations.
+
+            So:
+
+                We change the class Rental to:
+
+                  class Rental {
+                    - returnDate: Date?
+                  }
+
+            Similarly for Reservation? we have:
+
+                  - pickUpDate: Date
+
+            And we don't list the client, model, store? because we are showing associations? However, they are attributes? We are representing them as associations.
+
+            But in the UML, attributes and associations are separate? we can show both? but it's redundant? We can show the associations? and then list only the non-reference attributes.
+
+            That is common.
+
+            So, finally:
+
+      @startuml
+
+      enum BicycleType {
+         road
+         mountain
+         bmx
+         hybrid
+      }
+
+      class Client {
+         - nin: String
+         - tin: String
+         - name: String
+         - address: String
+      }
+
+      class BicycleModel {
+         - name: String
+         - type: BicycleType
+         - gears: Integer
+      }
+
+      class Bicycle {
+         - id: String
+      }
+
+      class Store {
+         - name: String
+         - address: String
+      }
+
+      class Reservation {
+         - pickUpDate: Date
+      }
+
+      class Rental {
+         - returnDate: Date?
+      }
+
+      ' Associations:
+
+        Client "1" - "*" Reservation : makes
+        Reservation "0..1" <-- "1" Rental : for
+
+        BicycleModel "1" - "*" Reservation : reserved model
+        Store "1" - "*" Reservation : pickup location
+
+        BicycleModel "1" - "*" Bicycle : of model
+
+        Bicycle "1" - "*" Rental : rented as
+
+      @enduml
+
+   We are missing: the link from Rental to Bicycle? because we have in the association last line: Bicycle "1" - "*" Rental -> which means a bicycle can be rented many times? so in the Rental class we can associate with one bicycle? but we haven't drawn an association from Rental to Bicycle? 
+
+   How is the association drawn? The association "Bicycle '1' - '*' Rental" is one association line? with multiplicities? and it doesn't say which class has the attribute? but it does connect.
+
+   Now, what about the reservation? We have:
+
+        Reservation "0..1" <-- "1" Rental 
+
+        meaning: Rental has a link to Reservation? (with multiplicity 1) and Reservation might have a link to Rental? (multiplicity 0..1) -> but we don't require that? We can model as unidirectional? if we only require one direction? 
+
+        In implementation? 
+
+            We might have:
+
+                Reservation class may have a Rental reference (for convenience)? but it's optional.
+
+            But the requirement: when we have a reservation? we want to know if it was turned into a rental? 
+
+            However, we can get that by query? 
+
+        We'll model as:
+
+            Rental has a reference to the Reservation? (mandatory) -> so:
+
+               Reservation ..> Rental? No, we have a bidirectional association? 
+
+        We'll stick to unidirectional from Rental to Reservation? so we draw an arrow from Rental to Reservation? with multiplicity: 
+
+            Rental "1" --> "1" Reservation  (because a rental must be linked to one reservation)
+
+            and Reservation might be linked to a rental? but we don't require? Hence:
+
+               Reservation -- Rental   (with direction from Rental to Reservation? and multiplicity at Reservation: 1, which is fixed? because each rental points to one reservation? but one reservation can be pointed by at most one rental? So:
+
+               Rental --> Reservation : reservation
+
+               with multiplicity: Reservation 1, Rental 1? 
+
+            Actually, we defined:
+
+                A Rental is linked to exactly one Reservation? 
+                A Reservation can be linked to at most one Rental? so multiplicity 0..1
+
+            How to draw? 
+
+                  Rental -- Reservation : reservation
+                  with near Rental: 1, and near Reservation: 0..1
+
+            But in UML, the multiplicity at the target end? 
+
+            PlantUML? 
+
+                  Reservation "0..1" <-- "1" Rental
+
+            Meaning: at the Reservation end: 0..1 (each reservation is associated to 0 or 1 rental? because the arrow points to reservation? and we have the multiplicity at Reservation? and at the rental end: 1? meaning each rental is associated to exactly 1 reservation? 
+
+            This is consistent.
+
+   Therefore, the final PlantUML code with associations:
+
+      @startuml
+      title Bicycle Rental System
+      skinparam classAttributeIconSize 0
+
+      enum BicycleType {
+         road
+         mountain
+         bmx
+         hybrid
+      }
+
+      class Client {
+         - nin: String
+         - tin: String
+         - name: String
+         - address: String
+      }
+
+      class BicycleModel {
+         - name: String
+         - type: BicycleType
+         - gears: Integer
+      }
+
+      class Bicycle {
+         - id: String
+      }
+
+      class Store {
+         - name: String
+         - address: String
+      }
+
+      class Reservation {
+         - pickUpDate: Date
+      }
+
+      class Rental {
+         - returnDate: Date?
+      }
+
+      Client "1" --> "*" Reservation : client
+      Store "1" --> "*" Reservation : pickupStore
+      BicycleModel "1" --> "*" Reservation : model
+      Reservation "0..1" <-- "1" Rental : is fulfilled by
+      BicycleModel "1" --> "*" Bicycle : model
+      Bicycle "1" --> "*" Rental : bicycle
+      @enduml
+
+   Let me check the association labels? They can be used to indicate the role? but we have not shown the role names? Maybe we don't need.
+
+   Alternatively, we can use the direction of the arrow? 
+
+   But note: we have a many-to-one (Reservation to Client)? the arrow should go from Reservation to Client? wait, no. The diagram currently: Client --> Reservation? meaning a Client has one or more Reservations? 
+
+   Actually, in the diagram we have:
+
+        Client "1" --> "*" Reservation
+
+   This arrow means Client is associated to Reservation? and Reservation is at the other end? and the multiplicity at Reservation end: *? meaning if a Client? then there are * Reservation? 
+
+   But the object Reservation will have a reference to its Client? That's common.
+
+   We are not specifying the direction of the reference? We are just showing the association? and the multiplicities? and the names of the association? 
+
+   We'll generate the diagram as above.
+
+   One issue: the association between Rental and Reservation: we have:
+
+        Reservation "0..1" <-- "1" Rental 
+
+   This arrow points towards Reservation? meaning that Rental has a link to the Reservation? 
+
+   Correct? Yes.
+
+   Also, the multiplicity is shown: Reservation end: 0..1, Rental end: 1? 
+
+   But wait: if we look from the Reservation perspective, each reservation is associated with at most one rental? 
+   And from Rental perspective, each rental is associated to one reservation? 
+
+   So: 
+
+        Reservation 0..1 ---- 1 Rental   -> but what we wrote:
+
+            Reservation "0..1" <-- "1" Rental 
+
+        This means: 
+            Outer side (Reservation) has multiplicity 0..1 (each Rental is linked to 0..1 Reservation? which is false) -> no, the multiplicities are always written for the opposite end.
+
+        In PlantUML, the multiplicity shown next to a class? is the multiplicity for objects of that class? in the association? 
+
+        Example:
+
+            A "a" -- "b" B
+
+        Here, 'a' is the multiplicity at the B end? meaning how many Bs per A? and 'b' is the multiplicity at the A end? meaning how many As per B?
+
+        But the standard is: 
+
+            A *-- B : role name
+            with multiplicity: at B end: *? at A end: ? not shown? 
+
+        Actually, in the line:
+
+            A "multiplicityAtB" -- "multiplicityAtA" B
+
+        So when we write:
+
+            Reservation "0..1" <-- "1" Rental
+
+        This means: 
+            For Reservation? we are showing the multiplicity for Rental? (but wait) 
+
+        Actually, it's:
+
+            Reservation -- Rental
+            with multiplicity for Reservation (at the Rental end) is 1? meaning each Rental must have 1 Reservation? 
+            and multiplicity for Rental (at the Reservation end) is 0..1? meaning each Reservation has 0..1 Rental.
+
+        Because:
+
+            The first multiplicity (written near Reservation) is for the Rental? how many Rental per Reservation? And the one near Rental is for Reservation? how many Reservation per Rental?
+
+        However, the documentation for PlantUML states:
+
+            classA "1" --> "*" classB
+
+        means that one object of classA is associated to many objects of classB? so classA has one? classB has many? 
+
+        But our example:
+
+            Reservation "0..1" <-- "1" Rental
+
+        We are writing near Reservation: 0..1? and near Rental: 1? and the arrow points from Rental to Reservation? so it's:
+
+            Rental "1" -> "0..1" Reservation? 
+
+        This would mean: one Rental is linked to 0..1 Reservation? which is false? 
+
+        We want: 
+
+            Each Rental is linked to exactly 1 Reservation? and each Reservation is linked to 0 or 1 Rental.
+
+        So we write:
+
+            Rental "1" --> "0..1" Reservation   # This would mean: Rental has 0..1 Reservation? and Reservation has 1 Rental? -> wrong.
+
+        Alternatively:
+
+            We note: the multiplicities are the number of objects at the far end.
+
+        According to PlantUML examples: 
+
+            Customer "1" -- "*" Order   means: one customer has multiple orders? and one order has one customer.
+
+        So: 
+
+            Customer -> Order: the multiplicity at Order is * (meaning many orders per customer) and at Customer? when starting from Order? It's 1? but we don't show? 
+
+        But we are showing two multiplicities? The syntax:
+
+            Customer "1" - "many" Order
+
+        In our case? 
+
+            We want:
+
+                Reservation has 0..1 Rental? and Rental has 1 Reservation.
+
+            This is: 
+
+                Reservation "0..1" -- "1" Rental
+
+            but which way the arrow? If we don't care about the arrow? it's just association.
+
+            However, we care for the reference? That Rental has a reference to Reservation? so we point the arrow from Rental to Reservation? and write multiplicities? Let me see:
+
+            In PlantUML, we can write:
+
+                Reservation "0..1" <|-- "1" Rental   # with arrow pointing to Reservation? meaning Rental knows Reservation.
+
+            But that's inheritance.
+
+            For association:
+
+                Rental --|> Reservation    # wrong, that's dependency.
+
+            Actually, for plain association? we don't use arrowheads? we use lines? and the multiplicities are at the ends? 
+
+            We can do:
+
+                Rental --> Reservation : reservation
+                Reservation "0..1" <-- Rental    # with the multiplicities? 
+
+            How about:
+
+                Rental "rental\n1" --> "reservation 1" Reservation
+
+            and then we want to say at Reservation end? each reservation is in at most one rental? so 
+
+                at Reservation: we put 0..1? 
+
+            But we'd rather:
+
+                We write the multiplicities on the ends? 
+
+                Rental -- Reservation
+                with near Rental: 1? and near Reservation: 0..1
+
+            How to do? 
+
+                Reservation "0..1" <-- "1" Rental
+
+            meaning: Reservation has 1 Rental? and Rental has 0..1 Reservation? That is not.
+
+            Let's try:
+
+                Rental "1" --> "0..1" Reservation   : reservation
+
+            This would mean: 
+                Each Rental is associated with 0..1 Reservation? (multiplicity near Reservation: 0..1? for the Rental object) and 
+                each Reservation is associated with how many Rental? The multiplicity near Rental: 1? meaning each Reservation is associated with 1 Rental? -> which is not what we want.
+
+            We want:
+
+                For a Reservation? how many Rental? 0..1.
+                For a Rental? how many Reservation? 1.
+
+            So the multiplicities are? 
+
+                Reservation end: for each rental? we have 1 reservation? -> so multiplicity at Reservation end? when looking from rental: every rental points to exactly one reservation? so at Reservation? we'd put: 1 (as the number of reservations per rental? but that doesn't make sense) 
+
+            Let me think: In standard UML? the multiplicity is written at the ends? meaning the number of objects of the class at the opposite end.
+
+            For example:
+
+                Reservation 0..1 -------------------- 1 Rental
+
+            And we are connecting from Reservation to Rental? But we want to show an arrow? for navigation? from Rental to Reservation? 
+
+            How to do? 
+
+            Option: 
+
+                  Rental -> Reservation : reservation
+                  Put multiplicity near Reservation: 1 (because a rental has one reservation)
+                  Put multiplicity near Rental: 0..1 (because a reservation has at most one rental? but we haven't drawn an object flow from reservation to rental?) 
+
+            This is confusing.
+
+            Alternatively, we don't show the arrow? because it's an association? and we just put multiplicities:
+
+                  Rental -- Reservation
+                  with multiplicity: at the Reservation end: 0..1? meaning [for each Rental? there are 0..1 Reservation? -> no, that's not the meaning]
+
+            According to the PlantUML guide: 
+
+                  http://plantuml.com/class-diagram
+
+                  - Using one symbol only (without the quotes) is allowed:
+
+                        Customer --> Order
+
+                  You can define association with labels and multiplicity
+
+                        Customer "1" --> "many" Order : orders
+
+                  Here, the multiplicities are shown for the two ends? 
+
+                  Interpretation: 
+                      Customer has many Orders (because the multiplicity at the Order end is many? and the arrow navigates from Customer to Order)
+                      Order has one Customer? 
+
+            But what if we want: 
+
+                      Rental -> Reservation : reservation
+                      where each Rental has one Reservation? and each Reservation may have zero or one Rental? 
+
+            We can write:
+
+                      Reservation "0..1" <-- "1" Rental : rental
+
+            This would be interpreted as:
+
+                  Reservation is the source? but the arrow is from Rental to Reservation? so it's Rental knows Reservation? with multiplicity: 
+
+                      for each Rental? there is one Reservation? 
+                      and for each Reservation? there is 0..1 Rental? 
+
+            But our diagram? We want to say: 
+
+                  for each Reservation? there are 0..1 Rental? 
+                  for each Rental? there is 1 Reservation? 
+
+            So:
+
+                  Reservation "0..1" <-- "1" Rental   # with an arrow from Rental to Reservation? but we wrote the multiplicities? 
+
+            The possible risk? The first multiplicity ("0..1") written next to Reservation would be for Rental? meaning how many Rental per Reservation? and the second multiplicity ("1") written next to Rental is for Reservation? how many Reservation per Rental? 
+
+            That matches: 
+                Per Reservation: there are 0..1 Rental.
+                Per Rental: there is one Reservation.
+
+            So we write:
+
+                Reservation "0..1" <-- "1" Rental : reservation
+
+   So the final code:
+
+      @startuml
+      title Bicycle Rental System
+      skinparam classAttributeIconSize 0
+
+      enum BicycleType {
+         road
+         mountain
+         bmx
+         hybrid
+      }
+
+      class Client {
+         - nin: String
+         - tin: String
+         - name: String
+         - address: String
+      }
+
+      class BicycleModel {
+         - name: String
+         - type: BicycleType
+         - gears: Integer
+      }
+
+      class Bicycle {
+         - id: String
+      }
+
+      class Store {
+         - name: String
+         - address: String
+      }
+
+      class Reservation {
+         - pickUpDate: Date
+      }
+
+      class Rental {
+         - returnDate: Date?
+      }
+
+      Client "1" --> "*" Reservation
+      Store "1" --> "*" Reservation
+      BicycleModel "1" --> "*" Reservation
+      BicycleModel "1" --> "*" Bicycle 
+      Reservation "0..1" <-- "1" Rental : reservation
+      Bicycle "1" --> "*" Rental
+      @enduml
+
+   We removed the association labels? Because it's clear? 
+
+   However, the association between Bicycle and Rental? we put: 
+
+        Bicycle "1" --> "*" Rental
+
+   What does this mean? 
+        For each Bicycle? there are many Rentals? and each Rental has one Bicycle? 
+        This is exactly what we want.
+
+   We have the directional arrow? which might imply navigability? but the multiplicities are shown.
+
+   Alternatively, we can use arrow heads? 
+
+        --> for one-way navigability? ->    
+
+   We'll leave as is.
+
+   Let's output the PlantUML code.
+
+   Note: I added a title and set skinparam classAttributeIconSize to 0? to hide the circles for attributes.
+
+   Also, note: the requirement for the return store is not stored? but we assume it's the same as pick-up store? and we get that from reservation.
+
+   This diagram should meet the requirements.
+</think>
+Here's the UML Class Diagram for the Bicycle Rental system and the corresponding PlantUML code:
+
+### UML Class Diagram Key Components:
+1. **Enum**: `BicycleType` with values: road, mountain, bmx, hybrid
+2. **Classes**:
+   - `Client`: Stores client information
+   - `BicycleModel`: Represents bicycle models
+   - `Bicycle`: Represents individual bicycles
+   - `Store`: Physical rental locations
+   - `Reservation`: Bike booking details
+   - `Rental`: Actual bike rental transaction
+3. **Relationships**:
+   - Client makes 0..n Reservations
+   - Store hosts 1..n Reservations
+   - BicycleModel specifies 1..n Bicycles
+   - BicycleModel may be referenced in 0..n Reservations
+   - Rental fulfills exactly 1 Reservation
+   - Rental uses 1 Bicycle
+   - Bicycle can be rented 0..n times
+
+```plantuml
+@startuml Bicycle Rental System
+skinparam classAttributeIconSize 0
+
+enum BicycleType {
+  road
+  mountain
+  bmx
+  hybrid
+}
+
+class Client {
+  - nin: String {unique, optional}
+  - tin: String {unique, mandatory}
+  - name: String {mandatory}
+  - address: String
+}
+
+class BicycleModel {
+  - name: String {unique}
+  - type: BicycleType
+  - gears: Integer
+}
+
+class Bicycle {
+  - id: String {unique}
+}
+
+class Store {
+  - name: String {unique}
+  - address: String
+}
+
+class Reservation {
+  - pickUpDate: Date
+}
+
+class Rental {
+  - returnDate: Date?
+}
+
+Client "1" -right--> "*" Reservation
+Store "1" -right---> "*" Reservation
+BicycleModel "1" --|> "*" Reservation
+BicycleModel "1" --|> "*" Bicycle
+Reservation "1" -left-- "0..1" Rental
+Bicycle "1" -right---> "*" Rental
+@enduml
+```
+
+### Explanation of Relationships:
+1. **Client to Reservation** (1-to-many):  
+   A client can make multiple reservations, but each reservation belongs to exactly one client.
+2. **Store to Reservation** (1-to-many):  
+   A store hosts multiple reservations, but each reservation is for one specific store.
+3. **BicycleModel to Reservation** (1-to-many):  
+   A bike model can be part of multiple reservations, but each reservation is for one model.
+4. **BicycleModel to Bicycle** (1-to-many):  
+   One model can have multiple physical bicycles, but each bicycle follows one model.
+5. **Reservation to Rental** (1-to-0..1):  
+   A reservation may result in at most one rental (if not picked up yet), but every rental corresponds to exactly one reservation.
+6. **Bicycle to Rental** (1-to-many):  
+   A bicycle can be rented multiple times, but each rental uses exactly one bicycle.
+
+### Key Constraints Enforced:
+- `Client`: TIN mandatory and unique, NIN optional but unique
+- `BicycleModel`: Name unique, type restricted to enum values
+- `Bicycle`: ID unique
+- `Store`: Name unique
+- `Rental`: Actual bike recorded at pickup, return date recorded at return
+
+This design captures all requirements including:
+- Client identification (TIN mandatory, NIN unique)
+- Bicycle categorization with valid types
+- Reservation vs rental lifecycle
+- Store management
+- Tracking actual bicycles used in rentals
+- Return date recording """

@@ -1,0 +1,67 @@
+@startuml
+
+class WebPortal {
+  - versionNumber : String
+  - url : String
+}
+
+class Building {
+  - id : String
+  - name : String
+  - energyClass : char
+  - address : String
+  - yearOfConstruction : int
+}
+
+class User {
+  - username : String
+  - email : String
+  - password : String
+  - isActivated : boolean
+}
+
+class Administrator {
+  - idCardNumber : String
+}
+
+abstract class Entry {
+  - name : String
+  - isPublic : boolean
+}
+
+class TextEntry {
+  - textContent : String
+}
+
+class NumericEntry {
+  - value : float
+  - unit : String
+}
+
+class Image {
+  - filename : String
+  - isProfilePhoto : boolean
+}
+
+class Comment {
+  - content : String
+  - timestamp : Date
+}
+
+' Relationships
+WebPortal "1" -- "0..*" Building : provides >
+WebPortal "1" -- "0..*" User : has registered >
+
+User "1" -- "0..*" Building : owns >
+User "1" -- "0..*" Comment : creates >
+
+Building "1" *-- "0..*" Entry : contains >
+Building "1" *-- "1..*" Image : has >
+Building "1" -- "0..*" Comment : has >
+
+Administrator --|> User
+
+Entry <|-- TextEntry
+Entry <|-- NumericEntry
+
+@enduml
