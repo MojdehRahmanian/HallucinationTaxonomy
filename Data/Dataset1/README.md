@@ -2,6 +2,7 @@
 
 **Source.** D. De Bari, G. Garaccione, R. Coppola, M. Torchiano, L. Ardito. *Evaluating Large Language Models in Exercises of UML Class Diagram Modeling.*
 ESEM '24, pp. 393–399, 2024.
+
 Original dataset: http://doi.org/10.6084/m9.figshare.25434550
 
 **Content.** 20 UML class-diagram modelling exercises, each consisting of a natural-language description and a reference class diagram. The exercises were
