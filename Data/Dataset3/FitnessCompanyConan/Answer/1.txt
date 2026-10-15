@@ -1,0 +1,42 @@
+@startuml
+class Center {
+  - name: String
+  - address: String
+}
+
+class Room {
+  - roomNumber: int
+  - maxCapacity: int
+}
+
+class Person {
+  - firstName: String
+  - familyName: String
+  - birthDate: Date
+}
+
+class Trainer {
+  - diploma: String
+}
+
+abstract class Session {
+  - date: Date
+  - startingHour: Time
+}
+
+class IndividualSession {
+}
+
+class GroupSession {
+  - type: String
+}
+
+Center "1" *-- "1..*" Room : has
+Session "*" -- "1" Room : takes place in
+Session "*" -- "1..*" Person : participates
+Person <|-- Trainer
+Session <|-- IndividualSession
+Session <|-- GroupSession
+GroupSession "*" -- "1" Trainer : supervised by
+
+@enduml

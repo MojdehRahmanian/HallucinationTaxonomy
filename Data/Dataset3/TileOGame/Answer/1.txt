@@ -1,0 +1,87 @@
+@startuml
+
+class Game {
+  - maxPlayers: int
+  - currentPlayerIndex: int
+  - isOver: boolean
+  + start()
+  + nextTurn()
+  + checkWin(): boolean
+}
+
+class Board {
+  + placeTile(tile: Tile)
+  + connectTiles(t1: Tile, t2: Tile, side: String)
+}
+
+class Tile {
+  - color: String
+  - isHidden: boolean
+  - isVisited: boolean
+}
+
+class ActionTile {
+  - disabledTurns: int
+  - turnsDisabled: int
+}
+
+class ConnectionPiece {
+}
+
+class Player {
+  - name: String
+  - order: int
+}
+
+class PlayingPiece {
+  - color: String
+}
+
+class Die {
+  + roll(): int
+}
+
+class Deck {
+  + drawCard(): ActionCard
+}
+
+class ActionCard {
+  - actionType: String
+}
+
+class Designer {
+  + defineBoard()
+  + setHiddenTile(tile: Tile)
+  + setStartingPosition(player: Player, tile: Tile)
+  + setActionTileDisabledTurns(tile: ActionTile, turns: int)
+  + buildDeck()
+}
+
+' Spare connection pieces pile
+class SparePile {
+  - count: int
+  + addPiece()
+  + removePiece(): ConnectionPiece
+}
+
+' Relationships
+Game "1" *-- "1" Board
+Game "1" *-- "1" Deck
+Game "1" *-- "1" Die
+Game "1" *-- "1" SparePile
+Game "1" *-- "2..4" Player
+Game "1" -- "1" Designer
+
+Board "1" *-- "1..*" Tile
+Board "1" *-- "0..*" ConnectionPiece
+
+ActionTile --|> Tile
+
+Deck "1" *-- "32" ActionCard
+
+Player "1" *-- "1" PlayingPiece
+Player "1" -- "1" Tile : currentPosition
+
+ConnectionPiece "1" -- "2" Tile : connects
+
+@enduml

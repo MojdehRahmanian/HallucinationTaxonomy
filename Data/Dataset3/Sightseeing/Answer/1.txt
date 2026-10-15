@@ -1,0 +1,42 @@
+@startuml
+
+class City {
+    - name: String
+    - inhabitants: int
+}
+
+class Attraction {
+    - name: String
+    - address: String
+}
+
+class GuidedTour {
+    - number: int
+    - duration: int
+}
+
+class Person {
+    - name: String
+}
+
+class Visitor {
+}
+
+class Guide {
+}
+
+class Discount {
+    - amount: double
+}
+
+City "1" --> "1..*" Attraction : has
+Attraction "1" --> "0..*" GuidedTour : offers
+GuidedTour "1" --> "1" Guide : requires
+GuidedTour "0..*" --> "0..20" Visitor : participates in
+GuidedTour "0..*" -- "0..*" Visitor : discount
+(GuidedTour, Visitor) .. Discount
+
+Person <|-- Visitor
+Person <|-- Guide
+
+@enduml

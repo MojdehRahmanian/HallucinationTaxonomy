@@ -1,0 +1,63 @@
+@startuml Facepage Class Diagram
+
+' Hide unnecessary details for clarity
+hide empty members
+skinparam classAttributeIconSize 0
+
+class User {
+  -id: int {unique}
+  -name: String
+  -email: String
+  -dateOfBirth: Date
+}
+
+class Account {
+  -accountNumber: int {unique}
+}
+
+class PersonalAccount {
+  -sendFriendRequest()
+  -acceptFriendRequest()
+}
+
+class BusinessAccount {
+  -companyName: String
+  -monthlyFee: double
+  -payMonthlyFee()
+}
+
+class Page {
+  -pageName: String
+  -numberOfVisits: int
+  -addPrivilege()
+}
+
+class AdvertisementPage {
+  -bounceRate: double
+  -clickThroughRate: double
+  -conversionRate: double
+}
+
+class Privilege {
+  -canWriteOnWall: boolean
+  -canAdjustInfo: boolean
+}
+
+' Relationships
+User "1" -- "1..*" Account : has >
+Account <|-- PersonalAccount
+Account <|-- BusinessAccount
+
+PersonalAccount "1" -- "0..*" FriendRequest : sends/receives >
+PersonalAccount "1" -- "0..*" Privilege : grants >
+
+PersonalAccount "1" -- "0..*" Page : creates >
+BusinessAccount "1" -- "0..*" Page : creates >
+BusinessAccount "1" -- "0..*" AdvertisementPage : creates >
+
+Page "1" -- "0..*" Privilege : has >
+Page <|-- AdvertisementPage
+
+
+
+@enduml

@@ -1,0 +1,73 @@
+@startuml
+' Enabling automatic relationship detection
+!pragma useIntermediatePackages false
+
+class Apartment {
+  -address: String
+  -emailAddress: String
+}
+
+class Inhabitant {
+  -username: String
+  -password: String
+  -adminRights: boolean
+}
+
+class Room {
+  -description: String
+}
+
+class Sensor {
+  -vendorId: String
+  -description: String
+  -unit: Unit
+  -threshold: float
+}
+
+class TemperatureSensor {
+  -minValue: float
+  -maxValue: float
+}
+
+class PowerSensor {
+  -counterReading: float
+}
+
+class MeasurementValue {
+  -timestamp: Date
+  -value: float
+}
+
+enum Unit {
+  CELSIUS
+  WATT
+}
+
+class SensorController {
+}
+
+class EMonitor {
+}
+
+' Relationships
+Apartment "1" -- "1..*" Room : contains
+Apartment "1" -- "1..*" Inhabitant : has
+
+Room "1" -- "1..*" Sensor : contains
+
+Sensor <|-- TemperatureSensor
+Sensor <|-- PowerSensor
+
+Sensor "1" -- "0..*" MeasurementValue : records
+
+Inhabitant "1" -- "0..*" Sensor : queries/configures >
+
+SensorController "1" -- "1" Apartment : manages
+SensorController "1" -- "1..*" Sensor : controls
+
+EMonitor -- SensorController : checks thresholds >
+EMonitor -- Apartment : sends alerts to >
+
+MeasurementValue --> Sensor : belongs to
+
+@enduml

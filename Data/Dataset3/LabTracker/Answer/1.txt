@@ -1,0 +1,86 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+enum Interval {
+    WEEKLY
+    MONTHLY
+    EVERY_HALF_YEAR
+    YEARLY
+}
+
+enum AppointmentType {
+    APPOINTMENT_REQUIRED
+    WALK_IN_ONLY
+    DROP_OFF
+}
+
+class Doctor {
+    - practitionerNumber: int
+    - signature: Image
+    - fullName: String
+    - address: String
+    - phoneNumber: String
+}
+
+class Patient {
+    - healthNumber: String
+    - firstName: String
+    - lastName: String
+    - dateOfBirth: Date
+    - address: String
+    - phoneNumber: String
+}
+
+class Requisition {
+    - validFromDate: Date
+    - repeatCount: int
+    - interval: Interval
+}
+
+class TestGroup {
+    - name: String
+}
+
+class Test {
+    - name: String
+    - duration: int
+    - durationIndependentOfCount: boolean
+    - appointmentType: AppointmentType
+}
+
+class TestResult {
+    - result: boolean
+    - report: String
+}
+
+class Lab {
+    - name: String
+    - registrationNumber: String
+    - address: String
+    - cancellationFee: double
+}
+
+class BusinessHours {
+    - dayOfWeek: String
+    - startTime: Time
+    - endTime: Time
+}
+
+class Appointment {
+    - confirmationNumber: String
+    - date: Date
+    - startTime: Time
+    - endTime: Time
+}
+
+Doctor "1" --> "0..*" Requisition : creates
+Patient "1" --> "0..*" Requisition : assigned to
+Requisition "1" --> "1..*" Test : contains
+Test "1..*" --> "1" TestGroup : belongs to
+Test "1" --> "0..1" TestResult : has
+Requisition "0..*" --> "1" Lab : directed to
+Patient "1" --> "0..*" Appointment : books
+Appointment "1" --> "1" Requisition : for
+Lab "1" *-- "7" BusinessHours : has
+
+@enduml
