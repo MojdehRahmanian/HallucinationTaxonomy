@@ -1,0 +1,89 @@
+id,subcategory,description,detail
+1,C1,Speculative Branch,Assumes multiple projects per manager without clear support from the prompt.
+1,C3,Composition misuse,Misuses composition for requirements and system.
+1,C3,Composition syntax confusion,"Brief confusion between multiplicity `*` and composition arrow `*--`, later self-corrected."
+2,C1,Speculative Branch,Assumes location can have multiple externals without prompt evidence.
+2,C3,Tool Misuse,Misinterprets association multiplicity for External and Location.
+3,C1,Speculative HeaderFooter modeling,Unnecessary complexity in HeaderFooter modeling.
+3,C1,Speculative Cell Content,"Invents 'block' vs 'inline' pictures, complicating the model."
+3,C1,Speculative Header/Footer Content,"Speculates about images or tables in headers, which the prompt forbids."
+3,C3,Composition/Aggregation misuse,"Misuse or confusion between composition and aggregation semantics (HeaderFooter, symbol usage)."
+3,C2,Goal Drift,Focus on structural details over user actions.
+4,C1,Speculative Appointment–Visit link,Considered linking Visit to Appointment but abandoned the idea.
+4,C2,Goal Drift,"Overemphasis on simplicity (e.g., using string for medication) over explicit requirements."
+4,C3,Composition misuse,Misuse of composition for Prescription in Visit.
+5,C1,Speculative Store class,Introduced unnecessary Store class; later abandoned.
+5,C3,Composition misuse,Misuse of composition for Subscriber–Card relationship.
+6,C3,Composition misuse (CrewAssignment),Misuse of composition for CrewAssignment relationship.
+6,C3,Composition misuse (Flight–Airport),Incorrectly proposed composition for Flight–Airport relationship.
+7,C3,Composition misuse (Customer–Account),Misuses composition for Customer–Account relationship.
+7,C3,Multiplicity confusion,Brief confusion about association end labeling.
+9,C1,Speculative CarModel class,Introduces CarModel class without clear justification.
+9,C3,Composite key misuse,Misunderstands PlantUML's handling of composite keys.
+10,C1,Speculative Branch,Speculates on DateTime vs Date/Time without clear need.
+11,C3,Tool Misuse,Misinterpretation of UML multiplicity.
+12,C3,Composition misuse (association class),Incorrectly used composition for association class.
+13,C2,Goal Drift,Focus shifts to relational design over class diagram.
+13,C3,Multiplicity/association misuse,Confusion in handling UML/PlantUML association and multiplicity syntax.
+15,C3,UML misuse,Misuse of UML constructs in modeling card management.
+17,C3,Aggregation Misuse,Aggregation used instead of composition.
+18,C3,Aggregation vs Association confusion,Confusion between aggregation and association.
+18,C3,Incorrect composition (User–Transaction),"Briefly suggests composition for User–Transaction, which is incorrect."
+19,C3,Composition misuse (Schedule–Appointment),Misuse of composition for Schedule–Appointment relationship.
+20,C1,Speculative WebUser–ShoppingCart link,Unnecessary or redundant modeling of WebUser–ShoppingCart relationship.
+20,C3,Composition vs Association confusion,Confusion between composition and association semantics.
+22,C3,Composition Misuse,Misuse of composition for Scene-Setup and Setup-Take.
+23,C1,Speculative Character subclasses,Unnecessary breakdown into Character subclasses.
+23,C3,Multiple inheritance misuse (Picture),Misuse or unresolved confusion about multiple inheritance for Picture.
+25,C1,Speculative RestockOrder,RestockOrder class introduced without clear prompt support.
+26,C3,Composition misuse (AircraftTypeRequirement),Misuse of composition in AircraftTypeRequirement relationship.
+27,C2,Goal Drift,Focuses on implementation details over prompt requirements.
+27,C3,Composition vs Aggregation confusion,Confusion over when to use composition versus aggregation.
+27,C3,Multiplicity misuse,Incorrect reasoning about one-to-many multiplicity notation.
+29,C1,Speculative item relationship modeling,Speculative or convoluted modeling of item–service and unsold item relationships.
+29,C3,Multiplicity misuse,Incorrect or confused handling of UML/PlantUML multiplicity representation and syntax.
+30,C3,Association class syntax misuse,Incorrect or uncertain handling of PlantUML syntax for association classes.
+31,C3,Multiplicity/relationship misuse,Incorrect or inconsistent handling of UML relationships and multiplicities.
+32,C3,Composition misuse (Order–OrderItem),Misuse of composition for Order–OrderItem relationship.
+32,C3,Invalid association syntax,Proposes invalid (`}o--o{`) and semantically wrong (`--o`) UML syntax.
+32,C3,Weak composition justification (FurnitureLine–Piece),Asserts composition without strong lifecycle dependency.
+33,C2,Goal Drift,Focus on extensibility over the prompt’s single factory scope.
+33,C3,Multiplicity misuse,Confusion and contradictory reasoning about UML/PlantUML multiplicity syntax and direction.
+34,C1,Speculative walk-in rentals,"Speculates on walk-ins without reservations, not supported by the prompt."
+34,C2,Goal Drift,Focuses on billing and inventory aspects outside the prompt scope.
+34,C3,UML misuse (optional client),Misuses UML when modeling optional client in Rental.
+35,C2,Goal Drift,Focuses on internal card validation details not required.
+38,C2,Goal Drift,Focuses on constraint enforcement instead of structural requirements.
+38,C3,Aggregation misuse (Library–Book),Misuses aggregation for the Library–Book relationship.
+40,C1,Relationship indecision,"Cycles between composition, aggregation, and association without resolution."
+40,C3,Composition misuse (Account–Order),Incorrectly uses composition for Account–Order despite lifecycle mismatch.
+40,C2,Goal Drift,Focus on lifecycle aspects not required by the prompt.
+41,C1,Speculative ProjectManagementSystem class,Unnecessary/speculative design of ProjectManagementSystem class (severity disputed across models).
+42,C3,Multiplicity confusion,Confusion or speculation in interpreting multiplicity semantics (severity disputed across models).
+42,C3,Incorrect association direction,Reversed association multiplicity between ExternalScene and Location.
+43,C3,Interface vs Abstract confusion,Inconsistent treatment of BodyElement as interface vs abstract class.
+44,C3,Structural semantics misuse,"Misuse or confusion in aggregation, composition, and multiplicity notation."
+45,C3,Composition misuse,"Misuse or confusion in composition relationships (Order–User/Movie, Card, etc.)."
+46,C3,PlantUML misuse,"Misunderstanding of structural/notation semantics (association direction, constraints)."
+47,C3,Aggregation vs Composition misuse,Incorrect use of aggregation where composition is more appropriate.
+48,C3,Relationship notation misuse,"Confusion or misuse of multiplicity/association notation (PlantUML, crow’s foot)."
+49,C3,Composition misuse,Misuse of composition for Service–Item relationship.
+50,C3,Composition misuse (DishIngredient),Incorrect use of composition for DishIngredient; lifecycle not aligned.
+50,C3,Composition misuse (MealDish),Incorrect use of composition for MealDish; lifecycle not aligned.
+50,C3,Multiplicity misuse (Meal–Client),"Incorrect Meal–Client multiplicity: should be 0..*–1, not 0..1–0..1."
+51,C3,Association/multiplicity misuse,"Misuse of UML associations and multiplicities, including direction errors."
+52,C1,Speculative relationship modeling,"Speculative or excessive deliberation on many-to-many, component usage, quantity tracking, and FurnitureLine relationships."
+52,C3,Relationship semantics misuse,Confusion in aggregation/composition semantics and many-to-many notation.
+52,C2,Goal Drift,Focus on UML aesthetics over clear requirement alignment.
+53,C3,Relationship/composition misuse,Incorrect use of composition without lifecycle tie and misuse of UML multiplicity notation.
+54,C1,Speculative rental and tracking modeling,Speculative or unnecessary modeling of rental–reservation links and bicycle location tracking.
+54,C2,Goal Drift,Focuses on optional links not required by the prompt.
+55,C3,Composition misuse (Sign),Misuse of composition for Sign; should be association.
+55,C2,Goal Drift,Overemphasis on card verification system details.
+56,C1,Speculative modeling,Speculative or overcomplicated modeling of Card structure and Division hierarchy.
+56,C3,Composition misuse,Misuse or incorrect notation in composition for Division hierarchy.
+56,C2,Goal Drift,Focus on hierarchy over direct branch association.
+58,C3,Composition/association misuse,Confusion or inconsistency in composition vs. association semantics.
+58,C2,Goal Drift,Focus on data structure over borrowing logic.
+59,C3,Schedule–Appointment misuse,Incorrect use of composition/association and directionality in Schedule–Appointment relationships.
+60,C3,Composition/association misuse,"Misuse and confusion in composition/association semantics (Account–Order, LineItem, Payment, ownership/lifecycle)."

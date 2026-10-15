@@ -1,0 +1,14 @@
+﻿id,Name,Classes,Associations
+1,AlphaInsurance,10,10
+2,BankAccount,6,5
+3,BuildingManagement,10,11
+4,BusTransportationManagementSystem,5,4
+5,ClothingCompany,7,9
+6,eHome2020,8,10
+7,EUScienceConnect,8,10
+8,Facepage,9,11
+9,FitnessCompanyConan,8,9
+10,LabTracker,12,12
+11,Sightseeing,7,7
+12,TileOGame,16,21
+13,University,9,9

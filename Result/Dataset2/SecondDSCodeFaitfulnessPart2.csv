@@ -1,0 +1,131 @@
+id,subcategory,description,detail
+R36_Video Rental.txt,B3,Multiplicity Contradiction,Carries has 1-to-1 with Title instead of many-to-1
+R36_Video Rental.txt,B1,Dropped Attribute,totalRentalAmount renamed to totalAmount
+R38_LawFirm.txt,B2,Fabricated BusinessObjective Class,BusinessObjective class not mentioned in reasoning
+R38_LawFirm.txt,B2,Fabricated KPI Class,KPI class not mentioned in reasoning
+R38_LawFirm.txt,B2,Fabricated BusinessProblem Class,BusinessProblem class not mentioned in reasoning
+R38_LawFirm.txt,B3,Event Multiplicity Contradiction,Reasoning: 1..* events per case; Code: * events
+R38_LawFirm.txt,B3,Association Direction Contradiction,Reasoning uses composition; Code uses directed assoc
+R39_Insurance.txt,B2,Fabricated Code,"Added make, model, year to Vehicle class"
+R37_LawFirm2.txt,B3,Multiplicity Contradiction,Address-ContactAddress relationship has wrong multiplicity
+R37_LawFirm2.txt,B3,Multiplicity Contradiction,Incorrect direction in ContactAddress relationships
+R32_TheEnergyManagementSystem.txt,B2,Fabricated Helper Classes,Helper classes not mentioned in reasoning
+R32_TheEnergyManagementSystem.txt,B2,Report Generation Methods,generateUtilizationReport/AlarmReport not in reasoning
+R32_TheEnergyManagementSystem.txt,B3,Method Signature Mismatch,Several method signatures differ from reasoning
+R32_TheEnergyManagementSystem.txt,B1,Missing Methods,Several methods from reasoning omitted in code
+R32_TheEnergyManagementSystem.txt,B4,Inheritance vs Dependency,Event inheritance vs dependency in reasoning
+R40_Dental Clinic.txt,B2,Fabricated Class,"ProcedureRoom class not in reasoning, only Room"
+R40_Dental Clinic.txt,B1,Dropped Class,"Schedule, Clinic, InventoryRecord classes missing"
+R40_Dental Clinic.txt,B2,Fabricated Attributes,IDs added to all classes not in reasoning
+R40_Dental Clinic.txt,B3,Contradicting Relationship,InsuranceClaim->Billing not in reasoning
+R40_Dental Clinic.txt,B1,Dropped Relationship,InsuranceClaim->Appointment relationship missing
+R40_Dental Clinic.txt,B3,Contradicting Enum Values,ProcedureType values don't match reasoning
+R34_Truck.txt,B1,Dropped Customer ID,customerId attribute missing from Customer class
+R42_Cctns.txt,B1,Dropped ServiceDefinition Interface,ServiceDefinition interface missing from diagram
+R45_Gemini.txt,B2,Fabricated ArchiveSubsystem Class,ArchiveSubsystem not mentioned in reasoning
+R45_Gemini.txt,B2,Fabricated Detector Method,readData() method not in reasoning
+R45_Gemini.txt,B2,Fabricated Storage Method,retrieve() method not in reasoning
+R45_Gemini.txt,B2,Fabricated System Method,archiveData() method not in reasoning
+R45_Gemini.txt,B2,Fabricated DataService Methods,transferData() and displayData() not in reasoning
+R45_Gemini.txt,B2,Fabricated Preprocessor Method,processIRData() not in reasoning
+R45_Gemini.txt,B3,Relationship Contradiction,Data-Storage multiplicity missing from code
+R45_Gemini.txt,B1,Dropped DataService Methods,storeData() and getData() methods missing
+R45_Gemini.txt,B1,Dropped DataService Method,compressData() method missing
+R31_Restaurant.txt,B2,Fabricated Code,Reservation '1' to Waiter 'served by' not in reasoning
+R31_Restaurant.txt,B3,Contradiction,"Reservation-Table multiplicity: '*-*' in reasoning, '1-1..*' in code"
+R31_Restaurant.txt,B1,Dropped Step,Employee supervisor relationship missing in code
+R31_Restaurant.txt,B3,Contradiction,"OrderDetail multiplicity: '0..*' in reasoning, '1..*' in code"
+R44_Inventory.txt,B2,Fabricated User Inheritance Hierarchy,User subtypes not in reasoning
+R44_Inventory.txt,B2,ReturnedAsset Class,ReturnedAsset class not mentioned in reasoning
+R44_Inventory.txt,B1,Missing UserRole Class,UserRole class from reasoning not in diagram
+R44_Inventory.txt,B1,Missing OrganizationalUnit Class,OrganizationalUnit abstraction missing
+R44_Inventory.txt,B2,BulkEntry Class,BulkEntry class not in reasoning
+R44_Inventory.txt,B1,Missing Location Hierarchy,Self-association for Location hierarchy missing
+R43_Gamma.txt,B1,Dropped ContactInfo Class,ContactInfo class mentioned in reasoning is missing
+R43_Gamma.txt,B1,Dropped OrderItem Class,OrderItem class from reasoning is missing
+R43_Gamma.txt,B2,Fabricated OrderHistory Class,OrderHistory not in reasoning but appears in code
+R43_Gamma.txt,B2,Fabricated InventoryManager,InventoryManager not mentioned in reasoning
+R43_Gamma.txt,B2,Fabricated SecuritySystem,SecuritySystem not mentioned in reasoning
+R43_Gamma.txt,B2,Fabricated Web Components,WebBrowser/WebServer/ServiceComponent not in reasoning
+R43_Gamma.txt,B3,Order-Product Relationship,"Should be Order-OrderItem-Product, not direct Order-Product"
+R43_Gamma.txt,B3,Customer-PaymentInfo Multiplicity,1..* in code vs singular in reasoning
+R43_Gamma.txt,B4,Profile Attributes Mismatch,Email/phone in Profile vs separate ContactInfo class
+R60_EvlaBack.txt,B3,Multiplicity Contradiction,ComputeMonitor and SystemMonitor show '1' twice
+R60_EvlaBack.txt,B2,Fabricated Processing Sequence,Processing sequence arrows not mentioned in reasoning
+R60_EvlaBack.txt,B2,Fabricated ProcessorManager,"ProcessorManager not in reasoning, only ProcessingManager"
+R60_EvlaBack.txt,B3,Method Name Contradiction,acknowledgeDataReceipt vs acknowledgeReceipt
+R35_UnifiedUniversityInventorySystem.txt,B1,Dropped TransferRequest Class,TransferRequest subclass missing from diagram
+R35_UnifiedUniversityInventorySystem.txt,B3,Contradicting Asset Status,RESERVED status not mentioned in reasoning
+R35_UnifiedUniversityInventorySystem.txt,B1,Missing Asset-User Relationship,No relationship between User and Asset
+R35_UnifiedUniversityInventorySystem.txt,B2,Fabricated Report Relationships,Report relationships not described in reasoning
+R51_Beyond.txt,B1,Dropped Terminal Class,Terminal class discussed in reasoning is missing
+R51_Beyond.txt,B1,Dropped DialogManager,DialogManager class is missing from final diagram
+R51_Beyond.txt,B1,Dropped Modality Classes,TouchModality and SpeechModality classes missing
+R51_Beyond.txt,B1,Dropped ModalitySwitcher,ModalitySwitcher class is missing
+R51_Beyond.txt,B2,Fabricated MultiModalInterface,Not mentioned in reasoning but appears in diagram
+R51_Beyond.txt,B3,Relationship Contradiction,ContextEngine-MultiModalInterface differs from reasoning
+R51_Beyond.txt,B4,UserInterface Structure Mismatch,UserInterface became MultiModalInterface with different hierarchy
+R50_Nasax38.txt,B2,Fabricated PipeService Class,PipeService class not mentioned in reasoning
+R50_Nasax38.txt,B1,Dropped API Methods,openPipe method missing from FTSS
+R50_Nasax38.txt,B3,Return Type Contradiction,getMinorFrameNumber/getMETValue missing null return
+R50_Nasax38.txt,B4,Pipe Methods Structural Mismatch,Pipe methods moved to PipeService instead of Pipe
+R50_Nasax38.txt,B2,Fabricated Socket Class,Socket implemented as class not mentioned in reasoning
+R56_Libra.txt,B1,Dropped Cluster Attributes,"clusterId, submissionDirections, criteria missing"
+R56_Libra.txt,B1,Dropped Scheduler Methods,deleteJob/changeJob methods missing
+R56_Libra.txt,B2,Fabricated Method,processScheduling() not in reasoning
+R56_Libra.txt,B3,Method Name Contradiction,changeJob in reasoning vs modifyJob in code
+R33_Travel System.txt,B3,Contradictory Relationship,Reservation has both 1-to-1..2 and specific relations
+R33_Travel System.txt,B2,Fabricated Methods,CRUD methods not discussed in reasoning
+R33_Travel System.txt,B2,Fabricated Attribute,User.fullName not in reasoning
+R47_Dii.txt,B2,Fabricated COECompliance Class,COECompliance class not mentioned in reasoning
+R47_Dii.txt,B1,Dropped Session Class,Session class in reasoning missing from final diagram
+R47_Dii.txt,B1,Dropped DatabaseConnection Class,DatabaseConnection replaced with ConnectionDescriptor
+R47_Dii.txt,B3,Mode vs OperationMode Naming,Mode in reasoning renamed to OperationMode in diagram
+R47_Dii.txt,B3,CommunicationStatus Handling,CommunicationStatus enum replaced with class
+R47_Dii.txt,B4,System-Mode Relationship,Composition in reasoning vs association in diagram
+R55_Hats.txt,B1,Missing HATS_SML_Program abstract class,Abstract base class for parsers was dropped
+R55_Hats.txt,B3,HATS_SML relationship typo,HATS_SATSML --> ParseProgram (typo in class name)
+R55_Hats.txt,B4,Parser program structure mismatch,Inheritance vs composition for parser programs
+R57_.Npacdocx.txt,B2,Fabricated ConflictCause Enum,ConflictCause enum not mentioned in reasoning
+R57_.Npacdocx.txt,B2,Fabricated DisasterRecovery Class,Reasoning decided to model as methods in NPACSMS
+R57_.Npacdocx.txt,B3,ServiceProvider-SubscriptionVersion Relationship,"Reasoning specified 1..* cardinality, code shows 1"
+R57_.Npacdocx.txt,B1,Missing Methods in NPACSMS,Several methods from reasoning omitted in code
+R57_.Npacdocx.txt,B1,Missing Attributes in SubscriptionVersion,id attribute missing from final code
+R52_CtcNetwork.txt,B1,Missing Attributes in TrafficCondition,networkIdentifier and linkIdentifier attributes missing
+R52_CtcNetwork.txt,B3,Relationship Type Mismatch,TrafficCondition has direct associations instead of dependency
+R52_CtcNetwork.txt,B2,Fabricated Relationship,TrafficCondition->RoadwayNetwork not in reasoning
+R52_CtcNetwork.txt,B1,Missing Collection Attributes,listOfLinkData and listOfNodeData missing
+R59_Telescope.txt,B2,Fabricated Enum,ActivityType enum not in reasoning
+R59_Telescope.txt,B3,Class Name Contradiction,HeaterController vs HeaterSystem
+R59_Telescope.txt,B2,Fabricated Methods,startSequence() and performNextActivity() added
+R59_Telescope.txt,B3,Method Name Contradiction,SCU methods don't match reasoning
+R54_Esa.txt,B2,Fabricated Method,storeData() not in reasoning
+R54_Esa.txt,B2,Fabricated Method,distributeDataAndSoftware() not in reasoning
+R54_Esa.txt,B2,Class Name Change,IDFSDataAccessSoftware renamed to IDFS_Software
+R54_Esa.txt,B3,Relationship Contradiction,ScienceWebDisplay->CoI relationship missing
+R41_CrimeCriminalTrackingSystems.txt,B1,Dropped Investigation Class,Investigation class mentioned in reasoning is missing
+R41_CrimeCriminalTrackingSystems.txt,B1,Dropped Prosecution Class,Prosecution entity is missing from diagram
+R41_CrimeCriminalTrackingSystems.txt,B1,Dropped User Class,Abstract User class mentioned in reasoning is missing
+R41_CrimeCriminalTrackingSystems.txt,B1,Dropped ReferenceData Class,ReferenceData class mentioned in reasoning is missing
+R41_CrimeCriminalTrackingSystems.txt,B3,Police Officer Naming,Named 'Police' in reasoning but 'PoliceOfficer' in code
+R41_CrimeCriminalTrackingSystems.txt,B3,CitizenInterface Naming,Named 'CitizenInterfaceModule' in reasoning
+R46_Themas.txt,B3,Method Name Contradiction,loadInitializationData vs initializeOperationalParameters
+R48_Multi-Mahjong.txt,B1,Dropped Player Class,Player class replaced with PlayerInfo
+R48_Multi-Mahjong.txt,B2,Added ChatMessage Class,ChatMessage class not in reasoning
+R48_Multi-Mahjong.txt,B3,Method Name Mismatch,makeMove vs calculateMove in ComputerOpponent
+R48_Multi-Mahjong.txt,B2,Added Methods,"Added methods not in reasoning (disconnect, etc.)"
+R48_Multi-Mahjong.txt,B3,Parameter Mismatch,updateHighScores takes different parameters
+R58_SpaceFractions.txt,B2,Fabricated SystemController Class,SystemController class not mentioned in reasoning
+R58_SpaceFractions.txt,B3,Relationship Direction Change,IntroductoryMovie->MainMenu changed to indirect flow
+R58_SpaceFractions.txt,B2,Added onMovieComplete Method,Method not specified in reasoning
+R58_SpaceFractions.txt,B1,Method Name Changes,"start() changed to playMovie(), display() to displayMenu()"
+R53_Elsfork.txt,B3,Typo in Class Name,Disturb--anceFaultRecordRetrieval has incorrect dashes
+R53_Elsfork.txt,B2,Added Notes,Notes for OperationalFunctions and SystemManagementFunctions
+R49_Tcs.txt,B1,Dropped Operator Class,Operator class mentioned in reasoning is missing
+R49_Tcs.txt,B1,Dropped AV Class,AV class defined in reasoning is missing
+R49_Tcs.txt,B1,Dropped Payload Class,Payload class defined in reasoning is missing
+R49_Tcs.txt,B1,Dropped Overlay Class,Overlay class mentioned in reasoning is missing
+R49_Tcs.txt,B1,Missing TCS-Operator Relationship,Association between TCS and Operator is missing
+R49_Tcs.txt,B2,Added ValidationResult Class,Class not mentioned in reasoning
+R49_Tcs.txt,B3,MissionPlanValidator-MissionPlan Relationship,Composition in reasoning vs association in code
+R49_Tcs.txt,B3,ThreatLookupTable-FlightRoutePlan Relationship,Relationship not in reasoning

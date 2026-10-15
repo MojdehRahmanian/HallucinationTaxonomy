@@ -1,0 +1,157 @@
+id,subcategory,description,detail
+R92_Peering.txt,B2,Fabricated ResourceInfo Class,ResourceInfo class not in reasoning
+R92_Peering.txt,B2,Fabricated PeeringArrangement Class,PeeringArrangement class not in reasoning
+R92_Peering.txt,B2,Fabricated Methods,"reportFailure, encapsulateForPeering not in reasoning"
+R92_Peering.txt,B3,Composition vs Aggregation,"SR-Resource is aggregation in reasoning, composition in code"
+R92_Peering.txt,B2,Fabricated Notes,Notes on protocols and policies not in reasoning
+R92_Peering.txt,B3,Data Structure Mismatch,"List<Resource> vs Map<int, Resource>"
+R99_Mdot.txt,B3,Method Return Type Contradiction,InputServices methods don't return data types as specified
+R99_Mdot.txt,B2,Fabricated Attributes,Added attributes not mentioned in reasoning
+R108_Triangle.txt,B1,Dropped GameLoader,GameLoader class discussed in reasoning is missing
+R108_Triangle.txt,B2,Fabricated GameManager,GameManager not in reasoning but appears in diagram
+R108_Triangle.txt,B3,Player inheritance,"Reasoning has HumanPlayer subclass, code uses PlayerType"
+R108_Triangle.txt,B2,Fabricated enums,GameType and PlayerType enums not in reasoning
+R108_Triangle.txt,B1,Missing HumanPlayer,HumanPlayer class from reasoning is missing
+R108_Triangle.txt,B1,Missing RandomAIPlayer,RandomAIPlayer class from reasoning is missing
+R108_Triangle.txt,B3,Application-Game relationship,"Reasoning has direct relationship, code uses GameManager"
+R105_Stewards.txt,B1,Dropped User Class,User class mentioned in reasoning is missing in diagram
+R105_Stewards.txt,B1,Dropped Instrument Class,Instrument class from reasoning not in final diagram
+R105_Stewards.txt,B1,Dropped TimeSeriesData Class,TimeSeriesData class merged into TabularData
+R105_Stewards.txt,B1,Dropped AdminMetrics Class,AdminMetrics class mentioned but not implemented
+R105_Stewards.txt,B1,Dropped UserFeedback Class,UserFeedback class mentioned but not implemented
+R105_Stewards.txt,B2,Added MetadataSearchTool,Not explicitly mentioned in reasoning
+R105_Stewards.txt,B3,Metadata-Database Relationship,"Reasoning has Data-Metadata relation, not Database-Metadata"
+R105_Stewards.txt,B3,Station-TabularData Relationship,"Reasoning has Instrument-Data relation, not Station-TabularData"
+R105_Stewards.txt,B4,Data Hierarchy Structure,Data as abstract parent class missing in diagram
+R114_ClarusLow.txt,B2,Fabricated Class Name,QualityRule used instead of Rule from reasoning
+R114_ClarusLow.txt,B3,Multiplicity Contradiction,"Rule->Parameter is 0..1 in reasoning, 1->0..* in code"
+R114_ClarusLow.txt,B3,Multiplicity Contradiction,"Rule->Situation is 0..1 in reasoning, 1->0..* in code"
+R114_ClarusLow.txt,B3,Multiplicity Contradiction,"Rule->Location is 0..1 in reasoning, 1->0..* in code"
+R114_ClarusLow.txt,B2,Fabricated Relationship,HistoricalData->Parameter relation not in reasoning
+R114_ClarusLow.txt,B2,Fabricated Class Name,ConfigurationAdministrationService vs original name
+R96_PugetSound.txt,B2,Fabricated Code,User-AudioClip 'records' relation not in reasoning
+R96_PugetSound.txt,B2,Fabricated Code,MultipleUploadConfig-File relation not in reasoning
+R96_PugetSound.txt,B3,Contradiction,Page-MultipleUploadConfig composition vs association
+R96_PugetSound.txt,B1,Dropped Step,Several methods missing from classes
+R94_Caiso.txt,B3,Multiplicity Contradiction,CrankingPath source/target multiplicity differs from reasoning
+R94_Caiso.txt,B2,Fabricated Relationship,ContingencyStudy->Generator relation not in reasoning
+R94_Caiso.txt,B3,Relationship Direction Contradiction,Generator->CrankingPath vs CrankingPath->Generator
+R94_Caiso.txt,B1,Dropped Attribute,CrankingPath 'available' attribute missing
+R113_Grid3D.txt,B1,Dropped Method,loadData() method renamed to parseFile() in DataFile
+R113_Grid3D.txt,B3,Parameter Type Contradiction,rotate/move methods use Vector3D vs individual parameters
+R113_Grid3D.txt,B3,Method Parameter Contradiction,plotDataPoints() takes parameter in code but not in reasoning
+R113_Grid3D.txt,B3,Multiplicity Contradiction,DataFile-DataPoint relation shows 0..2000 instead of 0..*
+R106_EireneSys15.txt,B2,Fabricated RequirementStatus Enum,RequirementStatus enum not mentioned in reasoning
+R106_EireneSys15.txt,B2,Fabricated ETCSLine Class,ETCSLine was considered but not included in final design
+R106_EireneSys15.txt,B2,Fabricated NetworkDesign Class,"Not in reasoning, replaced NetworkSpecification"
+R106_EireneSys15.txt,B2,Fabricated CoverageRequirement Attributes,"maxAntennaLoss, additionalMargin, getEffectiveCoverage()"
+R106_EireneSys15.txt,B2,Fabricated HandoverRequirement Attributes,"measurementStartEvent, measurementStopEvent"
+R106_EireneSys15.txt,B1,Dropped NetworkSpecification Class,Defined in reasoning but missing in code
+R106_EireneSys15.txt,B1,Dropped isMandatory Attribute,Replaced with RequirementStatus enum
+R106_EireneSys15.txt,B1,Dropped speedCondition Attribute,Missing from CoverageRequirement class
+R106_EireneSys15.txt,B3,Relationship Contradiction,NetworkSpecification aggregation vs NetworkDesign dependency
+R97_Nlm.txt,B2,Fabricated Class,Metadata class not mentioned in reasoning
+R97_Nlm.txt,B2,Fabricated Enum,StreamType enum contradicts reasoning decision
+R97_Nlm.txt,B3,Multiplicity Contradiction,"Ingest->SIP: 0..* in reasoning, 1..* in code"
+R97_Nlm.txt,B3,Multiplicity Contradiction,"Ingest->AIP: 0..* in reasoning, 1..* in code"
+R97_Nlm.txt,B1,Dropped Method,extractDescriptiveInfo should return DescriptiveInfo
+R95_WaterUse.txt,B3,Class Name Mismatch,WaterConservingCredit renamed to WaterCredit
+R95_WaterUse.txt,B3,Class Name Mismatch,AlternativeSourceProject renamed to AlternativeProject
+R95_WaterUse.txt,B4,Inheritance vs Enumeration,Project types changed from inheritance to enum
+R95_WaterUse.txt,B3,Relationship Cardinality Mismatch,MFLZone-LapsedQuantity changed from many-to-one to one-to-many
+R95_WaterUse.txt,B2,Added Relationship,Permit-AlternativeProject relationship not in reasoning
+R118_Sprat.txt,B3,Multiplicity Contradiction,Domain->PrivacyPolicy multiplicity changed from 0..* to 1..*
+R118_Sprat.txt,B2,Fabricated Notes,Added explanatory notes not mentioned in reasoning
+R109_Pontis.txt,B3,Security Methods Contradiction,Security methods moved from SecurityManager to User
+R109_Pontis.txt,B3,Method Parameter Mismatch,Security methods have different parameters in code
+R109_Pontis.txt,B1,Missing User Attribute,unitOfMeasurement attribute missing from User
+R109_Pontis.txt,B1,Missing User Method,canEnterSQLQuery() method missing from User
+R109_Pontis.txt,B3,Method Name Mismatch,BridgeDataView methods renamed in code
+R109_Pontis.txt,B2,Added UnitConfiguration Method,setUnit() not in reasoning but added to code
+R109_Pontis.txt,B3,Relationship Direction Change,UnitConfigurationâUser vs reasoning's opposite
+R107_Znix.txt,B2,Fabricated EmailAssociate Class,EmailAssociate subclass not mentioned in reasoning
+R107_Znix.txt,B2,Fabricated WWWArchive Class,WWWArchive subclass not mentioned in reasoning
+R107_Znix.txt,B2,Fabricated label attribute,Relationship.label explicitly rejected in reasoning
+R107_Znix.txt,B3,Relationship target contradiction,Reasoning: from/to are Elements; Code: Associate/Entity
+R107_Znix.txt,B1,Missing Element class properties,Element class is abstract in reasoning but not in code
+R107_Znix.txt,B4,Entity-VirtualFolder relationship mismatch,Reasoning: many-to-many; Code: one-to-many
+R110_Phin.txt,B1,Dropped QuestionnaireResponse Relationships,Missing QuestionnaireResponse->Questionnaire relation
+R110_Phin.txt,B2,Fabricated Relationship,LabResult->Entity relation not in reasoning
+R110_Phin.txt,B3,Multiplicity Contradiction,Questionnaire-CaseRecord relation not in reasoning
+R110_Phin.txt,B1,Missing Methods,addDigitalSignature() method missing from Questionnaire
+R110_Phin.txt,B3,Association Multiplicity,Association-Entity is '1--2..*' vs reasoning's '1--2'
+R101_Ertms.txt,B2,Fabricated NationalSystem Class,NationalSystem class not mentioned in reasoning
+R101_Ertms.txt,B1,Dropped ETCS-DMI Composition,"Reasoning had ETCS *-- DMI, code has no composition"
+R101_Ertms.txt,B3,Method Signature Changes,Methods simplified without parameters in final code
+R101_Ertms.txt,B1,Missing Train-DMI Relationship,DMI-Train relationship missing from final code
+R101_Ertms.txt,B2,Fabricated DMI-Driver Relationship,DMI-Driver interaction not in reasoning
+R111_Nenios.txt,B1,Dropped ChildNote,ChildNote class mentioned in reasoning is missing
+R111_Nenios.txt,B1,Dropped ParentNote,ParentNote class mentioned in reasoning is missing
+R111_Nenios.txt,B1,Dropped AccountActivity,AccountActivity class mentioned in reasoning is missing
+R111_Nenios.txt,B2,Fabricated Billing Relationship,Billing->Invoice relationship not in reasoning
+R111_Nenios.txt,B3,Classroom-TeacherAssistant Contradiction,Two identical relationships not distinguished
+R111_Nenios.txt,B4,Immunization Structure Mismatch,ImmunizationRecord/Requirement vs simple Immunization
+R117_WatcomGui.txt,B4,Package Structure Mismatch,Different package organization than reasoning
+R117_WatcomGui.txt,B2,Compilation Note Addition,N3 note attached to System Libraries not in reasoning
+R102_EireneFun7.txt,B3,Inheritance Contradiction,PublicEmergencyCall inherits from PointToPoint in reasoning
+R102_EireneFun7.txt,B2,Fabricated UserType Enum,UserType enum not mentioned in reasoning
+R102_EireneFun7.txt,B2,Service Suffix Added,All classes renamed with 'Service' suffix
+R102_EireneFun7.txt,B2,Added Stereotypes,<<Service>> and <<Entity>> stereotypes added
+R104_CentralTradingSystem.txt,B1,Dropped Method Parameters,Method parameters missing in TransactionUserInterface
+R104_CentralTradingSystem.txt,B1,Dropped Method Return Types,Return types missing from all methods
+R104_CentralTradingSystem.txt,B3,Relationship Contradiction,CentralTradingSystem aggregation vs association with Instruction
+R104_CentralTradingSystem.txt,B1,Dropped Attribute,Trade missing buyInstruction/sellInstruction references
+R104_CentralTradingSystem.txt,B3,Relationship Direction Change,TradingSystemManagement relationship with ExceptionLog
+R104_CentralTradingSystem.txt,B1,Dropped Method,displayTradeConfirmation/displayFailureNotification missing
+R115_ClarusHigh.txt,B1,Dropped User Class,User class mentioned in reasoning but missing in diagram
+R115_ClarusHigh.txt,B1,Dropped SecurityGroup Class,SecurityGroup class missing despite being in reasoning
+R115_ClarusHigh.txt,B3,Contradicting Vehicle Relationship,"Reasoning has Vehicle as attribute, code as class hierarchy"
+R115_ClarusHigh.txt,B4,ClarusCollector Structure Mismatch,ClarusCollector class missing despite detailed reasoning
+R100_GetReal.txt,B1,Dropped Organization Class,Organization class and its relation to ProfessionalOrganizations missing
+R100_GetReal.txt,B1,Dropped Article Class,Article class and its relation to RSSFeeds missing
+R100_GetReal.txt,B3,Relationship Type Mismatch,AskGradOrProf uses aggregation instead of composition
+R100_GetReal.txt,B2,Fabricated Method,GetRealSite.displayContent() not in reasoning
+R100_GetReal.txt,B3,Attribute Name Mismatch,curriculumLinks vs recommendations in HighSchoolCourses
+R100_GetReal.txt,B3,Method Parameter Mismatch,postBlogEntry(content) vs postToBlog(entry: BlogEntry)
+R120_FoodOrderApp.txt,B2,Fabricated System Class,System class not mentioned in reasoning
+R120_FoodOrderApp.txt,B2,Fabricated OrderItem Class,OrderItem class not in reasoning
+R120_FoodOrderApp.txt,B2,Fabricated Location Class,"Location was attribute in reasoning, not class"
+R120_FoodOrderApp.txt,B2,Fabricated MenuItem Class,MenuItem class not defined in reasoning
+R120_FoodOrderApp.txt,B3,Relationship Direction Contradiction,Restaurant->Order direction reversed in code
+R120_FoodOrderApp.txt,B1,Missing Method,isCancellable() method missing from Order class
+R120_FoodOrderApp.txt,B3,Method Name Contradiction,cancelOrder() vs cancel() in Order class
+R120_FoodOrderApp.txt,B2,Fabricated Method,acceptOrder() not in reasoning
+R112_MicroCare.txt,B2,Fabricated Methods,Methods like validateSlips() not in reasoning
+R112_MicroCare.txt,B3,Voucher-Distributor Relationship,"Reasoning: 1-to-many, Code: 1-to-1"
+R112_MicroCare.txt,B2,Enums Added,VisitType and Status enums not in reasoning
+R112_MicroCare.txt,B3,Voucher-Claim Relationship,"Reasoning: 1-to-many, Code: 1-to-1..3"
+R112_MicroCare.txt,B2,Report-ServiceProvider Relationship,Not mentioned in reasoning
+R112_MicroCare.txt,B1,VMU Class Missing,VMU class and its relationship to Voucher omitted
+R112_MicroCare.txt,B3,Client/Partner-Claim Relationship,Not described this way in reasoning
+R116_Watcom.txt,B2,Fabricated Handle Classes,orl_sec_handle and orl_symbol_handle as classes
+R116_Watcom.txt,B2,Fabricated Enum,orl_reloc_type enum not in reasoning
+R116_Watcom.txt,B2,Fabricated Methods,"mapRelocationType, mapORLToLinkerStructures added"
+R116_Watcom.txt,B2,Fabricated Relationships,Multiple relationships not in reasoning
+R116_Watcom.txt,B2,Fabricated FiniELFLoadFile Class,Created as separate class with relationships
+R116_Watcom.txt,B2,Fabricated Methods,"writeSymbolTables, writeDebugInfo added"
+R116_Watcom.txt,B2,Fabricated Notes,Detailed note blocks not in reasoning
+R103_E-store.txt,B1,Missing Configuration Class,Configuration class completely omitted from diagram
+R103_E-store.txt,B1,Missing OrderLine Class,OrderLine class discussed but not implemented
+R103_E-store.txt,B3,Order-Product Relationship,Should connect to OrderLine not directly to Product
+R103_E-store.txt,B3,Product-Category Multiplicity,Should be many-to-many not one-to-many
+R103_E-store.txt,B2,Customer-SearchService Relationship,Direct relationship not in reasoning
+R103_E-store.txt,B2,Customer-CustomerSupport Relationship,1-to-1 relationship not specified in reasoning
+R93_Keepass.txt,B1,Dropped currentDatabase Attribute,KeePass.currentDatabase attribute missing in code
+R93_Keepass.txt,B3,Contradicting Relationship,MainWindow->Database relation not in reasoning
+R93_Keepass.txt,B3,Method Parameter Mismatch,openDatabase missing keyFile parameter in code
+R98_Nde.txt,B3,Relationship Type Contradiction,Solid arrows in code vs dashed in reasoning
+R91_Viper.txt,B2,Fabricated Actor Classes,Coordinator/Customer/Supplier as classes not in reasoning
+R91_Viper.txt,B2,Fabricated LoginSystem,LoginSystem class not mentioned in reasoning
+R91_Viper.txt,B3,Contact Implementation,Contact as interface contradicts reasoning
+R91_Viper.txt,B1,Missing Request Attributes,direction attribute missing from Request
+R91_Viper.txt,B2,Fabricated Methods,Methods like updateDetails() not in reasoning
+R119_Rlcs.txt,B1,Dropped Command Class,Command class missing from final diagram
+R119_Rlcs.txt,B3,User-Workstation Relationship,"Reasoning shows association, code shows composition"
+R119_Rlcs.txt,B2,Added GUI Screens,"LoginScreen, TimeStampWindow not in reasoning"
+R119_Rlcs.txt,B1,Missing SystemStatus Relationships,"Missing associations to Alarm, Override, User"
+R119_Rlcs.txt,B1,Missing GUI-SystemStatus Relationship,GUI-SystemStatus association missing

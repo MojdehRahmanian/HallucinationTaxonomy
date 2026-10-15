@@ -1,0 +1,75 @@
+id,subcategory,description,detail
+R75_Mashbot.txt,C3,Incorrect association representation,Inconsistent reasoning about composition vs association
+R75_Mashbot.txt,C1,Speculative Group class,Considers Group class but abandons without resolution
+R73_OpenSg.txt,C3,Composition misuse,Assumes composition for EIM-IecCim without lifecycle tie
+R73_OpenSg.txt,C1,Speculative data relationship,Proposes composition for store-data without justification
+R86_Inventory.txt,C1,Speculative Under $5 Category,Repeatedly speculates about Under $5 category behavior
+R86_Inventory.txt,C1,Generic Item Tile Speculation,Introduces generic item tile without resolving purpose
+R86_Inventory.txt,C2,Grid Display Overanalysis,Spends excessive time on view concerns (grid display)
+R69_GridBgc.txt,C1,Speculative Authentication Mechanism,Introduces then abandons authentication strategies
+R69_GridBgc.txt,C1,Uncertain Class Structure,Vacillates between inheritance vs role-based design
+R69_GridBgc.txt,C1,Speculative Controllers,Introduces then reconsiders various controllers
+R71_Jse.txt,C1,Speculative EmailService,Introduces then abandons EmailService concept
+R66_Tachonet.txt,C1,Abandoned SecurityManager class,Introduced but never integrated into final design
+R66_Tachonet.txt,C1,Speculative Transaction class,Introduced but not clearly integrated in final model
+R74_SplitMerge.txt,C1,Abandoned Prefix Classes,Considered prefix classes but abandoned without justification
+R74_SplitMerge.txt,C1,Speculative Controller Design,Added SplitController without requirement evidence
+R74_SplitMerge.txt,C1,Speculative Service Layer,Added PDFSplitService without requirement evidence
+R74_SplitMerge.txt,C3,Composition Misuse,Composition for UI elements without lifecycle justification
+R72_Philips.txt,C1,Speculative Buddy/Contact Class Branching,Introduces Buddy class then abandons for Contact
+R72_Philips.txt,C3,Incorrect Aggregation Relationship,ContactList-Contact should be composition not aggregation
+R81_VideoSearch.txt,C1,Speculative PaginationManager,Introduced then abandoned without justification
+R85_Library.txt,C1,Speculative Role Class,Introduces then abandons Role class concept
+R85_Library.txt,C1,Uncertain SharedFolder Relationships,Multiple contradictory relationship models proposed
+R85_Library.txt,C3,Association Class Misunderstanding,Confusion about modeling association classes in UML
+R87_Gaia.txt,C3,Incorrect relationship notation,Uses --> for composition instead of *--
+R87_Gaia.txt,C3,Inconsistent relationship semantics,Describes composition but uses aggregation (o--)
+R90_VirtualEd.txt,C3,Incorrect composition semantics,Misuses composition for ContactList in InstantEdu
+R90_VirtualEd.txt,C1,Speculative User type attribute,Introduces user type without requirement evidence
+R77_GParted.txt,C1,Abandoned PendingOperations class,Introduced then abandoned in favor of direct relations
+R77_GParted.txt,C1,Speculative DeviceSelector class,Introduced without justification from requirements
+R77_GParted.txt,C1,Speculative PartitionGraphicalView/ListView,Introduced then abandoned without resolution
+R77_GParted.txt,C3,Misuse of dependency relationships,Using dependencies for sequential UI flow is semantically incorrect
+R76_Home.txt,C1,Speculative HVAC-Thermostat Relationship,Explores multiple HVAC-thermostat models without resolution
+R76_Home.txt,C1,Abandoned Sensor Return Type Issue,Raises type safety concern but leaves it unresolved
+R76_Home.txt,C1,Unresolved Gateway Communication Pattern,Explores push vs. poll patterns without conclusion
+R76_Home.txt,C2,Overcomplication of Device Hierarchy,Focuses on elegant inheritance over requirements
+R67_Colorcast.txt,C1,Speculative HardwareSet class,Introduced then abandoned HardwareSet composition
+R67_Colorcast.txt,C1,Server class speculation,Introduced then abandoned Server class
+R67_Colorcast.txt,C3,Relationship notation confusion,Mixes dependency and association semantics
+R65_Qheadache.txt,C1,Speculative Block Dimensions,Extended reasoning about ambiguous block dimensions
+R65_Qheadache.txt,C1,Speculative Game State Names,Confusion between 'replacement' and 'movement'
+R65_Qheadache.txt,C1,Speculative Block Margin,Uncertainty about 0.0x vs 0.1x margin
+R65_Qheadache.txt,C2,Undo Implementation Overdesign,Excessive focus on undo implementation details
+R64_Pnnl.txt,C1,Speculative Data Classes,Considered SensedData/FixedData classes but abandoned
+R64_Pnnl.txt,C1,Speculative User Class,Added User class despite recognizing it as an actor
+R64_Pnnl.txt,C3,Incorrect Association Direction,Used arrows for associations that should be lines
+R84_ModelManager.txt,C3,Composition misuse,Proposes composition without lifecycle dependency
+R84_ModelManager.txt,C1,Speculative entities,Introduces entities without justification
+R83_Peazip.txt,C1,Speculative SelectionManager,Introduces then abandons SelectionManager class
+R83_Peazip.txt,C1,Speculative ObjectList,Introduces then abandons ObjectList class
+R83_Peazip.txt,C3,Misuse of aggregation,Justification for Object aggregation is unclear
+R70_Ijis.txt,C1,Speculative Incident Class,Introduces Incident class without justification
+R80_WarcPhase3.txt,C3,Incorrect composition relationships,Uses composition (*--) where association is more appropriate
+R80_WarcPhase3.txt,C1,Speculative Logger class,Introduces Logger without clear requirement justification
+R80_WarcPhase3.txt,C1,Speculative SelectionCriteria class,Introduces detailed selection class without necessity
+R88_Email.txt,C1,Abandoned EmailComposer,Speculates about EmailComposer class but never uses it
+R88_Email.txt,C1,Abandoned Services,Proposes services that don't appear in final design
+R88_Email.txt,C3,Inheritance Confusion,Unclear on Admin inheritance from User relationship
+R88_Email.txt,C3,Association Direction Issues,Some relationships use '-->' without clear semantics
+R89_Vub.txt,C1,Abandoned Administrator class,Introduces then abandons Administrator class
+R89_Vub.txt,C1,Speculative UserSession,Introduces then abandons UserSession class
+R62_SceApi.txt,C1,Speculative Interface Class,Introduces SCE-MI Interface without clear requirement
+R62_SceApi.txt,C2,Goal Drift in Modeling Approach,Shifts focus from user roles to interface modeling
+R79_BillDraft.txt,C1,Speculative DesignatorCode/LabLocation modeling,Repeatedly considers modeling as classes then abandons
+R79_BillDraft.txt,C1,Speculative Admin class,Considers Admin class then abandons without resolution
+R79_BillDraft.txt,C1,Speculative Role-Division relationship,Considers relationship then abandons without resolution
+R61_EvlaCorr.txt,C3,Incorrect association notation,Uses 'as network1' in associations incorrectly
+R61_EvlaCorr.txt,C1,Abandoned network interface classes,Detailed interface classes later abandoned
+R61_EvlaCorr.txt,C3,Misuse of abstract class,Computer marked abstract without abstract methods
+R82_Peppol.txt,C1,Speculative Legitimacy Class,Considered Legitimacy class but abandoned it
+R82_Peppol.txt,C1,Abandoned MappingAssociation,Introduced then abandoned MappingAssociation class
+R82_Peppol.txt,C3,Incorrect Relationship Cardinality,Inconsistent cardinality in mapping relationships
+R63_Agentmom.txt,C1,Speculative MessageDispatcher,Introduces then abandons MessageDispatcher concept
+R63_Agentmom.txt,C1,Uncertain Message Receiver Design,Explores multiple receiver designs without resolution
+R68_EProcurement.txt,C1,Abandoned Document class,Proposed abstract Document class later abandoned

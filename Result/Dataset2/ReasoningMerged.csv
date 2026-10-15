@@ -1,0 +1,292 @@
+id,subcategory,description,detail
+R8_HotelReservation.txt,C1,Reservation date speculation,Repeatedly considers adding dates not in requirements
+R8_HotelReservation.txt,C3,Room reservation boolean flag,Adds reserved boolean to Room instead of proper relation
+R24_SetCommunicationPrefences.txt,C1,Speculative UI Modeling,Considered modeling UI classes then abandoned
+R23_SetPIN.txt,C1,Speculative UserSession class,Introduces then abandons UserSession tracking concept
+R23_SetPIN.txt,C1,Speculative Menu class,Introduces then abandons Menu class as 'overkill'
+R23_SetPIN.txt,C3,Composition misunderstanding,Incorrectly justifies User-Card composition relationship
+R9_BeWellApp.txt,C3,Composition misuse,Incorrect composition semantics for App relationships
+R9_BeWellApp.txt,C1,Speculative service classes,Introduced services without requirements evidence
+R25_ApplePay.txt,C1,Speculative Controller Class,Introduces then abandons ApplePayController
+R25_ApplePay.txt,C1,Wallet Representation Uncertainty,Considers Wallet as actor before settling on class
+R25_ApplePay.txt,C3,Relationship Semantics Confusion,Confusion about composition vs association semantics
+R5_ComputerGame2.txt,C1,Soldier class speculation,Introduces Soldier class then abandons it
+R5_ComputerGame2.txt,C1,Obstacle/LevelObject speculation,Proposes abstract classes then abandons them
+R5_ComputerGame2.txt,C1,Cover blown mechanism speculation,Multiple approaches considered but never resolved
+R5_ComputerGame2.txt,C3,Inconsistent relationship notation,Confuses aggregation and composition notation
+R20_Montitoring Pressure.txt,C1,Button class speculation,Introduces Button class then abandons it
+R20_Montitoring Pressure.txt,C1,Operator class speculation,Introduces then abandons Operator class
+R20_Montitoring Pressure.txt,C3,Composition without lifecycle dependency,Uses composition without justifying lifecycle tie
+R14_ATM.txt,C1,Speculative Location Attribute,Introduces 'location?' then never justifies or uses it
+R14_ATM.txt,C3,Composition vs Association Confusion,Uncertain about Transaction-CashCard relationship
+R13_CourseEnrollment.txt,C1,Speculative Department Class,Introduces Department without clear requirement
+R13_CourseEnrollment.txt,C3,Misuse of Association Class,Confusion about how to model Enrollment as association class
+R12_RentedCarGalleryManagementSystem.txt,C1,Speculative StoreAssistant class,Considers StoreAssistant class then correctly abandons
+R12_RentedCarGalleryManagementSystem.txt,C1,Speculative RentalReport class,Introduces then abandons without justification
+R12_RentedCarGalleryManagementSystem.txt,C3,Aggregation vs Composition confusion,Unclear reasoning about relationship semantics
+R17_TimberedHouse.txt,C1,Speculative Tool Ownership,Assumes tools are owned by carpenters without evidence
+R17_TimberedHouse.txt,C3,Composition Misuse,Incorrectly uses composition for tools without lifecycle tie
+R17_TimberedHouse.txt,C1,Multiplicity Confusion,Extended speculation about multiplicity notation
+R4_ComputerGame1.txt,C3,Token class relationship misspecification,Token class likely needs composition with Player
+R4_ComputerGame1.txt,C1,Speculative Token class,Introduces Token class but questions its necessity
+R7_SuperMarket.txt,C3,Incorrect composition semantics,Misuses composition for Store-Employee relationship
+R7_SuperMarket.txt,C1,Abandoned ShelfProduct concept,Introduces then abandons ShelfProduct class
+R7_SuperMarket.txt,C1,Speculative SaleTransaction,Introduces then abandons SaleTransaction class
+R29_PrepaidCardLoading.txt,C3,Incorrect Composition Semantics,Suggests composition without lifecycle dependency
+R29_PrepaidCardLoading.txt,C1,Speculative Exception Class,Mentions exception class then abandons it
+R19_Airport.txt,C3,Incorrect composition semantics,Misuses composition for relationships without lifecycle tie
+R19_Airport.txt,C1,Abandoned RouteSegment exploration,Introduces RouteSegment without clear justification
+R2_EmployeeManagementSystem.txt,C1,Speculative method design,Explores multiple retirement age implementations
+R2_EmployeeManagementSystem.txt,C3,Incorrect inheritance syntax,Employee < Employee <|-- Worker is invalid
+R6_AcademicProgram.txt,C1,Transcript Class Speculation,Considered then abandoned Transcript class without evidence
+R6_AcademicProgram.txt,C1,Enrollment Class Speculation,Considered then abandoned Enrollment class
+R6_AcademicProgram.txt,C3,Composition Misuse,Incorrectly used composition for AcademicProgram-Course
+R22_IPOApplication.txt,C3,Incorrect composition relationships,Misused composition for non-lifecycle dependencies
+R22_IPOApplication.txt,C1,Abandoned EmailContent relationships,Multiple relationship options considered then abandoned
+R28_Donation.txt,C3,Incorrect association direction,Uses arrows for associations that should be lines
+R1_Restaurant.txt,C1,Abandoned Schedule Class,Considers Schedule class then abandons without resolution
+R1_Restaurant.txt,C1,Speculative Section Modeling,Explores Section as class/enum but never resolves
+R1_Restaurant.txt,C3,Incorrect Restaurant Composition,Uses composition for entities that exist independently
+R1_Restaurant.txt,C1,Unresolved PointOfSaleSystem Access,Vacillates on how POS accesses other components
+R3_Library.txt,C1,Abandoned Library class,Proposed Library class but later abandoned
+R3_Library.txt,C1,Speculative Author class,Considered Author class but abandoned without justification
+R3_Library.txt,C3,Bidirectional association misrepresentation,Incorrectly claims unidirectional arrows show bidirectional
+R27_BiometricLogin.txt,C3,Incorrect composition relationship,Customer *-- Device uses composition incorrectly
+R27_BiometricLogin.txt,C1,Speculative BankingStaff class,Mentions BankingStaff but abandons without justification
+R11_FootballTeam.txt,C3,Incorrect association representation,Bidirectional association shown with two separate arrows
+R16_Cinema.txt,C1,Ticket class speculation,Introduces then abandons Ticket class without justification
+R16_Cinema.txt,C1,User class speculation,Introduces then abandons User class without justification
+R16_Cinema.txt,C1,Reminder enumeration speculation,Mentions enum for reminder then abandons it
+R10_FileManager.txt,C1,Speculative Document-Editor Relationship,Explores multiple relationship options without evidence
+R10_FileManager.txt,C3,Aggregation Misuse,Incorrectly uses aggregation for FileSystem-Document
+R15_VideoRental.txt,C3,Incorrect relationship notation,Uses --> for associations instead of proper UML notation
+R15_VideoRental.txt,C1,Speculative InventoryManager class,Introduces then abandons InventoryManager class
+R15_VideoRental.txt,C1,Speculative Payment class,Introduces then abandons Payment class
+R30_WalletApplication.txt,C1,Transaction class speculation,Introduces Transaction class then abandons it
+R30_WalletApplication.txt,C3,Composition misuse,Questions if Customer-Wallet is composition
+R26_BlockCard.txt,C3,Incorrect aggregation semantics,Confuses aggregation with composition semantics
+R26_BlockCard.txt,C1,Speculative AlertSystem,Introduces then abandons AlertSystem concept
+R21_SavingsAccount.txt,C3,Incorrect Composition Semantics,Uses composition without lifecycle dependency
+R21_SavingsAccount.txt,C1,Speculative Service Architecture,Introduces services not in requirements
+R36_Video Rental.txt,C3,Incorrect composition semantics,Misunderstands composition lifecycle dependency
+R38_LawFirm.txt,C1,Speculative Document Class,Considered Document class but abandoned without resolution
+R38_LawFirm.txt,C1,Firm Entity Speculation,Considered Firm entity but left unresolved
+R38_LawFirm.txt,C3,Composition vs Association Confusion,Misused composition for Case-Event relationship
+R39_Insurance.txt,C1,Speculative Vehicle/Dwelling attributes,Considers then abandons specific attributes
+R39_Insurance.txt,C3,Aggregation vs Composition confusion,Uncertain about proper relationship semantics
+R37_LawFirm2.txt,C3,Misuse of composition for ContactAddress,Considers using *-- (composition) for simple associations
+R37_LawFirm2.txt,C1,Speculative Document usage tracking,Introduces then abandons document usage tracking
+R37_LawFirm2.txt,C1,Redundant Case-Event relationship,Extensive speculation about redundant relationships
+R32_TheEnergyManagementSystem.txt,C1,Speculative Event Handling,Assumes alarms are events stored in SystemReports
+R32_TheEnergyManagementSystem.txt,C1,Speculative Class Structure,Creates Event class without requirement evidence
+R40_Dental Clinic.txt,C1,Abandoned SupplyInRoom class,Proposed SupplyInRoom class later abandoned for InventoryRecord
+R40_Dental Clinic.txt,C1,Speculative billing structure,Extended speculation on billing without resolution
+R40_Dental Clinic.txt,C3,Misuse of composition,Clinic *-- Patient marked as aggregation then composition
+R34_Truck.txt,C1,Transfer modeling speculation,Speculates about Transfer class then abandons it
+R34_Truck.txt,C1,Rental Agreement inheritance speculation,Considers TruckRentalAgreement subclass then abandons
+R42_Cctns.txt,C1,Abandoned OfflineModule class,Proposed OfflineModule class never used in final design
+R45_Gemini.txt,C1,Preprocessor class speculation,Introduces Preprocessor class but never justifies need
+R45_Gemini.txt,C2,Storage inheritance exploration,Spends excessive time on storage hierarchy options
+R31_Restaurant.txt,C3,Incorrect composition semantics,Uses composition (*--) without lifecycle dependency
+R31_Restaurant.txt,C1,Abandoned supervisor modeling approaches,Multiple abandoned approaches for Employee hierarchy
+R44_Inventory.txt,C1,Speculative Role Modeling,Explores multiple role models without clear resolution
+R44_Inventory.txt,C3,Incorrect Relationship Notation,Confuses UML arrow direction in relationship notation
+R43_Gamma.txt,C1,Speculative Profile Entity,Introduces Profile without clear justification
+R43_Gamma.txt,C3,Composition Misunderstanding,Questions composition without lifecycle consideration
+R60_EvlaBack.txt,C1,Abandoned inheritance structure,Proposed inheritance for ProcessingStep then abandoned
+R60_EvlaBack.txt,C3,Aggregation vs Composition confusion,Inconsistent use of composition vs aggregation
+R51_Beyond.txt,C1,Speculative ModalitySwitcher,Introduces ModalitySwitcher that's never justified
+R51_Beyond.txt,C1,Speculative System class,Introduces System class but abandons it
+R51_Beyond.txt,C3,Modality inheritance confusion,Confuses modality as UI subclass vs component
+R50_Nasax38.txt,C1,Speculative Socket Class,Introduces Socket class then abandons without resolution
+R50_Nasax38.txt,C1,Speculative Buffer Class,Introduces Buffer in Pipe but never defines it
+R50_Nasax38.txt,C3,Ambiguous Relationship Semantics,Uncertain about FTSS-Pipe relationship (composition?)
+R56_Libra.txt,C1,Speculative UserRepository,Introduces UserRepository without evidence in requirements
+R56_Libra.txt,C1,Speculative SGEInterface,Creates SGEInterface with methods not in requirements
+R56_Libra.txt,C3,Relationship Semantics Confusion,Inconsistent about association vs composition
+R33_Travel System.txt,C3,Composition misunderstanding,Incorrectly justifies composition based on deletion
+R33_Travel System.txt,C1,Speculative Driver class,Introduces then abandons Driver class possibility
+R33_Travel System.txt,C1,Airline attribute speculation,Extended uncertainty about airline vs vendor
+R47_Dii.txt,C1,Abandoned degraded communications modeling,Explored multiple approaches without resolution
+R47_Dii.txt,C3,Incorrect composition semantics,System *-- Mode implies lifecycle dependency
+R47_Dii.txt,C1,Speculative XML Service segmentation,Added isSegmented without clear justification
+R55_Hats.txt,C1,Speculative ErrorWindow,Mentions ErrorWindow but doesn't justify inclusion
+R57_.Npacdocx.txt,C1,Speculative LocalSMS relationship,Extensive hedging about LocalSMS relationships
+R57_.Npacdocx.txt,C3,Composition misuse,Proposes composition where association is appropriate
+R52_CtcNetwork.txt,C1,Abandoned TrafficCondition association,Explores multiple options but abandons without clear resolution
+R52_CtcNetwork.txt,C3,Composition vs Aggregation confusion,Inconsistent reasoning about lifecycle dependencies
+R59_Telescope.txt,C1,Abandoned TAM definition,Speculates on TAM meaning but never resolves
+R59_Telescope.txt,C1,Observation sequence class structure,Explores subclasses then abandons for single class
+R59_Telescope.txt,C1,Pre-observation activities modeling,Considers activity classes then abandons
+R59_Telescope.txt,C3,Incorrect association notation,Uses --> for associations instead of proper UML
+R54_Esa.txt,C1,Speculative Software Classes,Introduces software classes without clear justification
+R54_Esa.txt,C1,Speculative CoI Attributes,Adds name/email attributes without requirement basis
+R54_Esa.txt,C3,Incorrect Relationship Semantics,Confuses association directions and dependencies
+R41_CrimeCriminalTrackingSystems.txt,C1,Abandoned User class,Introduces User class but doesn't include in final design
+R41_CrimeCriminalTrackingSystems.txt,C1,Uncertain Case-Complaint relationship,Hedges on relationship cardinality without resolution
+R41_CrimeCriminalTrackingSystems.txt,C3,Module as class confusion,Treats modules as classes rather than packages/components
+R46_Themas.txt,C1,Speculative HCUnit ID,Repeatedly speculates about HCUnit ID without resolution
+R46_Themas.txt,C1,Speculative InitializationData class,Proposes then abandons InitializationData class
+R48_Multi-Mahjong.txt,C1,Speculative ChatMessage class,Introduces ChatMessage without justification
+R48_Multi-Mahjong.txt,C1,Speculative Tile/Position/GameState/Move,Introduces types without justification
+R48_Multi-Mahjong.txt,C3,Inconsistent relationship semantics,Mixes aggregation/composition inconsistently
+R58_SpaceFractions.txt,C1,Speculative attributes,Proposed attributes without evidence then abandoned
+R58_SpaceFractions.txt,C3,Association vs Dependency confusion,Vacillates between association and dependency
+R53_Elsfork.txt,C3,Misuse of composition,Uses composition for function grouping without lifecycle tie
+R49_Tcs.txt,C1,Speculative Position Class,Introduces Position class without clear requirement
+R49_Tcs.txt,C1,Speculative Overlay Class,Creates Overlay class without clear requirement
+R49_Tcs.txt,C3,Composition vs Aggregation Confusion,Misunderstands MissionPlan relationship with TCS
+R75_Mashbot.txt,C3,Incorrect association representation,Inconsistent reasoning about composition vs association
+R75_Mashbot.txt,C1,Speculative Group class,Considers Group class but abandons without resolution
+R73_OpenSg.txt,C3,Composition misuse,Assumes composition for EIM-IecCim without lifecycle tie
+R73_OpenSg.txt,C1,Speculative data relationship,Proposes composition for store-data without justification
+R86_Inventory.txt,C1,Speculative Under $5 Category,Repeatedly speculates about Under $5 category behavior
+R86_Inventory.txt,C1,Generic Item Tile Speculation,Introduces generic item tile without resolving purpose
+R86_Inventory.txt,C2,Grid Display Overanalysis,Spends excessive time on view concerns (grid display)
+R69_GridBgc.txt,C1,Speculative Authentication Mechanism,Introduces then abandons authentication strategies
+R69_GridBgc.txt,C1,Uncertain Class Structure,Vacillates between inheritance vs role-based design
+R69_GridBgc.txt,C1,Speculative Controllers,Introduces then reconsiders various controllers
+R71_Jse.txt,C1,Speculative EmailService,Introduces then abandons EmailService concept
+R66_Tachonet.txt,C1,Abandoned SecurityManager class,Introduced but never integrated into final design
+R66_Tachonet.txt,C1,Speculative Transaction class,Introduced but not clearly integrated in final model
+R74_SplitMerge.txt,C1,Abandoned Prefix Classes,Considered prefix classes but abandoned without justification
+R74_SplitMerge.txt,C1,Speculative Controller Design,Added SplitController without requirement evidence
+R74_SplitMerge.txt,C1,Speculative Service Layer,Added PDFSplitService without requirement evidence
+R74_SplitMerge.txt,C3,Composition Misuse,Composition for UI elements without lifecycle justification
+R72_Philips.txt,C1,Speculative Buddy/Contact Class Branching,Introduces Buddy class then abandons for Contact
+R72_Philips.txt,C3,Incorrect Aggregation Relationship,ContactList-Contact should be composition not aggregation
+R81_VideoSearch.txt,C1,Speculative PaginationManager,Introduced then abandoned without justification
+R85_Library.txt,C1,Speculative Role Class,Introduces then abandons Role class concept
+R85_Library.txt,C1,Uncertain SharedFolder Relationships,Multiple contradictory relationship models proposed
+R85_Library.txt,C3,Association Class Misunderstanding,Confusion about modeling association classes in UML
+R87_Gaia.txt,C3,Incorrect relationship notation,Uses --> for composition instead of *--
+R87_Gaia.txt,C3,Inconsistent relationship semantics,Describes composition but uses aggregation (o--)
+R90_VirtualEd.txt,C3,Incorrect composition semantics,Misuses composition for ContactList in InstantEdu
+R90_VirtualEd.txt,C1,Speculative User type attribute,Introduces user type without requirement evidence
+R77_GParted.txt,C1,Abandoned PendingOperations class,Introduced then abandoned in favor of direct relations
+R77_GParted.txt,C1,Speculative DeviceSelector class,Introduced without justification from requirements
+R77_GParted.txt,C1,Speculative PartitionGraphicalView/ListView,Introduced then abandoned without resolution
+R77_GParted.txt,C3,Misuse of dependency relationships,Using dependencies for sequential UI flow is semantically incorrect
+R76_Home.txt,C1,Speculative HVAC-Thermostat Relationship,Explores multiple HVAC-thermostat models without resolution
+R76_Home.txt,C1,Abandoned Sensor Return Type Issue,Raises type safety concern but leaves it unresolved
+R76_Home.txt,C1,Unresolved Gateway Communication Pattern,Explores push vs. poll patterns without conclusion
+R76_Home.txt,C2,Overcomplication of Device Hierarchy,Focuses on elegant inheritance over requirements
+R67_Colorcast.txt,C1,Speculative HardwareSet class,Introduced then abandoned HardwareSet composition
+R67_Colorcast.txt,C1,Server class speculation,Introduced then abandoned Server class
+R67_Colorcast.txt,C3,Relationship notation confusion,Mixes dependency and association semantics
+R65_Qheadache.txt,C1,Speculative Block Dimensions,Extended reasoning about ambiguous block dimensions
+R65_Qheadache.txt,C1,Speculative Game State Names,Confusion between 'replacement' and 'movement'
+R65_Qheadache.txt,C1,Speculative Block Margin,Uncertainty about 0.0x vs 0.1x margin
+R65_Qheadache.txt,C2,Undo Implementation Overdesign,Excessive focus on undo implementation details
+R64_Pnnl.txt,C1,Speculative Data Classes,Considered SensedData/FixedData classes but abandoned
+R64_Pnnl.txt,C1,Speculative User Class,Added User class despite recognizing it as an actor
+R64_Pnnl.txt,C3,Incorrect Association Direction,Used arrows for associations that should be lines
+R84_ModelManager.txt,C3,Composition misuse,Proposes composition without lifecycle dependency
+R84_ModelManager.txt,C1,Speculative entities,Introduces entities without justification
+R83_Peazip.txt,C1,Speculative SelectionManager,Introduces then abandons SelectionManager class
+R83_Peazip.txt,C1,Speculative ObjectList,Introduces then abandons ObjectList class
+R83_Peazip.txt,C3,Misuse of aggregation,Justification for Object aggregation is unclear
+R70_Ijis.txt,C1,Speculative Incident Class,Introduces Incident class without justification
+R80_WarcPhase3.txt,C3,Incorrect composition relationships,Uses composition (*--) where association is more appropriate
+R80_WarcPhase3.txt,C1,Speculative Logger class,Introduces Logger without clear requirement justification
+R80_WarcPhase3.txt,C1,Speculative SelectionCriteria class,Introduces detailed selection class without necessity
+R88_Email.txt,C1,Abandoned EmailComposer,Speculates about EmailComposer class but never uses it
+R88_Email.txt,C1,Abandoned Services,Proposes services that don't appear in final design
+R88_Email.txt,C3,Inheritance Confusion,Unclear on Admin inheritance from User relationship
+R88_Email.txt,C3,Association Direction Issues,Some relationships use '-->' without clear semantics
+R89_Vub.txt,C1,Abandoned Administrator class,Introduces then abandons Administrator class
+R89_Vub.txt,C1,Speculative UserSession,Introduces then abandons UserSession class
+R62_SceApi.txt,C1,Speculative Interface Class,Introduces SCE-MI Interface without clear requirement
+R62_SceApi.txt,C2,Goal Drift in Modeling Approach,Shifts focus from user roles to interface modeling
+R79_BillDraft.txt,C1,Speculative DesignatorCode/LabLocation modeling,Repeatedly considers modeling as classes then abandons
+R79_BillDraft.txt,C1,Speculative Admin class,Considers Admin class then abandons without resolution
+R79_BillDraft.txt,C1,Speculative Role-Division relationship,Considers relationship then abandons without resolution
+R61_EvlaCorr.txt,C3,Incorrect association notation,Uses 'as network1' in associations incorrectly
+R61_EvlaCorr.txt,C1,Abandoned network interface classes,Detailed interface classes later abandoned
+R61_EvlaCorr.txt,C3,Misuse of abstract class,Computer marked abstract without abstract methods
+R82_Peppol.txt,C1,Speculative Legitimacy Class,Considered Legitimacy class but abandoned it
+R82_Peppol.txt,C1,Abandoned MappingAssociation,Introduced then abandoned MappingAssociation class
+R82_Peppol.txt,C3,Incorrect Relationship Cardinality,Inconsistent cardinality in mapping relationships
+R63_Agentmom.txt,C1,Speculative MessageDispatcher,Introduces then abandons MessageDispatcher concept
+R63_Agentmom.txt,C1,Uncertain Message Receiver Design,Explores multiple receiver designs without resolution
+R68_EProcurement.txt,C1,Abandoned Document class,Proposed abstract Document class later abandoned
+R92_Peering.txt,C1,Speculative Resource Attributes,Assumed attributes without evidence in requirements
+R92_Peering.txt,C3,Aggregation vs Composition Confusion,Misunderstood lifecycle dependency in SR-Resource
+R99_Mdot.txt,C1,Speculative method signatures,Assumed collection methods without requirement evidence
+R108_Triangle.txt,C1,Abandoned Position Selector,Proposed PositionSelector class later abandoned
+R108_Triangle.txt,C1,Abandoned Player Selector,Proposed PlayerSelector class later abandoned
+R108_Triangle.txt,C1,Uncertain Position Relationship,Vacillates on Position's relationship to Game
+R108_Triangle.txt,C3,Incorrect Association Direction,Uses --> for composition relationships
+R105_Stewards.txt,C1,Abandoned QueryEngine class,Introduced then not included in final design
+R105_Stewards.txt,C1,Abandoned VisualizationTool class,Referenced in associations but not defined in final classes
+R105_Stewards.txt,C1,Abandoned ReportGenerator class,Referenced in associations but not defined in final classes
+R105_Stewards.txt,C3,Incorrect association notation,Uses *--> for association instead of dependency
+R114_ClarusLow.txt,C1,Abandoned Administrator Management,Explores admin-rule relationship but never resolves it
+R114_ClarusLow.txt,C1,Speculative QualityCheckingProcess,Introduces then abandons without justification
+R114_ClarusLow.txt,C3,Composition Misuse,Incorrectly uses composition for recorded methods
+R96_PugetSound.txt,C1,Abandoned space allocation models,Multiple space allocation models proposed then abandoned
+R96_PugetSound.txt,C2,Simplification over requirements,Chose to simplify space allocation despite requirements
+R94_Caiso.txt,C1,Abandoned BlackStartGeneration class,Created then abandoned without clear justification
+R94_Caiso.txt,C1,Speculative PlanningEvaluation class,Considered then abandoned without resolution
+R94_Caiso.txt,C1,Speculative BlackStartRequirement class,Introduced then abandoned without resolution
+R94_Caiso.txt,C1,Speculative TransmissionPath entity,Considered but never fully resolved
+R113_Grid3D.txt,C3,Incorrect association notation,Uses --> for association instead of -- in reasoning
+R106_EireneSys15.txt,C1,Network and MobileInstallation speculation,Introduces then abandons Network/MobileInstallation
+R106_EireneSys15.txt,C1,Overspeculation on speed conditions,Explores multiple speed range representations
+R106_EireneSys15.txt,C3,Aggregation vs Composition confusion,Switches between aggregation/composition symbols
+R97_Nlm.txt,C1,Abandoned Phase Classes,Proposed IngestPhase classes later abandoned
+R97_Nlm.txt,C1,Workflow Class Speculation,Considered then abandoned IngestWorkflow class
+R97_Nlm.txt,C3,Aggregation vs Composition Confusion,Unclear reasoning about IngestStream relationship
+R95_WaterUse.txt,C3,Incorrect relationship notation,Uses arrow notation incorrectly for associations
+R95_WaterUse.txt,C1,Speculative WaterQualityData class,Proposes then abandons WaterQualityData class
+R118_Sprat.txt,C1,Repository class speculation,Introduces Repository class then abandons it
+R118_Sprat.txt,C1,Profile class speculation,Mentions Profile class but never integrates it
+R109_Pontis.txt,C1,Speculative Bridge/Project classes,Introduces Bridge/Project classes then questions them
+R109_Pontis.txt,C1,Uncertain UnitConfiguration setter,Debates including setter then omits without resolution
+R109_Pontis.txt,C3,Incorrect relationship notation,Uses --> for associations instead of proper UML notation
+R107_Znix.txt,C1,Relationship label speculation,Considers adding labels to relationships but abandons
+R107_Znix.txt,C1,Associate content storage speculation,Explores multiple storage options without resolution
+R107_Znix.txt,C3,Incorrect composition notation,Confuses composition with aggregation semantics
+R107_Znix.txt,C1,Entity-folder relationship uncertainty,Vacillates between one-to-many and many-to-many
+R110_Phin.txt,C1,Speculative EpiData class,Introduces EpiData class without clear justification
+R110_Phin.txt,C1,Speculative Action class,Extended deliberation without resolution on Action class
+R110_Phin.txt,C3,Association relationship misuse,Confusion between association class and binary relation
+R101_Ertms.txt,C1,Speculative Train-ETCS Relationship,Oscillates between 1-to-1 and 1-to-many Train supervision
+R101_Ertms.txt,C1,Speculative RBC Role,Uncertain about RBC's relationship to ETCS
+R101_Ertms.txt,C3,Misuse of Composition,Uses composition for DMI without lifecycle justification
+R111_Nenios.txt,C1,Speculative Employee Class,Introduces Employee class then abandons it
+R111_Nenios.txt,C3,Classroom Association Confusion,Unclear about teacher/assistant multiplicity
+R111_Nenios.txt,C1,Uncertain Note Structure,Explores polymorphic notes then abandons for subtypes
+R117_WatcomGui.txt,C1,Speculative WPI Interface,Creates then questions WPI as abstract/interface
+R117_WatcomGui.txt,C3,Misuse of Realization,Uses realization without confirming interface relationship
+R102_EireneFun7.txt,C3,Incorrect composition relationship,VoiceCall *-- User is wrong; calls don't own users
+R102_EireneFun7.txt,C1,Speculative User controller attribute,Introduces isController without clear requirement
+R102_EireneFun7.txt,C1,Uncertain MultiPartyCall constraints,Extended speculation about participant count
+R104_CentralTradingSystem.txt,C1,Speculative Boundary Classes,Introduced boundary classes without clear requirement
+R104_CentralTradingSystem.txt,C3,Aggregation Misuse,Used aggregation without lifecycle justification
+R115_ClarusHigh.txt,C1,Abandoned Vehicle Class,Introduces Vehicle class but decides to use attributes instead
+R115_ClarusHigh.txt,C1,Speculative Image-Data Relationship,Explores multiple Image-ImageDerivedData relationships
+R100_GetReal.txt,C1,Abandoned Inner Classes,Repeatedly considers inner classes then abandons them
+R100_GetReal.txt,C2,Simplicity Over Requirements,Chooses simplicity over proper OO modeling
+R100_GetReal.txt,C3,Composition Misuse,Uses composition without lifecycle dependency evidence
+R120_FoodOrderApp.txt,C1,Speculative Menu Class,Introduces then abandons MenuItem class
+R120_FoodOrderApp.txt,C1,Speculative Location Class,Suggests then abandons Location class
+R112_MicroCare.txt,C1,Speculative Partner Relationship,Repeatedly questions Partner role without resolution
+R112_MicroCare.txt,C1,Uncertain MSIUAdminTeam Feedback Role,Extended speculation on feedback collection process
+R112_MicroCare.txt,C3,Incorrect Association Direction,Confuses association direction in Client-Voucher relation
+R116_Watcom.txt,C1,Speculative handle classes,Considered creating handle classes but abandoned them
+R116_Watcom.txt,C1,Uncertain WLCore-LoadELF relationship,Speculated about WLCore->LoadELF dependency but abandoned
+R103_E-store.txt,C1,Speculative OrderHistory class,Introduced then abandoned OrderHistory class
+R103_E-store.txt,C1,Speculative User superclass,Introduced then abandoned User superclass
+R103_E-store.txt,C1,Speculative NonConfigurableProduct,Introduced then abandoned NonConfigurableProduct
+R103_E-store.txt,C1,Speculative SearchHistory class,Introduced then abandoned SearchHistory class
+R103_E-store.txt,C3,Incorrect aggregation notation,Used *-- for aggregation instead of o--
+R93_Keepass.txt,C3,Storing plaintext password in Database class,Incorrectly models password storage in Database class
+R93_Keepass.txt,C1,Keyfile parameter inconsistency,Speculates about keyFile usage without resolution
+R93_Keepass.txt,C3,Unlock method design flaw,Proposes insecure password verification mechanism
+R98_Nde.txt,C3,Incorrect dependency notation,Uses ..> for all relationships without semantic distinction
+R91_Viper.txt,C1,Coordinator class speculation,Repeatedly considers then abandons Coordinator class
+R91_Viper.txt,C1,Request subclass speculation,Considers IncomingRequest/OutgoingRequest subclasses
+R91_Viper.txt,C1,Notification class speculation,Briefly considers then abandons notification class
+R119_Rlcs.txt,C3,Composition vs Aggregation Confusion,Confusion about composition vs aggregation semantics
+R119_Rlcs.txt,C1,Speculative Authentication Manager,Proposed then abandoned without justification

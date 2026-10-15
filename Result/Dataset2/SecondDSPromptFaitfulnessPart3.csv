@@ -1,0 +1,131 @@
+id,subcategory,description,detail
+R75_Mashbot.txt,A3,Over-specific Account Types,"The reasoning invents SYSTEM_ADMINISTRATOR and REGULAR_USER as account types, but these specific types aren't defined in the prompt."
+R75_Mashbot.txt,A4,Missing History Concept,"The prompt mentions account history as a factor in deletion, but the reasoning doesn't model this concept in the class diagram."
+R73_OpenSg.txt,A1,Unsupported Entity: BusinessUnit,"BusinessUnit is introduced in reasoning but not explicitly mentioned in prompt, only 'business units' in context of patterns."
+R73_OpenSg.txt,A1,Unsupported Entity: Data class hierarchy,"Abstract Data class with SmartGridData and NonSmartGridData subclasses not specified in prompt, only mentioned as types of data."
+R73_OpenSg.txt,A1,Unsupported Entity: ReferenceArchitecture,"ReferenceArchitecture created as separate class, but prompt only mentions it as something to be used, not as an entity."
+R73_OpenSg.txt,A1,Unsupported Entity: EnterpriseInformationArchitecture,"Created as separate class but prompt only mentions it as something to be created, not as a standalone entity."
+R73_OpenSg.txt,A3,Over-specific class relationships,"Reasoning specifies detailed relationships (composition, association) between classes that aren't explicitly defined in the prompt."
+R86_Inventory.txt,A3,Over-specific Category Types,"The reasoning introduces specific category types (UNIQUE, STOCK, UNDER_FIVE) that aren't explicitly defined in the prompt, which overspecifies the category classification."
+R86_Inventory.txt,A3,Price Attribute Invention,"The reasoning adds a price attribute to InventoryItem to determine if items are 'under $5', but the prompt doesn't specify that items have prices."
+R86_Inventory.txt,A1,Unsupported Attribute Class,"The reasoning introduces an Attribute class for storing item attributes, but the prompt doesn't specify this level of detail for attributes."
+R86_Inventory.txt,A4,Missing Matrix Representation,"The reasoning acknowledges but doesn't model the matrix display requirements, which are explicitly mentioned in the business rules."
+R78_Fishing.txt,A1,Unsupported Entity: XMLGenerator,"XMLGenerator class is introduced in reasoning but not explicitly mentioned in prompt, which only states ELSS must output XML data."
+R78_Fishing.txt,A1,Unsupported Entity: Validator,Validator class is introduced in reasoning but prompt only mentions validation against UK XML/XSD without specifying a separate component.
+R78_Fishing.txt,A1,Unsupported Entity: AcknowledgmentHandler,AcknowledgmentHandler is introduced as a separate class but prompt only mentions acknowledgment operation functionality.
+R78_Fishing.txt,A1,Unsupported Entity: CommunicationSystem,CommunicationSystem is introduced as a class but prompt only mentions vessel's communication system(s) as external systems.
+R78_Fishing.txt,A3,Over-specific methods and attributes,Reasoning introduces specific methods and attributes for classes that aren't specified in the prompt requirements.
+R69_GridBgc.txt,A1,Unsupported Entity: NotificationSystem,"A NotificationSystem class is introduced in reasoning but not explicitly mentioned in prompt, though notification functionality is described."
+R69_GridBgc.txt,A1,Unsupported Entity: AuthenticationService,"AuthenticationService class is introduced in reasoning but not explicitly mentioned in prompt, though authentication functionality is described."
+R69_GridBgc.txt,A1,Unsupported Entity: AdminController,"AdminController class is introduced in reasoning but not explicitly mentioned in prompt, though admin functionality is described."
+R69_GridBgc.txt,A3,Over-specific User Attributes,The reasoning adds specific attributes like 'email' to User class that aren't explicitly mentioned in the prompt.
+R69_GridBgc.txt,A4,Missing Template and SharedObject entities,The reasoning acknowledges but doesn't fully model Template and SharedObject entities mentioned in the prompt's account deletion requirements.
+R71_Jse.txt,A1,EmailService Class,"The reasoning discusses an EmailService class that isn't mentioned in the prompt. While email functionality is mentioned, a separate service class isn't specified."
+R71_Jse.txt,A3,Over-specified ISIN Status Values,"The reasoning creates specific enum values (ACTIVE, CANCELLED, DE_REGISTERED) for ISIN status when the prompt doesn't specify these exact values."
+R71_Jse.txt,A3,Rejection Type Enumerations,The reasoning invents specific enumeration values for rejection types that aren't explicitly defined in the prompt.
+R71_Jse.txt,A4,Missing Parameter-Driven Functionality,The reasoning acknowledges but doesn't fully address the parameter-driven functionality required for the Active/Canceled/Deregistered ISIN screens.
+R66_Tachonet.txt,A1,Unsupported Entity: SecurityManager,"SecurityManager class is introduced in reasoning but not explicitly mentioned in prompt, though security requirements exist."
+R66_Tachonet.txt,A1,Unsupported Entity: Transaction,"Transaction class is introduced in reasoning but not explicitly mentioned in prompt, though workflow tracking is required."
+R66_Tachonet.txt,A1,Unsupported Entity: CardEvent,"CardEvent class is introduced in reasoning but not explicitly mentioned in prompt, though card status management is required."
+R66_Tachonet.txt,A3,Over-specific Role Structure,"Reasoning creates specific role types like 'MEMBER_OPERATOR', 'ENFORCEMENT_AGENT' not specified in prompt."
+R66_Tachonet.txt,A4,Missing Non-Repudiation Requirement,"Prompt explicitly mentions non-repudiation as part of security requirements, but reasoning doesn't adequately address this."
+R74_SplitMerge.txt,A1,Unsupported PDFSplitService,The reasoning introduces a PDFSplitService class that isn't mentioned in the prompt requirements.
+R74_SplitMerge.txt,A1,Unsupported SplitController,The reasoning introduces a SplitController class that isn't mentioned in the prompt requirements.
+R74_SplitMerge.txt,A4,Missing RUN button representation,"The prompt explicitly mentions a RUN button, but the reasoning doesn't clearly model this UI element."
+R72_Philips.txt,A3,Over-specific Attributes,"Many attributes like 'sessionId', 'timestamp', 'imagePath' for emoticons were invented without prompt support."
+R72_Philips.txt,A3,Over-specific Methods,"Methods like 'createGroupChat', 'notifyNewMessage', 'notifyNewEmail' are invented with specific signatures not mentioned in prompt."
+R72_Philips.txt,A3,Over-specific Relationship Types,"Specific relationship types (composition, aggregation) are defined without prompt support."
+R81_VideoSearch.txt,A1,Unsupported Entity: TorrentQuery,The 'TorrentQuery' class is mentioned in reasoning but not specified in the prompt requirements.
+R81_VideoSearch.txt,A1,Unsupported Entity: PaginationManager,The 'PaginationManager' class is mentioned in reasoning but not specified in the prompt requirements.
+R81_VideoSearch.txt,A3,Over-specific UI Structure,"The reasoning specifies a dedicated 'TorrentResultsTab' class, but prompt only mentions results displayed in a tab, not a separate class."
+R81_VideoSearch.txt,A4,Missing Streaming Search,The reasoning acknowledges shared search bar with streaming search but doesn't include streaming search functionality in the class structure.
+R85_Library.txt,A1,Unsupported Table and Field Entities,"The reasoning introduces 'Table' and 'Field' classes that aren't explicitly mentioned in the prompt, though query fields are mentioned."
+R85_Library.txt,A3,Over-specific Staff Attributes,"The reasoning specifies detailed Staff attributes (id, name) not mentioned in the prompt, going beyond the login requirements."
+R85_Library.txt,A3,Over-specific Report Attributes,"The reasoning invents detailed Report attributes like creationTime, startTime, endTime that aren't specified in the prompt."
+R85_Library.txt,A4,Missing Transaction Privacy Details,The reasoning acknowledges but doesn't adequately address the transaction data archive privacy protection requirements specified in the prompt.
+R87_Gaia.txt,A1,Unsupported Entity: AstroSource,The 'AstroSource' class is introduced in reasoning but not mentioned in the prompt.
+R87_Gaia.txt,A3,Over-specific methods,"Methods like 'storeCatalogue', 'retrieveCatalogue', 'applyNoise' are invented without prompt support."
+R90_VirtualEd.txt,A1,Unsupported Entity: VirtualEduSystem,"While 'Virtual-Edu' is mentioned as a system to log into, the reasoning creates a formal 'VirtualEduSystem' class with attributes and methods not specified in prompt."
+R90_VirtualEd.txt,A1,Unsupported Entity: ContactList,"The prompt mentions a list of contacts appears, but doesn't specify a separate 'ContactList' class with owner attribute."
+R90_VirtualEd.txt,A1,Unsupported Entity: Message hierarchy,"The prompt doesn't specify a Message class or its subclasses (TextMessage, EmotionMessage, FileMessage). These are invented."
+R90_VirtualEd.txt,A3,Over-specific User attributes,"The reasoning adds username, onlineStatus, and userType attributes to User class that aren't explicitly mentioned in the prompt."
+R90_VirtualEd.txt,A3,Over-specific Conversation attributes,"The reasoning adds participants, messages, and isGroup attributes to Conversation class that aren't explicitly mentioned in the prompt."
+R77_GParted.txt,A1,Unsupported DeviceSelector Class,"The reasoning introduces a 'DeviceSelector' class that isn't mentioned in the prompt, which only refers to a 'drop-down menu' for device selection."
+R77_GParted.txt,A1,Unsupported PartitionGraphicalView/PartitionListView,"These classes are invented but not mentioned in the prompt, which only describes graphical and list representations of partitions."
+R77_GParted.txt,A1,Unsupported PendingOperations Class,"The reasoning introduces a PendingOperations class to manage operations, but this specific class structure isn't mentioned in the prompt."
+R77_GParted.txt,A1,Unsupported ToolBar Class,The prompt mentions a 'bar containing common functions' but doesn't explicitly call it a ToolBar.
+R77_GParted.txt,A3,Over-specified Class Attributes,The reasoning adds specific attributes like 'selectedOption: int' for BootMenu and 'languages: List<String>' for LanguageSelectionMenu that aren't specified in the prompt.
+R77_GParted.txt,A3,Over-specified Methods,Methods like 'boot()' for BootMenu and 'selectLanguage(languageIndex: int)' for LanguageSelectionMenu are invented without prompt support.
+R76_Home.txt,A1,Unsupported WebServer Entity,"The reasoning introduces a WebServer class that isn't explicitly mentioned in the prompt. While a 'home web server' is mentioned, it's not defined as a separate class entity."
+R76_Home.txt,A3,Over-specific Database Implementation,"The reasoning defines a Database class with specific methods and data structures (Map<DeviceId, List<Reading>>) that aren't specified in the prompt."
+R76_Home.txt,A3,Over-specific Thermostat Schedule Structure,The reasoning specifies a 2D array schedule structure (ScheduleEntry[7][24]) which is not detailed in the prompt.
+R76_Home.txt,A3,Over-specific Gateway Methods,The reasoning defines specific methods for DHGatewayDevice like readSensors() and sendControllerCommand() that aren't specified in the prompt.
+R76_Home.txt,A4,Missing Manual Temperature Setting,The reasoning doesn't address the requirement that manual temperature settings remain in effect until the end of the planned/default period.
+R67_Colorcast.txt,A1,Unsupported Entity: ColorKastApplication,"The name 'ColorKast' appears in requirements, but 'ColorKastApplication' as a specific class is inferred rather than explicitly mentioned."
+R67_Colorcast.txt,A1,Unsupported Entity: HardwareSet,"The reasoning introduces a 'HardwareSet' class that groups hardware interfaces, but this is not mentioned in the prompt."
+R67_Colorcast.txt,A1,Unsupported Entity: Server,"The reasoning introduces a 'Server' class that isn't explicitly mentioned in the prompt, though server-side functionality is referenced."
+R67_Colorcast.txt,A3,Over-specific methods in interfaces,The reasoning defines specific methods like 'translateColorSearch()' and 'matchColor()' that aren't explicitly described in the prompt.
+R67_Colorcast.txt,A3,Over-specific attribute values,"The reasoning specifies minColors=16777216 for Display, but the prompt only mentions '16.7 million colors or greater'."
+R65_Qheadache.txt,A3,Over-specific State Pattern Implementation,The reasoning introduces a detailed State pattern with GameState interface and concrete states that aren't mentioned in the prompt.
+R65_Qheadache.txt,A3,Detailed Undo Implementation,"The reasoning adds specific undo implementation details (undoBlock, undoX, undoY, canUndo) not specified in the prompt."
+R65_Qheadache.txt,A3,Invented Game Class,The reasoning introduces a Game class with specific methods and attributes not mentioned in the prompt.
+R65_Qheadache.txt,A4,Missing Block Dimensions,The reasoning acknowledges confusion about block dimensions but doesn't fully capture the specific dimensions mentioned in the prompt.
+R64_Pnnl.txt,A1,Unsupported DataAcquisition Entity,"The DataAcquisition class is not explicitly mentioned in the prompt as a separate entity, only as a concept."
+R64_Pnnl.txt,A1,Unsupported User Entity,"While users are mentioned in the prompt, they are described as roles rather than as a class in the system architecture."
+R64_Pnnl.txt,A3,Over-specific Method Parameters,Methods like obtainSensedData(realTime: boolean) include parameter types not specified in the prompt.
+R64_Pnnl.txt,A3,Over-specific Attribute Types,Attributes like 'sensedData: List' specify implementation details not mentioned in the prompt.
+R84_ModelManager.txt,A1,Unsupported Entity: Notification,"The 'Notification' class is created in reasoning but not explicitly defined as an entity in the prompt, though email notifications are mentioned."
+R84_ModelManager.txt,A1,Unsupported Entity: PostProcessing,"Created a separate 'PostProcessing' class though post-processing is only mentioned as an option in the prompt, not as a distinct entity."
+R84_ModelManager.txt,A3,Over-specific Attributes,"Many attributes are specified with exact types (String, boolean, int) that aren't defined in the prompt, particularly in Job, Notification, and other classes."
+R84_ModelManager.txt,A3,Over-specific Enumerations,"Created detailed enumerations (ModelType, JobType, DataSourceType, etc.) with specific values not explicitly defined in the prompt."
+R84_ModelManager.txt,A4,Missing MetVault Entity,MetVault is mentioned multiple times in the prompt as a data source but not included as an entity in the reasoning.
+R83_Peazip.txt,A3,Over-specific Object attributes,"The reasoning adds specific attributes to Object class (name, path, isSelected, extension, size, lastModified) not mentioned in the prompt."
+R83_Peazip.txt,A3,Over-specific method parameters,"Methods like selectByAttributes, selectBySize, and selectByDate include parameter types not specified in the prompt."
+R83_Peazip.txt,A3,Over-specific relationship multiplicities,"The reasoning specifies exact multiplicities (1-to-1, 1-to-many) for relationships that aren't defined in the prompt."
+R83_Peazip.txt,A4,Missing Bookmarks concept,The reasoning doesn't fully model the Bookmarks concept as a separate entity despite being mentioned as a distinct feature in the prompt.
+R70_Ijis.txt,A1,Unsupported User Class,The reasoning introduces a 'User' class that isn't mentioned in the prompt. The prompt lists actors but doesn't suggest a unified User class with roles.
+R70_Ijis.txt,A1,Unsupported AppointmentDocument Class,The reasoning creates an abstract 'AppointmentDocument' class that isn't mentioned in the prompt. This is an invented abstraction.
+R70_Ijis.txt,A3,Over-specific Document Attributes,"The reasoning invents specific attributes for documents like 'id', 'submissionDate', etc. that aren't specified in the prompt."
+R70_Ijis.txt,A3,Over-specific Relationship Multiplicities,"The reasoning specifies one-to-one relationships between entities (e.g., Defendant to Incident) that aren't explicitly defined in the prompt."
+R80_WarcPhase3.txt,A1,Unsupported Entity: SelectionCriteria,The SelectionCriteria class is created in the reasoning but not mentioned in the prompt as a distinct entity.
+R80_WarcPhase3.txt,A1,Unsupported Entity: Logger,"While logging is mentioned as a requirement, creating a separate Logger class is an implementation detail not specified in the prompt."
+R80_WarcPhase3.txt,A3,Over-specific Attributes,"Specific attributes like 'names', 'wildcard', 'maxSize', 'maxItems' in SelectionCriteria and 'inputPath', 'outputPath' in MigrationConfig are invented details."
+R80_WarcPhase3.txt,A4,Missed Repackaging Module,"The prompt mentions repackaging as a module that inherits default behaviors, but this is not addressed in the reasoning."
+R80_WarcPhase3.txt,A4,Missed Reporting Module,"The prompt mentions reporting as a module that inherits default behaviors, but this is not addressed in the reasoning."
+R88_Email.txt,A1,Unsupported Entity: EmailComposer,EmailComposer is mentioned as a potential class but not directly specified in the prompt requirements.
+R88_Email.txt,A1,Unsupported Entity: SpellChecker,SpellChecker is suggested as a possible service class but not explicitly required in the prompt.
+R88_Email.txt,A1,Unsupported Entity: SharingService,SharingService is proposed but not directly mentioned in the prompt requirements.
+R88_Email.txt,A1,Unsupported Entity: ClientView/UserPreference,ClientView and UserPreference are mentioned as potential classes but not directly specified in requirements.
+R88_Email.txt,A1,Unsupported Entity: TestEnvironment,TestEnvironment is suggested but not explicitly required as an entity in the prompt.
+R88_Email.txt,A1,Unsupported Entity: AccountManager,AccountManager is proposed but not directly mentioned in the prompt requirements.
+R88_Email.txt,A1,Unsupported Entity: NamingConvention,NamingConvention is suggested but not explicitly required as an entity in the prompt.
+R88_Email.txt,A1,Unsupported Entity: Compliance,Compliance is mentioned as a potential class but not directly specified in requirements.
+R88_Email.txt,A1,Unsupported Entity: EmailCapture,EmailCapture is proposed but not directly mentioned in the prompt requirements.
+R88_Email.txt,A1,Unsupported Entity: StorageManager,StorageManager is suggested but not explicitly required as an entity in the prompt.
+R88_Email.txt,A1,Unsupported Entity: ImportService,ImportService is proposed but not directly mentioned as a required entity in the prompt.
+R88_Email.txt,A1,Unsupported Entity: SearchService,SearchService is suggested as a separate class but not explicitly required in the prompt.
+R88_Email.txt,A1,Unsupported Entity: EmailSystemConfig,EmailSystemConfig is proposed but not directly mentioned in the prompt requirements.
+R89_Vub.txt,A1,Unsupported Entity: SearchCriteria,"SearchCriteria is introduced as a class but not explicitly mentioned in the prompt, which only describes search criteria as parameters."
+R89_Vub.txt,A1,Unsupported Entity: UserSession,UserSession is mentioned as a return type for login() but not specified in the prompt requirements.
+R89_Vub.txt,A3,Over-specific Publication attributes,"The reasoning adds specific attributes like 'id', 'abstract' to Publication that aren't mentioned in the prompt."
+R89_Vub.txt,A4,Missed VUB-network user distinction,"The reasoning struggles with and ultimately fails to properly model VUB-network users, who can search without logging in."
+R62_SceApi.txt,A1,Unsupported Entity: SCE-MI Interface,"The reasoning introduces a 'SCE-MI Interface' as a formal interface class, but the prompt only mentions it conceptually without suggesting it should be modeled as a separate entity."
+R62_SceApi.txt,A3,Over-specific Class Attributes,The reasoning adds specific attributes to the user classes (like 'Uses transactor models') that are presented as class attributes rather than as general responsibilities.
+R79_BillDraft.txt,A3,Over-specific User attributes,"Added 'designatorCode' and 'labLocation' as String attributes in User class when prompt only mentions they must be associated, not their data types."
+R79_BillDraft.txt,A3,Over-specific methods,"Added methods like 'getRoles()', 'addRole()', and 'addDivision()' that aren't explicitly mentioned in the prompt."
+R79_BillDraft.txt,A3,Over-specific class attributes,"Added 'name' attribute to Role, Division, and UserTemplate classes when not specified in the prompt."
+R79_BillDraft.txt,A3,Over-specific relationship types,Specified aggregation relationships (o--) when the prompt doesn't specify relationship types between entities.
+R61_EvlaCorr.txt,A1,Unsupported Entity: CorrelatorHardware,The 'CorrelatorHardware' class is created in the reasoning but not explicitly mentioned as a separate entity in the prompt.
+R61_EvlaCorr.txt,A1,Unsupported Entity: EVLA_MC,"While EVLA M&C is mentioned in the prompt as a network, it's modeled as a class/entity in the reasoning without prompt justification."
+R61_EvlaCorr.txt,A3,Over-specific Network Relationships,"The reasoning creates specific named relationships (network1, network2) between components that aren't explicitly defined in the prompt."
+R82_Peppol.txt,A1,Unsupported MappingRule Entity,"The reasoning introduces a 'MappingRule' class that isn't explicitly mentioned in the prompt. While mapping is discussed, a separate rule entity isn't specified."
+R82_Peppol.txt,A3,Over-specific Attributes,"The reasoning adds specific attributes like 'id', 'description', 'articleReference', 'country', and 'version' that aren't explicitly mentioned in the prompt requirements."
+R82_Peppol.txt,A3,Over-specific Multiplicities,"The reasoning specifies precise multiplicities (e.g., ""1"" -- ""*"") for relationships that aren't defined with this level of detail in the prompt."
+R82_Peppol.txt,A4,Missing CallForTenders,The reasoning initially identifies CallForTenders as a concept but doesn't include it in the final model despite the prompt mentioning it as a source of input.
+R63_Agentmom.txt,A1,Unsupported Entity: UnicastMessage,"The reasoning introduces UnicastMessage as a subclass of Message, but the prompt doesn't specify different message types or inheritance structure."
+R63_Agentmom.txt,A1,Unsupported Entity: MulticastMessage,"The reasoning introduces MulticastMessage as a subclass of Message, but the prompt doesn't specify different message types or inheritance structure."
+R63_Agentmom.txt,A3,Over-specific Agent Attributes,"The reasoning specifies an 'id' attribute for Agent class, but this is not mentioned in the prompt."
+R63_Agentmom.txt,A3,Over-specific MulticastGroup Attributes,"The reasoning specifies 'address' and 'members' attributes for MulticastGroup, but these specific attributes aren't mentioned in the prompt."
+R68_EProcurement.txt,A1,Unsupported Document Class Hierarchy,"The reasoning introduces abstract classes/interfaces (Document, BuyerDocument, SellerDocument) not mentioned in the prompt."
+R68_EProcurement.txt,A2,Unsupported Sender Relationship,"The reasoning adds 'sends' relationships between Buyer/Seller and documents, but the prompt only states which documents are produced by each party."
+R68_EProcurement.txt,A3,Over-specific VAT Interface,The reasoning creates a VATDocument interface and relationships that aren't explicitly required in the prompt.

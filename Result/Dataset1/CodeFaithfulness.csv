@@ -1,0 +1,204 @@
+id,subcategory,description,detail
+1,B1,Dropped ProjectManager Attribute,"Reasoning adds `name: String` to ProjectManager, but it's missing in the code."
+1,B2,Fabricated Notes,The code adds four `note` blocks that were not part of the reasoning process.
+1,B3,Incorrect Project-System Multiplicity,"Reasoning explicitly changes System multiplicity to 0..1, but the code uses 1."
+1,B3,Incorrect ProjectManager-Project Multiplicity,"Reasoning settles on `*` (0..*) for Project, but the code implements `1..*`."
+1,B4,Composition Changed to Aggregation,"Reasoning specifies Composition (`*--`) for Project relations, but code uses Aggregation (`o--`)."
+2,B2,Fabricated Attribute Name in Setup,"Reasoning specified attribute 'description', code used name 'photographicParams'."
+2,B2,Fabricated Attribute Name in External,"Reasoning specified attribute 'type', code used name 'sceneType'."
+2,B3,Contradictory Relationship Type,"Reasoning specified an association for External-Location, but code implemented a composition."
+2,B3,Contradictory Multiplicity,Reasoning: a Location has 0..* Externals. Code implies a Location has 1 External.
+3,B3,Separate Header/Footer Classes,Reasoning chose one `HeaderFooter` class; code made two.
+3,B1,Dropped Body Element Wrappers,"Dropped `TextBlock`, `BlockPicture`, and `TableBlock` classes."
+3,B4,Altered Cell Content Structure,Reasoning's polymorphic list was replaced by direct composition.
+3,B1,Dropped SentencePart Abstraction,The abstract `SentencePart` class was omitted from the code.
+3,B2,Fabricated Text Class,The `Text` class was not in the final reasoning model.
+4,B4,Prescription Class Replaced by Medication,Reasoning designed a Prescription class; code dropped it and f
+4,B2,Fabricated Medication-Doctor Link,The 'prescribed by' link from Medication to Doctor was not 
+4,B3,Contradictory Visit-Doctor Multiplicity,"Reasoning specified 1..1 multiplicity for Visit->Doctor, co"
+4,B1,Dropped Patient-to-Family Association,"Reasoning specified Patient has a reference to Family, but c"
+4,B1,Dropped familyName Attribute,The 'familyName' attribute for the Family class is missing.
+6,B3,Attribute Name Mismatch,"CrewAssignment attribute is `assignmentTime: Role`, not `role`."
+6,B4,Relationship Type Mismatch,Reasoned aggregations/compositions are coded as associations.
+6,B2,Fabricated Association,"Code adds CrewAssignment->Role link, reasoned against."
+6,B2,Fabricated Constraint,Code adds a constraint for COPILOT level not in reasoning.
+7,B1,Dropped Account Attribute,Reasoning specified an 'accountNumber' attribute for Account.
+7,B1,Dropped Multiplicities,Multiplicities for StockHolding->Stock relation are missing.
+8,B2,Fabricated Code,!theme plain not in reasoning
+8,B2,Fabricated Code,Private attributes (-) not in reasoning
+8,B3,Relationship Name Contradiction,Relationship names differ from reasoning
+9,B1,Dropped CarModel Class,Reasoning decided to add CarModel for normalization; it's missing.
+9,B4,Compatibility Structure Mismatch,Reasoning: M-M link Part-CarModel. Code: new Compatibility class.
+9,B3,Contradictory Car Attributes,"Car has make/model attributes, which reasoning moved to CarModel."
+9,B3,Incorrect PartUsage Multiplicity,Code implies a part can only be sold once (1-to-1 with PartUsage).
+9,B1,Dropped Service ID,The serviceID primary key from the reasoning is missing in Service.
+9,B2,Fabricated PartUsage Attribute,PartUsage has a 'unitPrice' attribute not in the reasoning.
+10,B3,Incorrect Waiter-Meal Multiplicity,Reasoning: 1 Waiter to many Meals. Code: 1 Waiter to 1 Meal.
+10,B3,Incorrect Table-Meal Multiplicity,Reasoning: 1 Table to many Meals. Code: 1 Table to 1 Meal.
+10,B3,Incorrect Client-Meal Multiplicity,Reasoning: 1 Client to many Meals. Code: 1 Client to 1 Meal.
+10,B2,Fabricated Packages,Packages were added in the code but not planned in reasoning.
+11,B3,Contradictory Package Attribute,Reasoning chose `deliveryType: String` but code used `isUrgent: Boolean`.
+12,B3,Incorrect Component Composition Relation,Reasoning: one Component per Composition. Code: many Components.
+12,B3,Incorrect Order Line Relation,Reasoning: one FurniturePiece per OrderLine. Code: many.
+12,B3,Multiple Multiplicity Contradictions,Reasoning uses 0..* but code uses 1..* for several relations.
+12,B2,Fabricated Notes,Three note blocks were added to the diagram without reasoning.
+13,B2,Fabricated Factory Class,Reasoning explicitly decided to omit the Factory class.
+13,B3,Incorrect OrderLine to ProductType Multiplicity,"Reasoning concluded a many-to-one relation, code shows one-to-one."
+13,B2,Fabricated Worker-Machine Relation,"A redundant ""works in"" relation was added without reasoning."
+13,B2,Fabricated Factory-Machine Relation,The relation from Factory to Machine was not in the reasoning.
+15,B1,Dropped ExitController Class,"The ExitController class, designed to handle exit logic, is missing."
+15,B1,Dropped CardReader Attribute,The `barrier: Barrier` attribute is missing from the CardReader class.
+15,B3,Contradictory CMS Methods,"CardManagementSystem methods differ from reasoning (e.g., validateCard)."
+15,B1,Dropped Barrier Method,The `lower()` method is missing from the Barrier class.
+15,B4,IdentityCard Structure Mismatch,"Reasoning specified an abstract class for IdentityCard, code used an interface."
+17,B3,Decorator Relationship Contradiction,"Reasoning used aggregation (o--), but code uses composition (*--)."
+17,B2,Fabricated Relationship Details,"The label ""decoratedContract 1"" and name "": composition"" were added."
+17,B2,Redundant Relationship Definition,The line `Contract <|.. ContractDecorator` is redundant with `implements`.
+18,B2,Fabricated Library Class,"The Library class was added, but the reasoning decided not to."
+18,B2,Fabricated Methods,Methods were added to User and BorrowRecord against reasoning.
+18,B3,Incorrect Book Multiplicity,"A BorrowRecord must have one Book, not zero or one (0..1)."
+18,B3,Contradictory Class Name,"Reasoning uses 'BorrowTransaction', code uses 'BorrowRecord'."
+19,B4,Incorrect Schedule-Appointment Relation,"Reasoning specified composition, but code uses aggregation."
+20,B2,Fabricated Attributes,"Attributes added to LineItem, Product, Payment not in reasoning"
+21,B2,Fabricated ProjectManager Class,Reasoning explicitly states to skip the ProjectManager class.
+21,B2,Fabricated User Class and Dependencies,The User class and its validation dependencies were not planned.
+21,B4,Association Type Mismatch,Reasoning used composition (*--) but code used association (-->).
+21,B3,Contradictory Attribute Type,"Reasoning specified percentComplete as float, code used Integer."
+21,B2,Fabricated Method Return Type,Code adds a 'boolean' return type to validate() methods.
+22,B2,Fabricated Attribute in External,External class has a 'dayOrNight' attribute not in reasoning.
+23,B1,Dropped Polymorphic Structure,"Abstract classes BodyElement, TextElement, CellContentItem missing"
+23,B3,Contradicted Header/Footer Design,"Reasoning chose string attributes, but code created classes."
+23,B3,Contradicted Character Hierarchy,"Reasoning chose one Character class, code made 3 subclasses."
+23,B4,Word Composition Mismatch,"Reasoning used Character objects, code used a String attribute."
+23,B3,Incorrect Relationship Kinds,Reasoning specified composition (*--) but code used association (-->)
+23,B2,Fabricated Keyboard Class,The Keyboard class was not mentioned in the reasoning.
+23,B2,Fabricated Column Class,The Column class was not part of the final reasoning design.
+24,B3,Contradiction,Family-Doctor multiplicity mismatch
+24,B3,Contradiction,Family-Doctor relationship type mismatch
+25,B1,Dropped `StockItem` Class,"The key `StockItem` class, for managing physical copies, is missing."
+25,B1,Dropped `Rent` Class,"The `Rent` class, essential for subscriber rentals, is missing."
+25,B4,Incorrect Availability Model,Reasoning uses `StockItem` for availability; code uses a boolean on `Movie`.
+25,B4,Order Links to Wrong Class,"Reasoning links `Order` to `StockItem`, but code links it to `Movie`."
+25,B2,Fabricated `isAvailable` Attribute,"The `Movie.isAvailable` attribute was added, contradicting the reasoning."
+25,B2,Fabricated Relationships,Multiple relationships like `Movie -- Card` were invented.
+25,B3,Incorrect `RestockOrder` Multiplicity,Reasoning: many-to-one for `RestockOrder`->`Movie`. Code: one-to-one.
+25,B1,Dropped `quantity` from `RestockOrder`,The `quantity` attribute specified for `RestockOrder` is missing.
+26,B1,Dropped CrewAssignment Class,"Reasoning designed a CrewAssignment class, but it's absent."
+26,B4,Flight-Pilot Relationship Mismatch,"Reasoning uses CrewAssignment, code uses direct composition."
+26,B2,Fabricated Pilot-RoleType Relationship,Code adds a Pilot to RoleType relation not in reasoning.
+26,B4,Flight-Airport Structural Mismatch,Reasoning: 2 associations. Code: 1 aggregation with mult 2.
+26,B3,Renamed Requirement Class,AircraftTypeRequirement in reasoning is PilotRequirement in code.
+26,B3,Renamed Status Enum,Enum CurrentStatus in reasoning is FlightStatus in code.
+27,B1,Dropped Attribute from Account,"Reasoning specifies `accountNumber` for Account, but it's missing."
+27,B2,Fabricated Attribute in Stock,Reasoning explicitly decides against `currentPrice` in Stock.
+27,B1,Dropped Method Parameters,Reasoning includes `currentPrice` in buy/sellStock methods.
+27,B3,Attribute Name Contradiction,`commissionPerTrade` in reasoning became `commissionRate` in code.
+27,B3,Method Name Contradiction,`addInterest()` in reasoning became `applyInterest()` in code.
+27,B4,Association Kind Mismatch,"StockHolding-Stock is undirected, not directed as reasoned."
+28,B3,Contradiction,Animal to Owner multiplicity contradicts reasoning
+28,B3,Contradiction,Animal to Breed multiplicity contradicts reasoning
+28,B3,Contradiction,Appointment to Animal multiplicity contradicts reasoning
+28,B3,Contradiction,Appointment to Physician multiplicity contradicts reasoning
+29,B1,Dropped ProductType Class,"Reasoning specified a ProductType class, but it's missing."
+29,B4,Denormalized Item Class,Code puts 'category' in Item; reasoning moved it to ProductType.
+29,B4,Denormalized Car Class,Code puts 'make' and 'model' in Car; reasoning moved them to CarModel.
+29,B4,Incorrect Compatibility Relation,Compatibility is Item<->CarModel; reasoning specified ProductType<->CarModel.
+30,B3,Incorrect Ingredient Multiplicity in Association,"Code shows 1-to-1 for DishIngredient-Ingredient, but reasoning specifies many-to-1."
+30,B3,Incorrect Dish Multiplicity in Association,"Code shows 1-to-1 for MealDish-Dish, but reasoning specifies many-to-1."
+30,B2,Fabricated Constraint Notes,The code adds several 'note' blocks for uniqueness constraints that were not planned in the reasoning.
+30,B3,Contradictory Data Types in Meal,"Reasoning decided to use String for date/time in Meal, but the code uses Date/Time types."
+31,B3,Incorrect Customer Multiplicity,"Reasoning states many Customers per Center, code shows 1-to-1."
+32,B2,Fabricated Association Class Syntax,Code adds 4 dashed-line relations not in the reasoning.
+32,B3,Incorrect Multiplicity on Composition,"Reasoning: Composition ""*"" -- ""1"" Component. Code: ""1"" -- ""1""."
+32,B3,Incorrect Multiplicity on OrderItem,"Reasoning: OrderItem ""*"" -- ""1"" FP. Code: ""1"" -- ""1""."
+32,B4,Order-OrderItem Relation Mismatch,"Reasoning planned an association, code implemented composition."
+32,B3,Component Attribute Name Contradiction,Reasoning specified `componentType` but code uses `type`.
+34,B3,Incorrect Reservation-Rental Multiplicity,Reasoning: 0..1 to 0..1. Code: 0..1 to 1. Contradicts walk-in logic.
+34,B2,Fabricated Compositions,Code adds Store compositions for Reservation/Rental not in reasoning.
+34,B3,Incorrect Rental-Store Return Multiplicity,"Code implies a Store can have only one returned rental (..""1"" Store)."
+34,B1,Dropped Client NIN Optionality,"Reasoning specifies NIN is optional, but code omits this constraint."
+34,B1,Dropped Rental ID,"Reasoning includes an 'id' attribute for the Rental class, but it's missing."
+35,B4,CardRegistry Structure Mismatch,"Reasoning plans two collections, code uses one Map<String, Card>"
+35,B4,cardNumber Inheritance Mismatch,"Reasoning inherits cardNumber, but code re-declares it in kids"
+35,B1,Dropped EmployeeCard Attribute,The 'employeeNumber' attribute is in the reasoning but not code
+35,B3,CardRegistry Method Contradiction,"Method signatures in code differ from reasoning (e.g., isValid)"
+35,B3,Sign Method Contradiction,Code methods (displayFull) differ from reasoning (setMessage).
+38,B3,Contradictory Library-User Association,Reasoning explicitly decides against Library managing users.
+38,B2,Fabricated Methods,"Methods added to Book, User, and Library against reasoning."
+38,B2,Fabricated Book Attributes,Book has 'isbn' and 'publicationYear' not in reasoning.
+38,B2,Fabricated Multiplicities,Multiplicities on relations were not discussed in reasoning.
+39,B3,Contradiction,Doctor-Schedule multiplicity mismatch
+39,B2,Fabricated Code,Appointment has endTime attribute
+39,B2,Fabricated Code,Appointment has date attribute
+40,B3,Incorrect LineItem-Product Multiplicity,Reasoning: 0..* LineItems to 1 Product. Code: 1 LineItem.
+40,B2,Fabricated Product-LineItem Relationship,"Code adds a second, redundant Product-LineItem association."
+40,B2,Fabricated Relationship Labels,"Code adds labels (e.g., 'owns', 'contains') to relations."
+40,B2,Fabricated Layout Directives,Code adds 'left to right direction' and 'linetype ortho'.
+41,B1,Dropped ProjectManagementSystem,Class was in reasoning but omitted from final code
+41,B3,Relationship Type Contradiction,"Reasoning used composition, code uses association"
+41,B2,Fabricated Validation Dependencies,Added dependencies not mentioned in reasoning
+41,B3,Multiplicity Contradiction,Project-Requirements: * vs 1..*
+42,B3,Multiplicity Contradiction,"ExternalScene-Location multiplicity is '*' in reasoning, '1' in code"
+42,B3,Relationship Type Contradiction,"ExternalScene-Location is association in reasoning, composition in code"
+43,B3,Interface vs Abstract Class Contradiction,"SentencePart defined as abstract class in reasoning, interface in code"
+43,B2,Fabricated Methods,Header/Footer addDate/Time/PageNumber methods not in reasoning
+43,B1,Missing Attributes,Document name attribute missing in code
+43,B3,Picture Implementation Contradiction,"Picture implements ICellContent in reasoning, but not CellContent in code"
+43,B2,PictureContent Class,PictureContent class not mentioned in reasoning
+43,B3,TableRow vs Row Naming,"TableRow in reasoning, Row in code"
+44,B3,Relationship Type Contradiction,Family-Patient relationships use composition not association
+44,B3,Relationship Direction Contradiction,Directed arrows used instead of undirected associations
+44,B2,Fabricated Notes,Added explanatory notes not mentioned in reasoning
+44,B3,Relationship Label Contradiction,"Changed relationship labels (has, treats, contains)"
+45,B3,Order-Movie Multiplicity Contradiction,Reasoning: Order has one Movie; Code: Order has 1..*
+45,B1,Missing quantityInStock Attribute,Movie should track quantity not just boolean inStock
+45,B3,Order-User Relationship Type,Reasoning: association; Code: composition
+45,B1,Missing Order Methods,processOrder() implementation details missing
+46,B2,Fabricated CrewRole Enumeration,CrewRole enum not mentioned in reasoning
+46,B3,Enum Name Contradiction,CurrentStatus in reasoning vs FlightStatus in code
+46,B2,Fabricated Flight-AircraftType Association,Flight to AircraftType 'ofType' relation not in reasoning
+46,B3,Association Type Contradiction,Flight-Airport uses composition not association
+47,B2,Fabricated Stock Class,Stock class was explicitly excluded in reasoning
+47,B2,Fabricated Relation,StockOrder to Stock relation not in reasoning
+47,B3,Method Parameter Mismatch,buyStock() missing commission parameter
+47,B2,Fabricated Method,applyInterest() not mentioned in reasoning
+47,B2,Fabricated Method,calculateTotalCost() not in reasoning
+47,B2,Fabricated Method,updatePrice() not in reasoning
+48,B3,Relationship Notation Contradiction,"Reasoning uses crow's foot, code uses UML notation"
+48,B2,Added Notes,Notes on entities not mentioned in reasoning
+48,B3,Relationship Direction Change,Relationship directions differ from reasoning
+49,B3,Car-Service Multiplicity Contradiction,Reasoning: Car 1--* Service; Code: Car *--1 Service
+49,B3,Service-Item Relationship Contradiction,Both 1--* and *--* relationships defined
+49,B1,Car-CarModel Attributes,Car still has make/model despite CarModel class
+50,B3,Multiplicity Contradiction,"DishIngredient multiplicity is 0..* in reasoning, 1..* in code"
+50,B3,Multiplicity Contradiction,"MealDish multiplicity is 0..* in reasoning, 1..* in code"
+51,B3,Multiplicity Contradiction,All Customer/Package/DeliveryCenter multiplicities wrong
+51,B3,Relationship Direction Contradiction,"Reasoning shows many-to-one, code shows one-to-one"
+52,B3,Multiplicity Contradiction,Reasoning uses 'piece' label but code uses 'requests'
+53,B3,Machine-Worker Relationship Contradiction,"Reasoning shows M:N, code shows 1:M relationship"
+53,B1,OrderItem Primary Key Missing,"Reasoning specifies PK, code omits it"
+54,B2,Fabricated Relationship,Reservation-Rental relationship not in reasoning
+54,B1,Dropped Attribute,Bicycle missing model attribute
+54,B1,Dropped Attributes,"Rental missing client, bicycle, pickupStore"
+55,B1,Dropped ExitSensor Attributes,ExitSensor attributes missing in diagram
+55,B1,Dropped Reception Attributes,Reception's cardVerificationSystem attribute missing
+55,B1,Dropped CardReader Attributes,CardReader's attributes missing in diagram
+55,B1,Dropped Sign Attributes,Sign's isFull attribute missing
+56,B1,Missing Employee-Division Association,Employee's worksIn association to Division is missing
+56,B3,Client-Account Relationship Direction,"Reasoning has many-to-many, code has one-to-many"
+56,B1,Missing Primary Card Relationship,CreditCardAccount->Card primaryCard relation missing
+56,B3,Bank-Division Multiplicity,"Reasoning has 1..* divisions, code has * (0..*)"
+57,B2,Fabricated Code,Added stereotype tags not mentioned in reasoning
+58,B2,Fabricated Attributes,Book has isbn and publicationYear not in reasoning
+58,B2,Fabricated Methods,User methods and BorrowRecord.calculateOverdue()
+58,B3,Contradicting Attributes,BorrowRecord has borrowDate/returnDate vs startDate/endDate
+58,B3,Contradicting Relationship,BorrowRecord has both association and aggregation to Book
+58,B4,Structural Mismatch,User has separate currentBorrows/borrowHistory lists
+59,B1,Dropped Method,Office.addSchedule() method missing in final code
+59,B2,Added Method,Schedule.isAvailable() not in reasoning
+59,B3,Relationship Multiplicity Change,Hospital-Office: 0..* changed to 1..*
+59,B3,Service Name Change,EmailService renamed to NotificationService
+59,B3,Relationship Type Change,Schedule-Doctor/Office: composition to association
+59,B3,Relationship Multiplicity Change,All entity relationships changed from o-- to --
+59,B2,Added Relationship,NotificationService notifies Patient
+60,B1,Dropped Composition,Missing composition relationships discussed in reasoning

@@ -1,0 +1,142 @@
+id,subcategory,description,detail
+R8_HotelReservation.txt,B3,RoomType Implementation Mismatch,RoomType is class in reasoning but enum in code
+R8_HotelReservation.txt,B1,Missing RoomType Properties,isPerPerson and rate properties missing from RoomType
+R8_HotelReservation.txt,B2,Fabricated Pricing Class,Pricing class not mentioned in reasoning
+R8_HotelReservation.txt,B3,PaymentMethod Method Signature,computeDiscount vs applyDiscount with different params
+R8_HotelReservation.txt,B1,Missing Hotel Methods,findAvailableRoom method missing
+R8_HotelReservation.txt,B2,Added User Properties,registrationDate and register() not in reasoning
+R24_SetCommunicationPrefences.txt,B2,Fabricated MobileApp Class,MobileApp class not mentioned in reasoning
+R24_SetCommunicationPrefences.txt,B3,Method Name Mismatch,setCustomerPreference vs validateAndSetPreference
+R24_SetCommunicationPrefences.txt,B1,Missing Method,validatePreference method missing from PreferenceManager
+R23_SetPIN.txt,B1,Dropped Database-User Relationship,Database storing Users mentioned in reasoning but missing
+R23_SetPIN.txt,B3,Card Multiplicity Contradiction,Reasoning: unlimited cards; Code: 0..4 cards
+R23_SetPIN.txt,B2,Fabricated Card Methods,validateNumber/validateCVV not in reasoning
+R23_SetPIN.txt,B2,Fabricated currentAttempts Attribute,Not explicitly defined in reasoning
+R23_SetPIN.txt,B2,Fabricated lockUserSession Method,Not explicitly defined in reasoning
+R9_BeWellApp.txt,B2,Fabricated Class,CalorieCalculator appears in code but not defined as class
+R9_BeWellApp.txt,B3,Relationship Direction Change,Calendar *-- DayRecord in reasoning vs --> in code
+R9_BeWellApp.txt,B1,Missing Class,VideoDatabase class missing from final diagram
+R9_BeWellApp.txt,B3,Relationship Type Change,App class and its compositions missing from diagram
+R9_BeWellApp.txt,B2,Fabricated Relationship,User --> SuggestionEngine not in reasoning
+R9_BeWellApp.txt,B3,Class Name Change,SuggestionService renamed to SuggestionEngine
+R9_BeWellApp.txt,B3,Inheritance Structure Change,Activity as parent class not in reasoning
+R25_ApplePay.txt,B2,Fabricated MobileApp Class,MobileApp class not mentioned in reasoning
+R25_ApplePay.txt,B3,Method Name Mismatch,isEligibleForApplePay() vs isEligible()
+R25_ApplePay.txt,B3,Attribute Name Mismatch,customerId/cardId vs customerID/cardID
+R25_ApplePay.txt,B2,Duplicate AVAILABLE Status,AVAILABLE appears twice in CardStatus enum
+R25_ApplePay.txt,B2,Added Dependency Arrows,Explicit dependency arrows not in reasoning
+R25_ApplePay.txt,B2,Added Enum Connections,Explicit enum connections not in reasoning
+R5_ComputerGame2.txt,B1,Dropped Army Class,Army class mentioned in reasoning is missing in diagram
+R5_ComputerGame2.txt,B1,Missing Army-Player Relationship,Army chases Player relationship not implemented
+R5_ComputerGame2.txt,B1,Missing Level-Army Relationship,Level contains Army relationship not implemented
+R5_ComputerGame2.txt,B3,Base-HackingSystem Relationship Contradiction,Shown as both composition and association
+R20_Montitoring Pressure.txt,B3,Method Name Contradiction,ControlPanel methods named differently in code vs reasoning
+R14_ATM.txt,B2,Fabricated Account Class,Account class implementation not in reasoning
+R14_ATM.txt,B2,Added Card Attributes,expirationDate and methods not in reasoning
+R14_ATM.txt,B2,Added ATM Location,Location was optional in reasoning but added in code
+R14_ATM.txt,B2,Added Transaction Fields,sourceAccount and targetAccount not in reasoning
+R14_ATM.txt,B3,Relationship Direction Mismatch,Account->CentralComputer contradicts reasoning
+R14_ATM.txt,B2,Added CashCard->BankComputer Relation,This relationship wasn't specified in reasoning
+R14_ATM.txt,B1,Missing Transaction->ATM Relation,ATM creates transactions in reasoning
+R13_CourseEnrollment.txt,B3,Multiplicity Contradiction,Student-CourseOffering has conflicting multiplicities
+R13_CourseEnrollment.txt,B1,Missing Semester Class,Semester class defined in reasoning but omitted in code
+R13_CourseEnrollment.txt,B3,Department Relationship Contradiction,Course-Department relationship differs from reasoning
+R13_CourseEnrollment.txt,B3,ReportCard Relationship Contradiction,ReportCard-Enrollment relationship missing
+R13_CourseEnrollment.txt,B2,Fabricated Relationship,Student-ReportCard direct relationship not in reasoning
+R12_RentedCarGalleryManagementSystem.txt,B2,Fabricated RentalReport Class,RentalReport class not mentioned in reasoning
+R12_RentedCarGalleryManagementSystem.txt,B2,Fabricated Methods,"Several methods not in reasoning (markAvailable, etc.)"
+R12_RentedCarGalleryManagementSystem.txt,B3,Relationship Contradiction,Rental-Car/Customer multiplicity differs from reasoning
+R12_RentedCarGalleryManagementSystem.txt,B1,Missing Rental Attributes,customer and car references missing from Rental
+R12_RentedCarGalleryManagementSystem.txt,B1,Missing Customer ID,customerId attribute missing from Customer class
+R12_RentedCarGalleryManagementSystem.txt,B3,Status Attribute Changed,status attribute replaced with isOverdue boolean
+R17_TimberedHouse.txt,B2,Fabricated Class Name,MudBrick class used instead of Brick from reasoning
+R17_TimberedHouse.txt,B2,Fabricated Notes,Added explanatory notes not mentioned in reasoning
+R4_ComputerGame1.txt,B3,Multiplicity Contradiction,Planet-Cell entryPoints relation shows composition not association
+R4_ComputerGame1.txt,B3,Relationship Direction Contradiction,"Game-Player shows bidirectional composition, not unidirectional"
+R4_ComputerGame1.txt,B1,Dropped Game Attribute,Game.players attribute missing from diagram
+R4_ComputerGame1.txt,B2,Fabricated Direction Enum,Direction enum not mentioned in reasoning
+R4_ComputerGame1.txt,B3,Relationship Type Contradiction,Token-Cell shows association not attribute relationship
+R7_SuperMarket.txt,B1,Missing Store Class,Store class defined in reasoning but missing in code
+R7_SuperMarket.txt,B1,Missing Payment Class,Payment class defined in reasoning but missing in code
+R7_SuperMarket.txt,B1,Missing Delivery Class,Delivery class defined in reasoning but missing in code
+R7_SuperMarket.txt,B1,Missing SaleItem Class,SaleItem class defined in reasoning but missing in code
+R7_SuperMarket.txt,B2,Added CustomerType Enum,CustomerType enum not in reasoning
+R7_SuperMarket.txt,B2,Added Cashier Class,Cashier as separate class not in reasoning
+R7_SuperMarket.txt,B3,Customer Inheritance Contradiction,Customer inheritance replaced with CustomerType enum
+R7_SuperMarket.txt,B4,Stock Implementation Mismatch,Stock class replaced with StockRecord
+R29_PrepaidCardLoading.txt,B2,Fabricated Attribute,loaderId attribute not mentioned in reasoning
+R29_PrepaidCardLoading.txt,B3,Method Signature Change,loadCard() parameters differ from reasoning
+R29_PrepaidCardLoading.txt,B2,Fabricated Method,validateCard() method not in reasoning
+R19_Airport.txt,B3,Reservation-Seat Multiplicity Contradiction,"Reasoning: 1-to-1, Code: 1-to-many"
+R19_Airport.txt,B3,FlightConnection-Flight Contradiction,"Reasoning has fromFlight/toFlight, code has connecting flight"
+R19_Airport.txt,B3,RouteSegment-Span Relationship Type,"Reasoning: aggregation, Code: composition"
+R2_EmployeeManagementSystem.txt,B3,Constraint Representation,Constraint format differs from reasoning
+R6_AcademicProgram.txt,B3,Multiplicity Contradiction,Course-Instructor multiplicity differs in code vs reasoning
+R6_AcademicProgram.txt,B2,Fabricated Relationships,Added 'manages' and 'interacts with' relationships
+R6_AcademicProgram.txt,B1,Missing Methods,Course missing addInstructor/removeInstructor methods
+R6_AcademicProgram.txt,B2,Fabricated Method,Added changeSchedule method to Course
+R6_AcademicProgram.txt,B2,Fabricated Notes,Added notes not mentioned in reasoning
+R22_IPOApplication.txt,B2,Fabricated Company Class,Company class not mentioned in reasoning
+R22_IPOApplication.txt,B1,Dropped EmailContent Class,EmailContent class missing from final diagram
+R22_IPOApplication.txt,B3,Relationship Type Contradiction,Document-IPOApplication changed from composition to association
+R22_IPOApplication.txt,B2,Fabricated Methods,Several methods added not in reasoning
+R22_IPOApplication.txt,B1,Dropped acceptedTerms Attribute,IPOApplication missing acceptedTerms attribute
+R28_Donation.txt,B1,Dropped DonationSystem Class,DonationSystem class completely omitted from diagram
+R28_Donation.txt,B2,Renamed Class,Donation renamed to DonationTransaction without reasoning
+R28_Donation.txt,B3,Customer-Account Multiplicity,"Reasoning: 1-to-many, Code: 1-to-1..*"
+R28_Donation.txt,B1,Missing Customer Method,getAccounts() method missing from Customer class
+R28_Donation.txt,B2,Added Customer Method,isEligible() and makeDonation() not in reasoning
+R28_Donation.txt,B2,Added Transaction Methods,processTransaction() not in reasoning
+R28_Donation.txt,B3,BankStaff-Organization Relationship,Should use BankSystem as intermediary per reasoning
+R28_Donation.txt,B1,Missing contactInfo Attribute,Customer.contactInfo attribute missing
+R28_Donation.txt,B2,Added EReceipt Attributes,accountDetails not in reasoning
+R1_Restaurant.txt,B2,Fabricated Section Classes,Section hierarchy not in reasoning
+R1_Restaurant.txt,B2,Fabricated Payment Class,"Payment class not in reasoning, used Transaction instead"
+R1_Restaurant.txt,B1,Missing Transaction Class,Transaction class discussed but not implemented
+R1_Restaurant.txt,B1,Missing ShiftAssignment Class,ShiftAssignment class discussed but not implemented
+R1_Restaurant.txt,B2,Fabricated OrderStatus Enum,Not explicitly defined in reasoning
+R1_Restaurant.txt,B2,Fabricated PaymentMethod Enum,Not explicitly defined in reasoning
+R1_Restaurant.txt,B1,Missing OrderItem Class,OrderItem class discussed but not implemented
+R1_Restaurant.txt,B3,Order-MenuItem Relationship,"Should be via OrderItem, not direct"
+R3_Library.txt,B2,Fabricated ItemStatus Enum,ItemStatus enum not mentioned in reasoning
+R3_Library.txt,B2,Fabricated Methods,LoanItem methods not in reasoning
+R3_Library.txt,B3,Contradicting Reservation Status,FULFILLED vs NOTIFIED in enum
+R27_BiometricLogin.txt,B2,Fabricated BankingStaff Class,BankingStaff class not mentioned in reasoning
+R27_BiometricLogin.txt,B2,Fabricated Enumerations,BiometricType and OSPlatform enums not in reasoning
+R27_BiometricLogin.txt,B1,Missing LoginService,LoginService class completely omitted from code
+R27_BiometricLogin.txt,B3,Attribute Naming Inconsistencies,Different attribute names in code vs reasoning
+R27_BiometricLogin.txt,B3,Relationship Direction Changes,Several relationship directions differ from reasoning
+R11_FootballTeam.txt,B1,Missing PositionType Implementation,Subclasses don't implement getPositionType()
+R16_Cinema.txt,B2,Fabricated BookingSystem Class,BookingSystem class not mentioned in reasoning
+R16_Cinema.txt,B2,Fabricated UI_Controller Class,UI_Controller class not in reasoning
+R16_Cinema.txt,B2,Fabricated Movie Attributes,description attribute not in reasoning
+R16_Cinema.txt,B2,Fabricated Movie Methods,getShows() method not in reasoning
+R16_Cinema.txt,B2,Fabricated Show Methods,reserveTickets() method not in reasoning
+R16_Cinema.txt,B2,Fabricated Booking Methods,confirmBooking/cancelBooking not in reasoning
+R16_Cinema.txt,B3,Attribute Name Mismatch,Booking attributes don't match reasoning
+R10_FileManager.txt,B2,Fabricated Code,Added note about file management task
+R10_FileManager.txt,B3,Contradiction,Document size type is Long vs long in reasoning
+R10_FileManager.txt,B2,Fabricated Code,Added skinparam styling not in reasoning
+R10_FileManager.txt,B2,Fabricated Code,Added '>' directional indicators to relationships
+R15_VideoRental.txt,B2,Fabricated IDCard Class,IDCard class not mentioned in reasoning
+R15_VideoRental.txt,B2,Fabricated Payment Class,Payment class explicitly rejected in reasoning
+R15_VideoRental.txt,B3,Rental-VideoTitle Contradiction,"Reasoning has Rental-VideoCopy relation, not VideoTitle"
+R15_VideoRental.txt,B1,Missing Rental-RentalTransaction Link,Reasoning added this link but code omits it
+R15_VideoRental.txt,B3,Customer-Rental Multiplicity,"Reasoning has 1-to-many, code has 1-to-0..20"
+R30_WalletApplication.txt,B1,Dropped Class,PaymentResult class missing in final diagram
+R30_WalletApplication.txt,B3,Method Name Mismatch,pay() vs processPayment() in PaymentOption
+R30_WalletApplication.txt,B3,Return Type Mismatch,PaymentResult vs boolean return types
+R30_WalletApplication.txt,B3,Method Name Mismatch,loadWallet() vs loadMoney() in Customer
+R30_WalletApplication.txt,B3,Method Name Mismatch,getBalance() vs viewBalance() in Customer
+R26_BlockCard.txt,B2,Fabricated OnlineBankingSystem Class,Class not mentioned in reasoning
+R26_BlockCard.txt,B2,Fabricated BlockingProcess Class,Different from BlockCardProcess in reasoning
+R26_BlockCard.txt,B1,Missing Card Attributes,Card.type and blockingReason attributes missing
+R26_BlockCard.txt,B1,Missing Card Method,unblock() method missing from Card class
+R26_BlockCard.txt,B1,Missing Customer Attribute,cards: List<Card> attribute missing
+R26_BlockCard.txt,B3,Relationship Multiplicity Mismatch,"Customer-Card is 1-* in reasoning, 1-0..* in code"
+R21_SavingsAccount.txt,B2,ValidationRules class not in reasoning,ValidationRules class was added without prior mention
+R21_SavingsAccount.txt,B1,Missing inheritance hierarchy,RetailCustomer and CorporateCustomer classes missing
+R21_SavingsAccount.txt,B3,Customer type implementation,Inheritance vs enum approach contradicts reasoning
+R21_SavingsAccount.txt,B1,Missing InputValidator class,InputValidator mentioned but not implemented
+R21_SavingsAccount.txt,B2,Added preventMitmAttack method,Method not mentioned in reasoning
+R21_SavingsAccount.txt,B3,AccountOpeningService vs System,Class name differs from reasoning

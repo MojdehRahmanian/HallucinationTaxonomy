@@ -1,0 +1,69 @@
+id,subcategory,description,detail
+R36_Video Rental.txt,C3,Incorrect composition semantics,Misunderstands composition lifecycle dependency
+R38_LawFirm.txt,C1,Speculative Document Class,Considered Document class but abandoned without resolution
+R38_LawFirm.txt,C1,Firm Entity Speculation,Considered Firm entity but left unresolved
+R38_LawFirm.txt,C3,Composition vs Association Confusion,Misused composition for Case-Event relationship
+R39_Insurance.txt,C1,Speculative Vehicle/Dwelling attributes,Considers then abandons specific attributes
+R39_Insurance.txt,C3,Aggregation vs Composition confusion,Uncertain about proper relationship semantics
+R37_LawFirm2.txt,C3,Misuse of composition for ContactAddress,Considers using *-- (composition) for simple associations
+R37_LawFirm2.txt,C1,Speculative Document usage tracking,Introduces then abandons document usage tracking
+R37_LawFirm2.txt,C1,Redundant Case-Event relationship,Extensive speculation about redundant relationships
+R32_TheEnergyManagementSystem.txt,C1,Speculative Event Handling,Assumes alarms are events stored in SystemReports
+R32_TheEnergyManagementSystem.txt,C1,Speculative Class Structure,Creates Event class without requirement evidence
+R40_Dental Clinic.txt,C1,Abandoned SupplyInRoom class,Proposed SupplyInRoom class later abandoned for InventoryRecord
+R40_Dental Clinic.txt,C1,Speculative billing structure,Extended speculation on billing without resolution
+R40_Dental Clinic.txt,C3,Misuse of composition,Clinic *-- Patient marked as aggregation then composition
+R34_Truck.txt,C1,Transfer modeling speculation,Speculates about Transfer class then abandons it
+R34_Truck.txt,C1,Rental Agreement inheritance speculation,Considers TruckRentalAgreement subclass then abandons
+R42_Cctns.txt,C1,Abandoned OfflineModule class,Proposed OfflineModule class never used in final design
+R45_Gemini.txt,C1,Preprocessor class speculation,Introduces Preprocessor class but never justifies need
+R45_Gemini.txt,C2,Storage inheritance exploration,Spends excessive time on storage hierarchy options
+R31_Restaurant.txt,C3,Incorrect composition semantics,Uses composition (*--) without lifecycle dependency
+R31_Restaurant.txt,C1,Abandoned supervisor modeling approaches,Multiple abandoned approaches for Employee hierarchy
+R44_Inventory.txt,C1,Speculative Role Modeling,Explores multiple role models without clear resolution
+R44_Inventory.txt,C3,Incorrect Relationship Notation,Confuses UML arrow direction in relationship notation
+R43_Gamma.txt,C1,Speculative Profile Entity,Introduces Profile without clear justification
+R43_Gamma.txt,C3,Composition Misunderstanding,Questions composition without lifecycle consideration
+R60_EvlaBack.txt,C1,Abandoned inheritance structure,Proposed inheritance for ProcessingStep then abandoned
+R60_EvlaBack.txt,C3,Aggregation vs Composition confusion,Inconsistent use of composition vs aggregation
+R51_Beyond.txt,C1,Speculative ModalitySwitcher,Introduces ModalitySwitcher that's never justified
+R51_Beyond.txt,C1,Speculative System class,Introduces System class but abandons it
+R51_Beyond.txt,C3,Modality inheritance confusion,Confuses modality as UI subclass vs component
+R50_Nasax38.txt,C1,Speculative Socket Class,Introduces Socket class then abandons without resolution
+R50_Nasax38.txt,C1,Speculative Buffer Class,Introduces Buffer in Pipe but never defines it
+R50_Nasax38.txt,C3,Ambiguous Relationship Semantics,Uncertain about FTSS-Pipe relationship (composition?)
+R56_Libra.txt,C1,Speculative UserRepository,Introduces UserRepository without evidence in requirements
+R56_Libra.txt,C1,Speculative SGEInterface,Creates SGEInterface with methods not in requirements
+R56_Libra.txt,C3,Relationship Semantics Confusion,Inconsistent about association vs composition
+R33_Travel System.txt,C3,Composition misunderstanding,Incorrectly justifies composition based on deletion
+R33_Travel System.txt,C1,Speculative Driver class,Introduces then abandons Driver class possibility
+R33_Travel System.txt,C1,Airline attribute speculation,Extended uncertainty about airline vs vendor
+R47_Dii.txt,C1,Abandoned degraded communications modeling,Explored multiple approaches without resolution
+R47_Dii.txt,C3,Incorrect composition semantics,System *-- Mode implies lifecycle dependency
+R47_Dii.txt,C1,Speculative XML Service segmentation,Added isSegmented without clear justification
+R55_Hats.txt,C1,Speculative ErrorWindow,Mentions ErrorWindow but doesn't justify inclusion
+R57_.Npacdocx.txt,C1,Speculative LocalSMS relationship,Extensive hedging about LocalSMS relationships
+R57_.Npacdocx.txt,C3,Composition misuse,Proposes composition where association is appropriate
+R52_CtcNetwork.txt,C1,Abandoned TrafficCondition association,Explores multiple options but abandons without clear resolution
+R52_CtcNetwork.txt,C3,Composition vs Aggregation confusion,Inconsistent reasoning about lifecycle dependencies
+R59_Telescope.txt,C1,Abandoned TAM definition,Speculates on TAM meaning but never resolves
+R59_Telescope.txt,C1,Observation sequence class structure,Explores subclasses then abandons for single class
+R59_Telescope.txt,C1,Pre-observation activities modeling,Considers activity classes then abandons
+R59_Telescope.txt,C3,Incorrect association notation,Uses --> for associations instead of proper UML
+R54_Esa.txt,C1,Speculative Software Classes,Introduces software classes without clear justification
+R54_Esa.txt,C1,Speculative CoI Attributes,Adds name/email attributes without requirement basis
+R54_Esa.txt,C3,Incorrect Relationship Semantics,Confuses association directions and dependencies
+R41_CrimeCriminalTrackingSystems.txt,C1,Abandoned User class,Introduces User class but doesn't include in final design
+R41_CrimeCriminalTrackingSystems.txt,C1,Uncertain Case-Complaint relationship,Hedges on relationship cardinality without resolution
+R41_CrimeCriminalTrackingSystems.txt,C3,Module as class confusion,Treats modules as classes rather than packages/components
+R46_Themas.txt,C1,Speculative HCUnit ID,Repeatedly speculates about HCUnit ID without resolution
+R46_Themas.txt,C1,Speculative InitializationData class,Proposes then abandons InitializationData class
+R48_Multi-Mahjong.txt,C1,Speculative ChatMessage class,Introduces ChatMessage without justification
+R48_Multi-Mahjong.txt,C1,Speculative Tile/Position/GameState/Move,Introduces types without justification
+R48_Multi-Mahjong.txt,C3,Inconsistent relationship semantics,Mixes aggregation/composition inconsistently
+R58_SpaceFractions.txt,C1,Speculative attributes,Proposed attributes without evidence then abandoned
+R58_SpaceFractions.txt,C3,Association vs Dependency confusion,Vacillates between association and dependency
+R53_Elsfork.txt,C3,Misuse of composition,Uses composition for function grouping without lifecycle tie
+R49_Tcs.txt,C1,Speculative Position Class,Introduces Position class without clear requirement
+R49_Tcs.txt,C1,Speculative Overlay Class,Creates Overlay class without clear requirement
+R49_Tcs.txt,C3,Composition vs Aggregation Confusion,Misunderstands MissionPlan relationship with TCS

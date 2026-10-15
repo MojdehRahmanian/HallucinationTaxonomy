@@ -1,0 +1,81 @@
+id,subcategory,description,detail
+R92_Peering.txt,C1,Speculative Resource Attributes,Assumed attributes without evidence in requirements
+R92_Peering.txt,C3,Aggregation vs Composition Confusion,Misunderstood lifecycle dependency in SR-Resource
+R99_Mdot.txt,C1,Speculative method signatures,Assumed collection methods without requirement evidence
+R108_Triangle.txt,C1,Abandoned Position Selector,Proposed PositionSelector class later abandoned
+R108_Triangle.txt,C1,Abandoned Player Selector,Proposed PlayerSelector class later abandoned
+R108_Triangle.txt,C1,Uncertain Position Relationship,Vacillates on Position's relationship to Game
+R108_Triangle.txt,C3,Incorrect Association Direction,Uses --> for composition relationships
+R105_Stewards.txt,C1,Abandoned QueryEngine class,Introduced then not included in final design
+R105_Stewards.txt,C1,Abandoned VisualizationTool class,Referenced in associations but not defined in final classes
+R105_Stewards.txt,C1,Abandoned ReportGenerator class,Referenced in associations but not defined in final classes
+R105_Stewards.txt,C3,Incorrect association notation,Uses *--> for association instead of dependency
+R114_ClarusLow.txt,C1,Abandoned Administrator Management,Explores admin-rule relationship but never resolves it
+R114_ClarusLow.txt,C1,Speculative QualityCheckingProcess,Introduces then abandons without justification
+R114_ClarusLow.txt,C3,Composition Misuse,Incorrectly uses composition for recorded methods
+R96_PugetSound.txt,C1,Abandoned space allocation models,Multiple space allocation models proposed then abandoned
+R96_PugetSound.txt,C2,Simplification over requirements,Chose to simplify space allocation despite requirements
+R94_Caiso.txt,C1,Abandoned BlackStartGeneration class,Created then abandoned without clear justification
+R94_Caiso.txt,C1,Speculative PlanningEvaluation class,Considered then abandoned without resolution
+R94_Caiso.txt,C1,Speculative BlackStartRequirement class,Introduced then abandoned without resolution
+R94_Caiso.txt,C1,Speculative TransmissionPath entity,Considered but never fully resolved
+R113_Grid3D.txt,C3,Incorrect association notation,Uses --> for association instead of -- in reasoning
+R106_EireneSys15.txt,C1,Network and MobileInstallation speculation,Introduces then abandons Network/MobileInstallation
+R106_EireneSys15.txt,C1,Overspeculation on speed conditions,Explores multiple speed range representations
+R106_EireneSys15.txt,C3,Aggregation vs Composition confusion,Switches between aggregation/composition symbols
+R97_Nlm.txt,C1,Abandoned Phase Classes,Proposed IngestPhase classes later abandoned
+R97_Nlm.txt,C1,Workflow Class Speculation,Considered then abandoned IngestWorkflow class
+R97_Nlm.txt,C3,Aggregation vs Composition Confusion,Unclear reasoning about IngestStream relationship
+R95_WaterUse.txt,C3,Incorrect relationship notation,Uses arrow notation incorrectly for associations
+R95_WaterUse.txt,C1,Speculative WaterQualityData class,Proposes then abandons WaterQualityData class
+R118_Sprat.txt,C1,Repository class speculation,Introduces Repository class then abandons it
+R118_Sprat.txt,C1,Profile class speculation,Mentions Profile class but never integrates it
+R109_Pontis.txt,C1,Speculative Bridge/Project classes,Introduces Bridge/Project classes then questions them
+R109_Pontis.txt,C1,Uncertain UnitConfiguration setter,Debates including setter then omits without resolution
+R109_Pontis.txt,C3,Incorrect relationship notation,Uses --> for associations instead of proper UML notation
+R107_Znix.txt,C1,Relationship label speculation,Considers adding labels to relationships but abandons
+R107_Znix.txt,C1,Associate content storage speculation,Explores multiple storage options without resolution
+R107_Znix.txt,C3,Incorrect composition notation,Confuses composition with aggregation semantics
+R107_Znix.txt,C1,Entity-folder relationship uncertainty,Vacillates between one-to-many and many-to-many
+R110_Phin.txt,C1,Speculative EpiData class,Introduces EpiData class without clear justification
+R110_Phin.txt,C1,Speculative Action class,Extended deliberation without resolution on Action class
+R110_Phin.txt,C3,Association relationship misuse,Confusion between association class and binary relation
+R101_Ertms.txt,C1,Speculative Train-ETCS Relationship,Oscillates between 1-to-1 and 1-to-many Train supervision
+R101_Ertms.txt,C1,Speculative RBC Role,Uncertain about RBC's relationship to ETCS
+R101_Ertms.txt,C3,Misuse of Composition,Uses composition for DMI without lifecycle justification
+R111_Nenios.txt,C1,Speculative Employee Class,Introduces Employee class then abandons it
+R111_Nenios.txt,C3,Classroom Association Confusion,Unclear about teacher/assistant multiplicity
+R111_Nenios.txt,C1,Uncertain Note Structure,Explores polymorphic notes then abandons for subtypes
+R117_WatcomGui.txt,C1,Speculative WPI Interface,Creates then questions WPI as abstract/interface
+R117_WatcomGui.txt,C3,Misuse of Realization,Uses realization without confirming interface relationship
+R102_EireneFun7.txt,C3,Incorrect composition relationship,VoiceCall *-- User is wrong; calls don't own users
+R102_EireneFun7.txt,C1,Speculative User controller attribute,Introduces isController without clear requirement
+R102_EireneFun7.txt,C1,Uncertain MultiPartyCall constraints,Extended speculation about participant count
+R104_CentralTradingSystem.txt,C1,Speculative Boundary Classes,Introduced boundary classes without clear requirement
+R104_CentralTradingSystem.txt,C3,Aggregation Misuse,Used aggregation without lifecycle justification
+R115_ClarusHigh.txt,C1,Abandoned Vehicle Class,Introduces Vehicle class but decides to use attributes instead
+R115_ClarusHigh.txt,C1,Speculative Image-Data Relationship,Explores multiple Image-ImageDerivedData relationships
+R100_GetReal.txt,C1,Abandoned Inner Classes,Repeatedly considers inner classes then abandons them
+R100_GetReal.txt,C2,Simplicity Over Requirements,Chooses simplicity over proper OO modeling
+R100_GetReal.txt,C3,Composition Misuse,Uses composition without lifecycle dependency evidence
+R120_FoodOrderApp.txt,C1,Speculative Menu Class,Introduces then abandons MenuItem class
+R120_FoodOrderApp.txt,C1,Speculative Location Class,Suggests then abandons Location class
+R112_MicroCare.txt,C1,Speculative Partner Relationship,Repeatedly questions Partner role without resolution
+R112_MicroCare.txt,C1,Uncertain MSIUAdminTeam Feedback Role,Extended speculation on feedback collection process
+R112_MicroCare.txt,C3,Incorrect Association Direction,Confuses association direction in Client-Voucher relation
+R116_Watcom.txt,C1,Speculative handle classes,Considered creating handle classes but abandoned them
+R116_Watcom.txt,C1,Uncertain WLCore-LoadELF relationship,Speculated about WLCore->LoadELF dependency but abandoned
+R103_E-store.txt,C1,Speculative OrderHistory class,Introduced then abandoned OrderHistory class
+R103_E-store.txt,C1,Speculative User superclass,Introduced then abandoned User superclass
+R103_E-store.txt,C1,Speculative NonConfigurableProduct,Introduced then abandoned NonConfigurableProduct
+R103_E-store.txt,C1,Speculative SearchHistory class,Introduced then abandoned SearchHistory class
+R103_E-store.txt,C3,Incorrect aggregation notation,Used *-- for aggregation instead of o--
+R93_Keepass.txt,C3,Storing plaintext password in Database class,Incorrectly models password storage in Database class
+R93_Keepass.txt,C1,Keyfile parameter inconsistency,Speculates about keyFile usage without resolution
+R93_Keepass.txt,C3,Unlock method design flaw,Proposes insecure password verification mechanism
+R98_Nde.txt,C3,Incorrect dependency notation,Uses ..> for all relationships without semantic distinction
+R91_Viper.txt,C1,Coordinator class speculation,Repeatedly considers then abandons Coordinator class
+R91_Viper.txt,C1,Request subclass speculation,Considers IncomingRequest/OutgoingRequest subclasses
+R91_Viper.txt,C1,Notification class speculation,Briefly considers then abandons notification class
+R119_Rlcs.txt,C3,Composition vs Aggregation Confusion,Confusion about composition vs aggregation semantics
+R119_Rlcs.txt,C1,Speculative Authentication Manager,Proposed then abandoned without justification

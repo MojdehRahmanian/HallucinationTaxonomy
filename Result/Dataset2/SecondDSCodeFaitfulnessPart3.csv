@@ -1,0 +1,144 @@
+id,subcategory,description,detail
+R75_Mashbot.txt,B2,Fabricated Class Name,ProductRole used instead of UserProductRole
+R75_Mashbot.txt,B3,Relationship Direction Contradiction,User/Product --> ProductRole instead of association
+R75_Mashbot.txt,B2,Fabricated Notes,Added detailed notes not mentioned in reasoning
+R75_Mashbot.txt,B1,Dropped Relationship Labels,Missing 'has roles for'/'for product' labels
+R73_OpenSg.txt,B2,Fabricated DataConcept Class,DataConcept class not in reasoning
+R73_OpenSg.txt,B2,Fabricated Alias Class,Alias class not mentioned in reasoning
+R73_OpenSg.txt,B2,Fabricated NIST Enum,NIST as enum not specified in reasoning
+R73_OpenSg.txt,B1,Dropped EnterpriseInformationArchitecture,Class mentioned in reasoning but missing in code
+R73_OpenSg.txt,B3,Relationship Contradiction,EIM-LifecycleManagement relationship direction flipped
+R86_Inventory.txt,B1,Missing Category-Department Relationship,Category should have a department reference
+R86_Inventory.txt,B3,Inheritance vs Composition Mismatch,Category inheritance vs parent-child relationship
+R86_Inventory.txt,B1,Missing Item-Category Relationship,InventoryItem should reference its category
+R78_Fishing.txt,B3,Acknowledgment vs Acknowledgement,Inconsistent spelling between reasoning and code
+R78_Fishing.txt,B2,UK_XSD Class,Added in code but not mentioned in reasoning
+R78_Fishing.txt,B1,Missing DataCapture Methods,Methods for capturing different report types missing
+R78_Fishing.txt,B3,Report Attributes Mismatch,Different attributes in reasoning vs code
+R69_GridBgc.txt,B3,Relationship Direction Contradiction,"User-Job relationship is composition in code, association in reasoning"
+R69_GridBgc.txt,B2,Fabricated Method,sendUnlockNotification not mentioned in reasoning
+R69_GridBgc.txt,B3,Method Name Contradiction,assignTemplateSubmissionPrivileges vs setTemplatePrivilege
+R69_GridBgc.txt,B3,Attribute Name Contradiction,canSubmitTemplate vs canSubmitTemplates
+R69_GridBgc.txt,B3,Method Name Contradiction,AuthenticationService vs AuthenticationSystem
+R71_Jse.txt,B2,Fabricated Inheritance Structure,RejectionRecord hierarchy not in reasoning
+R71_Jse.txt,B3,Multiplicity Contradiction,"ISINLookupScreen->ISIN is 1 in code, 0..1 in reasoning"
+R71_Jse.txt,B2,Fabricated Methods,Screen methods not discussed in reasoning
+R71_Jse.txt,B2,Fabricated Notes,Notes about conditional attributes not in reasoning
+R71_Jse.txt,B1,Dropped Attributes,errorMessageType missing from RejectionRecord
+R66_Tachonet.txt,B1,Dropped CardIssuingAuthority,Reasoning defined this as main class but missing in diagram
+R66_Tachonet.txt,B3,Member vs CardIssuingAuthority,"Reasoning uses CardIssuingAuthority, diagram uses Member"
+R66_Tachonet.txt,B1,Dropped Transaction Class,Transaction class defined in reasoning but missing in diagram
+R66_Tachonet.txt,B1,Dropped CardEvent Class,CardEvent class defined in reasoning but missing in diagram
+R66_Tachonet.txt,B4,User-Member Relationship,Reasoning: User belongs to Authority; Diagram: User belongs to Member
+R74_SplitMerge.txt,B2,Fabricated PDFSplitProcessor,PDFSplitProcessor used but not defined in reasoning
+R74_SplitMerge.txt,B2,Fabricated FileNameGenerator,FileNameGenerator class not mentioned in reasoning
+R74_SplitMerge.txt,B2,Fabricated SplitContext,SplitContext class not mentioned in reasoning
+R74_SplitMerge.txt,B1,Dropped PDFSplitService,PDFSplitService from reasoning missing in diagram
+R74_SplitMerge.txt,B3,Class Name Contradiction,SplitOptions vs SplitOption class name mismatch
+R72_Philips.txt,B3,Relationship Contradiction,"User-Buddy relation is composition in code, association in reasoning"
+R72_Philips.txt,B1,Dropped Class,Contact class from reasoning missing in code
+R72_Philips.txt,B1,Dropped Class,Email class from reasoning missing in code
+R72_Philips.txt,B2,Fabricated Class,EmailClient class not mentioned in reasoning
+R72_Philips.txt,B2,Fabricated Class,TVService class not mentioned in reasoning
+R72_Philips.txt,B3,Attribute Contradiction,User.passport vs User.passportId naming inconsistency
+R72_Philips.txt,B3,Method Contradiction,ContactList methods differ between reasoning and code
+R81_VideoSearch.txt,B1,Missing searchBar attribute,searchBar attribute replaced with searchTerm
+R81_VideoSearch.txt,B1,Missing torrentCheckBox attribute,torrentCheckBox attribute not in final code
+R81_VideoSearch.txt,B1,Missing previousPage method,previousPage method mentioned but not included
+R81_VideoSearch.txt,B3,Relationship multiplicity mismatch,TorrentWebsiteDatabase to TorrentWebsite: 1..* vs n
+R81_VideoSearch.txt,B4,Composition vs Association,Database-Website uses composition not association
+R81_VideoSearch.txt,B2,Added notes,Notes added that weren't in reasoning
+R85_Library.txt,B1,Missing Table and Field Classes,Table and Field classes mentioned in reasoning are absent
+R85_Library.txt,B1,Missing PeriodicReport Class,PeriodicReport subclass defined in reasoning is missing
+R85_Library.txt,B2,QueryTool-TransactionArchive Relationship,Relationship not explicitly mentioned in reasoning
+R85_Library.txt,B2,QueryTool-Report Relationship,Direct relationship not specified in reasoning
+R85_Library.txt,B3,SystemAdmin-QueryTool Relationship,Different relationship than described in reasoning
+R87_Gaia.txt,B1,Dropped NoiseEffect Classes,NoiseEffect hierarchy missing in final diagram
+R87_Gaia.txt,B1,Dropped AstroSource Class,AstroSource class missing in final diagram
+R87_Gaia.txt,B3,NoiseModel Relationship Contradiction,NoiseModel contains NoiseEffects vs direct methods
+R87_Gaia.txt,B2,Added CommandLineInterface,Not mentioned in reasoning
+R87_Gaia.txt,B4,Catalogue Structure Mismatch,Missing sources attribute and AstroSource relation
+R90_VirtualEd.txt,B2,Fabricated Student/Professor Classes,Student/Professor inheritance not in reasoning
+R90_VirtualEd.txt,B2,Fabricated SystemSettings Class,SystemSettings class not defined in reasoning
+R90_VirtualEd.txt,B2,Fabricated StatusColor Enum,StatusColor enum not mentioned in reasoning
+R90_VirtualEd.txt,B1,Dropped Message Inheritance,TextMessage/EmotionMessage/FileMessage missing
+R90_VirtualEd.txt,B4,ConversationWindow vs Conversation,Renamed Conversation to ConversationWindow
+R90_VirtualEd.txt,B3,Message Content Contradiction,Message has content attribute vs inheritance design
+R77_GParted.txt,B2,Fabricated Menu Class,Menu class not mentioned in reasoning
+R77_GParted.txt,B2,Fabricated MenuItem Class,MenuItem class not mentioned in reasoning
+R77_GParted.txt,B1,Dropped ToolBar Class,ToolBar class missing from final diagram
+R77_GParted.txt,B1,Dropped DeviceSelector,DeviceSelector mentioned but not in final diagram
+R77_GParted.txt,B3,Contradicting Relationship,GPartedDesktop->Device relation not in reasoning
+R77_GParted.txt,B3,Contradicting Relationship,GPartedMainWindow->Partition relation not in reasoning
+R76_Home.txt,B1,Missing HVACSystem Inheritance,Reasoning decided HVACSystem extends Device
+R76_Home.txt,B4,Thermostat Attribute Mismatch,currentTemp vs currentTemperature in reasoning
+R67_Colorcast.txt,B2,Fabricated HardwareSet Class,HardwareSet not in reasoning but central in diagram
+R67_Colorcast.txt,B2,Fabricated SoftwareInterface Class,Not in reasoning but added as aggregation parent
+R67_Colorcast.txt,B2,Fabricated CommunicationsInterface Class,Not in reasoning but added as composition parent
+R67_Colorcast.txt,B3,Multiplicity Contradiction,SoftwareInterface has '2' PaintInfoStorage/ColorTranslation
+R67_Colorcast.txt,B4,Structural Mismatch,"Reasoning uses dependencies, code uses composition"
+R67_Colorcast.txt,B1,Dropped HTTPProtocol Class,HTTPProtocol class missing from final diagram
+R65_Qheadache.txt,B2,Added Constraint Notes,Notes about constraints weren't in reasoning
+R65_Qheadache.txt,B3,Relationship Label Change,Board-Block relation changed from 'blocks' to 'contains'
+R64_Pnnl.txt,B2,Fabricated Classes,"SensedData, FixedData, Fault, DiagnosticResult not in reasoning"
+R64_Pnnl.txt,B2,Fabricated Methods,"prepareDiagnosticInput, runDiagnosis, generateReports"
+R64_Pnnl.txt,B2,Fabricated Class,Display class not mentioned in reasoning
+R64_Pnnl.txt,B3,Relationship Contradiction,"Reasoning uses association, code uses aggregation"
+R84_ModelManager.txt,B1,Dropped ObsDataSource Class,ObsDataSource class mentioned in reasoning is missing
+R84_ModelManager.txt,B2,Fabricated Job Inheritance,WeatherFDDAJob and CustomJob not in reasoning
+R84_ModelManager.txt,B3,JobType Enum Contradiction,JobType enum replaced with isRealTime boolean
+R84_ModelManager.txt,B3,Cycle Class Renamed,Cycle renamed to CycleConfiguration
+R83_Peazip.txt,B2,Fabricated Controller Classes,SelectionController and NavigationController not in reasoning
+R83_Peazip.txt,B3,Method Name Contradiction,"NavigationBar methods renamed (backâgoBack, etc.)"
+R83_Peazip.txt,B2,Fabricated Stereotypes,<<View>> and <<Controller>> stereotypes not in reasoning
+R83_Peazip.txt,B1,Dropped Methods,Most FileManagerInterface methods missing
+R83_Peazip.txt,B3,Class Name Contradiction,Object renamed to FileSystemObject
+R83_Peazip.txt,B2,Fabricated Dependencies,Menu to Controller dependencies not in reasoning
+R70_Ijis.txt,B2,Fabricated Class Structure,DetentionFacilityOfficer/Magistrate as separate classes
+R70_Ijis.txt,B1,Dropped Abstract Class,AppointmentDocument abstract class missing
+R70_Ijis.txt,B1,Missing Relationship,IndigencyHearing to Defendant relationship missing
+R70_Ijis.txt,B3,Relationship Contradiction,Defendant-Incident multiplicity differs from reasoning
+R70_Ijis.txt,B2,Added Methods,Methods added to classes not mentioned in reasoning
+R80_WarcPhase3.txt,B2,Fabricated PerfMode Enum,PerfMode enum not mentioned in reasoning
+R80_WarcPhase3.txt,B2,Fabricated LogLevel Enum,LogLevel enum not mentioned in reasoning
+R80_WarcPhase3.txt,B2,Fabricated Script Return Type,generateShellWrapper returns Script type not in reasoning
+R80_WarcPhase3.txt,B2,Fabricated MigrationProgress,getProgress returns MigrationProgress not in reasoning
+R80_WarcPhase3.txt,B1,Dropped MigrationWorkflow Class,MigrationWorkflow class completely missing from code
+R80_WarcPhase3.txt,B3,Logger Method Contradiction,Logger.log() has different parameters in code
+R80_WarcPhase3.txt,B3,SelectionCriteria Attribute Names,Attribute names differ from reasoning
+R80_WarcPhase3.txt,B2,Fabricated ValidationRule,ValidationRule type not mentioned in reasoning
+R88_Email.txt,B1,Dropped Task and Reminder Classes,Task and Reminder classes mentioned in reasoning but missing
+R88_Email.txt,B1,Dropped Resource and Event Classes,Resource and Event classes missing from diagram
+R88_Email.txt,B1,Dropped LegalHold Class,LegalHold class mentioned in reasoning but omitted
+R88_Email.txt,B1,Dropped GenericEmailAccount,GenericEmailAccount class missing from diagram
+R88_Email.txt,B3,Email-User Relationship Contradiction,Email-User sender relation shows 1-1 instead of many-1
+R88_Email.txt,B3,AgencyAdmin-Rule Relationship,Shows 1-1 instead of 1-many relationship
+R89_Vub.txt,B2,Fabricated System Methods,display* methods not in reasoning
+R89_Vub.txt,B2,Fabricated Administrator Class,Reasoning decided to skip Administrator class
+R89_Vub.txt,B3,Role Relationship Contradiction,Role as attribute vs separate association
+R89_Vub.txt,B2,Fabricated Publication-SearchCriteria Relation,Relation not mentioned in reasoning
+R89_Vub.txt,B2,Fabricated Administrator-User Relation,Relation not mentioned in reasoning
+R62_SceApi.txt,B4,Structural Mismatch,Attributes shown as operations with + visibility
+R79_BillDraft.txt,B2,Fabricated Admin Class,"Admin class not in reasoning, only mentioned as a role"
+R79_BillDraft.txt,B2,Fabricated System Class,System class explicitly excluded in reasoning
+R79_BillDraft.txt,B2,Fabricated ActiveDirectory Class,ActiveDirectory explicitly excluded in reasoning
+R79_BillDraft.txt,B2,Fabricated DesignatorCode Class,"Modeled as attribute in reasoning, not a class"
+R79_BillDraft.txt,B2,Fabricated LabLocation Class,"Modeled as attribute in reasoning, not a class"
+R79_BillDraft.txt,B2,Fabricated User Methods,save() and cancel() not in reasoning
+R79_BillDraft.txt,B2,Fabricated User-Template Inheritance,Reasoning explicitly states no direct relationship
+R79_BillDraft.txt,B3,Composition vs Aggregation,"Reasoning specified aggregation, code uses composition"
+R79_BillDraft.txt,B1,Missing User Methods,"getRoles(), addRole(), addDivision() omitted"
+R61_EvlaCorr.txt,B2,Fabricated UPS Relationship,UPS-CMIB direct relationship not in reasoning
+R61_EvlaCorr.txt,B2,Fabricated WatchdogTimer Relationship,WatchdogTimer-CMIB direct relationship not in reasoning
+R61_EvlaCorr.txt,B1,Missing Relationships,MCCC/CPCC to UPS/WatchdogTimer connections missing
+R61_EvlaCorr.txt,B3,Computer Inheritance,Reasoning shows inheritance before UML definition
+R61_EvlaCorr.txt,B2,Added Notes,"Notes for MCCC, CorrelatorHardware, EVLA_MC not in reasoning"
+R82_Peppol.txt,B3,Relationship Multiplicity Contradiction,MappingRule-EuropeanCriteria/NationalAttestation missing multiplicity
+R82_Peppol.txt,B3,Relationship Direction Contradiction,MappingRule uses dotted lines instead of solid with arrows
+R82_Peppol.txt,B1,Dropped Relationship Direction,Missing direction indicators on MappingRule relationships
+R63_Agentmom.txt,B2,Fabricated Receives Association,Agent 'receives' association not in reasoning
+R63_Agentmom.txt,B3,Attribute Name Mismatch,"agentId vs id, groupAddress vs address"
+R63_Agentmom.txt,B3,Method Parameter Mismatch,sendUnicastMessage/sendMulticastMessage parameters
+R63_Agentmom.txt,B3,Association Direction Mismatch,Agent-MulticastGroup bidirectional vs directed
+R63_Agentmom.txt,B2,Fabricated Note,Note on Message not in reasoning
+R68_EProcurement.txt,B3,Double Realization,PurchaseOrder has double ..|> to BuyerDocument

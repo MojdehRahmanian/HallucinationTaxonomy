@@ -1,0 +1,120 @@
+id,subcategory,description,detail
+R8_HotelReservation.txt,A3,Over-specific User attributes,The reasoning adds specific attributes like 'id' and 'name' to the User class that aren't mentioned in the prompt.
+R8_HotelReservation.txt,A3,Reserved flag for Room,Added a 'reserved' boolean attribute to Room class that isn't specified in the prompt.
+R8_HotelReservation.txt,A3,Over-specific Hotel methods,Created detailed methods like 'findAvailableRoom' and 'makeReservation' with specific parameters not mentioned in the prompt.
+R8_HotelReservation.txt,A1,Unsupported Hotel class,The Hotel/ReservationSystem class is invented without prompt support. The prompt doesn't specify a central system managing reservations.
+R24_SetCommunicationPrefences.txt,A1,Unsupported Entity: CustomerRepository,The reasoning introduces a CustomerRepository class that isn't mentioned in the prompt. The prompt only mentions storing preferences in a database.
+R24_SetCommunicationPrefences.txt,A1,Unsupported Entity: PreferenceManager,The PreferenceManager class is invented in the reasoning but not specified in the prompt requirements.
+R24_SetCommunicationPrefences.txt,A3,Over-specific Customer attributes,The reasoning adds specific attributes like customerId and name to the Customer class that aren't mentioned in the prompt.
+R24_SetCommunicationPrefences.txt,A4,Missing Mobile Platform Distinction,The reasoning acknowledges but doesn't model the Android and iOS platforms mentioned in the prompt's scope.
+R23_SetPIN.txt,A1,Unsupported Entity: UserSession,The reasoning discusses a potential UserSession class that isn't mentioned in the prompt requirements.
+R23_SetPIN.txt,A1,Unsupported Entity: Menu,The reasoning considers modeling a Menu class which isn't explicitly required in the prompt.
+R23_SetPIN.txt,A3,Over-specific User attributes,The reasoning adds 'name' attribute to User class which isn't specified in the prompt.
+R23_SetPIN.txt,A3,Over-specific Card attribute types,"The reasoning specifies cardNumber and cvv as String types, but prompt requires them to be integers."
+R23_SetPIN.txt,A4,Missing error handling for wrong CVV,"The reasoning doesn't address error handling for wrong CVV entries, only focusing on wrong card number attempts."
+R9_BeWellApp.txt,A1,Unsupported Entity: Meal,"The reasoning introduces a 'Meal' class as part of Diet, but this is not mentioned in the prompt."
+R9_BeWellApp.txt,A1,Unsupported Entity: OfflineData,The 'OfflineData' class is introduced in reasoning but not explicitly mentioned in the prompt.
+R9_BeWellApp.txt,A1,Unsupported Entity: App,The 'App' class as a controller is introduced in reasoning but not specified as a class in the prompt.
+R9_BeWellApp.txt,A3,Over-specific User attributes,"The reasoning specifies User attributes like id, name, and weight which aren't mentioned in the prompt."
+R9_BeWellApp.txt,A3,Over-specific Exercise structure,The reasoning adds 'sets' attribute to Exercise which isn't mentioned in the prompt.
+R25_ApplePay.txt,A3,Over-specific Customer attributes,Added 'customerId' and 'name' attributes to Customer class without prompt specification.
+R25_ApplePay.txt,A3,Over-specific Card attributes,Added 'cardId' attribute to Card class without prompt specification.
+R25_ApplePay.txt,A3,Over-specific Wallet attributes,Added 'walletId' attribute to Wallet class without prompt specification.
+R5_ComputerGame2.txt,A1,Unsupported Soldier Entity,The Soldier class is mentioned as a potential breakdown of Army but isn't specified in the prompt.
+R5_ComputerGame2.txt,A3,Over-specific Player Attributes,"Detailed attributes like 'position', 'speed', 'isJumping', 'isDucking' are invented without prompt support."
+R20_Montitoring Pressure.txt,A1,Unsupported Entity: Button,The reasoning discusses Button as a class/entity but this is not mentioned in the prompt.
+R20_Montitoring Pressure.txt,A3,Over-specific Implementation Details,"The reasoning invents specific methods like 'readBlockButton()', 'readResetButton()', 'getPressure()' that aren't specified in the prompt."
+R20_Montitoring Pressure.txt,A3,Over-specific Attributes,"The reasoning adds specific attributes like 'manualBlockActive', 'safetyInjectionSent' that aren't explicitly mentioned in the prompt."
+R20_Montitoring Pressure.txt,A3,Over-specific Relationships,The reasoning specifies composition relationships with multiplicity that aren't mentioned in the prompt.
+R14_ATM.txt,A3,Over-specific ATM attributes,"The reasoning specifies 'atmID' and potentially 'location' attributes for ATM, but these aren't mentioned in the prompt."
+R14_ATM.txt,A3,Over-specific CashCard attributes,"The reasoning defines 'cardNumber' and 'bankID' attributes for CashCard, which aren't specified in the prompt."
+R14_ATM.txt,A3,Over-specific Transaction attributes,"The reasoning defines detailed Transaction attributes (transactionID, card, type, amount, timestamp) not mentioned in the prompt."
+R14_ATM.txt,A1,Unsupported ValidationResult entity,ValidationResult class is introduced in reasoning but not mentioned in the prompt.
+R14_ATM.txt,A3,Over-specific TransactionResult attributes,The reasoning defines detailed TransactionResult attributes not mentioned in the prompt.
+R13_CourseEnrollment.txt,A1,Unsupported Entity: Department,"Department is modeled as a class with attributes, but the prompt only mentions departments as information about courses, not as a separate entity."
+R13_CourseEnrollment.txt,A3,Over-specific Student Attributes,Student attributes like email are invented without prompt support.
+R13_CourseEnrollment.txt,A3,Over-specific Semester Attributes,"Detailed Semester attributes like startDate, endDate, registrationStart/End dates are invented without prompt support."
+R13_CourseEnrollment.txt,A3,Over-specific Course Structure,The separation between Course and CourseOffering with specific relationships is more detailed than what the prompt requires.
+R13_CourseEnrollment.txt,A4,Missed Alternative Course Selections,The reasoning doesn't address how to model the two alternative course selections that students must indicate.
+R12_RentedCarGalleryManagementSystem.txt,A1,Unsupported Entity: CarRentalSystem,The 'CarRentalSystem' class is not mentioned in the prompt but was created as a central management class.
+R12_RentedCarGalleryManagementSystem.txt,A3,Over-specific Customer ID,"Added 'customerId' attribute to Customer class when prompt only mentions name, surname, and address."
+R12_RentedCarGalleryManagementSystem.txt,A3,Over-specific Rental ID,Added 'rentalId' attribute to Rental class which isn't specified in the prompt.
+R12_RentedCarGalleryManagementSystem.txt,A3,Over-specific Methods,"Created detailed methods like 'addCar', 'addCustomer', 'searchAvailableCars' not explicitly mentioned in prompt."
+R12_RentedCarGalleryManagementSystem.txt,A4,Missed Rental Reports,Prompt mentions 'produces rental reports' but reasoning doesn't include this functionality.
+R17_TimberedHouse.txt,A3,Over-specific Room and Floor Attributes,"The reasoning adds 'rooms: int' and 'floors: int' attributes to TimberedHouse, but the prompt only mentions houses having rooms and floors without specifying them as attributes."
+R4_ComputerGame1.txt,A1,Unsupported Entity: Token,"The reasoning introduces a 'Token' class, but the prompt only mentions players having tokens without suggesting they need to be modeled as separate entities."
+R4_ComputerGame1.txt,A3,Over-specific Cell Attributes,"The reasoning specifies Cell attributes like 'x, y, isOccupied' which are implementation details not mentioned in the prompt."
+R7_SuperMarket.txt,A1,Unsupported Entity: SaleItem,SaleItem class is created in reasoning but not mentioned in the prompt. The prompt only discusses products being recorded by cashiers.
+R7_SuperMarket.txt,A1,Unsupported Entity: StockItem,StockItem class is invented in reasoning but not mentioned in prompt. The prompt only mentions 'form of stock' for recording products.
+R7_SuperMarket.txt,A3,Over-specific Stock Structure,"Reasoning creates detailed Stock/StockItem composition relationship not specified in prompt, which only mentions recording products using forms."
+R7_SuperMarket.txt,A3,Over-specific Enums,"Created detailed enums (ProductType, StorageType, PaymentMethod, OrderStatus, DeliveryStatus) with specific values not explicitly mentioned in prompt."
+R7_SuperMarket.txt,A4,Missing Cashier Machine,"Prompt specifically mentions 'cashier's machine' where products are recorded by group, but this is not modeled as a separate entity in reasoning."
+R29_PrepaidCardLoading.txt,A1,Unsupported CardLoaderService,CardLoaderService entity is invented but not mentioned in the prompt requirements.
+R29_PrepaidCardLoading.txt,A1,Unsupported MobileApp class,Abstract MobileApp class is inferred but not explicitly mentioned in prompt.
+R29_PrepaidCardLoading.txt,A3,Over-specific Customer attributes,Customer attributes like customerId and name are invented without prompt support.
+R29_PrepaidCardLoading.txt,A3,Over-specific PrepaidCard attributes,Specific attributes like cardId and cardNumber are invented without prompt support.
+R29_PrepaidCardLoading.txt,A4,Missing System validation steps,Reasoning doesn't fully capture the system validation steps specified in the prompt requirements.
+R19_Airport.txt,A1,Unsupported Entity: RouteSegment,"The 'RouteSegment' class was created to manage the sequence of spans in a route, but this entity is not mentioned in the prompt."
+R19_Airport.txt,A3,Over-specific Facility Details,"The reasoning invents a 'Facility' class with specific attributes like 'facilityId', 'name', and 'location' that aren't specified in the prompt."
+R19_Airport.txt,A3,Over-specific Customer Attributes,"The reasoning adds detailed customer attributes (email, phone) that aren't mentioned in the prompt."
+R19_Airport.txt,A4,Missed Information Board Requirement,"The prompt mentions information boards in airports showing flight information, but this is not addressed in the reasoning."
+R2_EmployeeManagementSystem.txt,A1,Date Class Assumption,Reasoning discusses a Date class/type that isn't mentioned in the prompt.
+R2_EmployeeManagementSystem.txt,A3,Method Parameter Invention,Added a 'currentDate' parameter to retirementControl() method that isn't specified in the prompt.
+R2_EmployeeManagementSystem.txt,A3,Added getRetirementAge Method,Created a helper method getRetirementAge() that isn't mentioned in the prompt requirements.
+R6_AcademicProgram.txt,A1,Unsupported Entity: Transcript,"The reasoning discusses creating a Transcript class that isn't mentioned in the prompt, though ultimately decides not to include it."
+R6_AcademicProgram.txt,A1,Unsupported Entity: TranscriptEntry,The reasoning considers a TranscriptEntry class that isn't mentioned in the prompt.
+R6_AcademicProgram.txt,A1,Unsupported Entity: Survey,"The reasoning mentions a Survey class that isn't in the prompt, though decides not to include it."
+R6_AcademicProgram.txt,A3,Over-specific Student attributes,The reasoning adds name and studentId attributes to Student class without prompt support.
+R6_AcademicProgram.txt,A3,Over-specific AcademicProgram attributes,The reasoning adds a name attribute to AcademicProgram without prompt support.
+R22_IPOApplication.txt,A1,Unsupported Entity: EmailContent,"EmailContent class is not mentioned in the prompt. The prompt only specifies email content requirements, not a separate class."
+R22_IPOApplication.txt,A1,Unsupported Entity: EmailService,"EmailService class is not explicitly mentioned in the prompt, which only states emails should be sent."
+R22_IPOApplication.txt,A1,Unsupported Entity: ApplicationSystem,"ApplicationSystem class is not explicitly mentioned in the prompt, though system functionality is described."
+R22_IPOApplication.txt,A3,Over-specific IPO Application Status,"The reasoning invents a 'status' attribute for IPOApplication with values like 'Pending', 'Rejected', 'Approved' not specified in prompt."
+R22_IPOApplication.txt,A4,Missing Mobile Platform Distinction,"Prompt specifies two separate applications for Android and iOS platforms, but reasoning doesn't address this requirement."
+R28_Donation.txt,A1,Unsupported Entity: BankStaff,"The 'BankStaff' class is created in reasoning but prompt only mentions 'bank staff' as actors, not as a class requiring modeling."
+R28_Donation.txt,A1,Unsupported Entity: DonationSystem,"Created 'DonationSystem' class not explicitly mentioned in prompt, which refers to 'system' generically."
+R28_Donation.txt,A1,Unsupported Entity: BankSystem,"Created 'BankSystem' class not explicitly mentioned in prompt, which refers to 'internal banking systems'."
+R28_Donation.txt,A3,Over-specific Customer attributes,"Added attributes like customerId, name, contactInfo not specified in prompt."
+R28_Donation.txt,A3,Over-specific Account methods,Created methods like isActive() and hasSufficientBalance() not explicitly required in prompt.
+R1_Restaurant.txt,A1,Unsupported Entity: OrderItem,OrderItem class is introduced in reasoning but not mentioned in the prompt requirements.
+R1_Restaurant.txt,A1,Unsupported Entity: ShiftAssignment,ShiftAssignment class is created but not mentioned in prompt requirements.
+R1_Restaurant.txt,A3,Over-specific Attendance Status,"AttendanceStatus enum with specific states (PRESENT, ABSENT, ON_LEAVE) is invented without prompt support."
+R1_Restaurant.txt,A3,Over-specific Order Status,"Order status states (PENDING, PREPARING, SERVED, PAID) are invented without prompt support."
+R3_Library.txt,A1,LibrarySystem Class,The reasoning discusses a LibrarySystem class that isn't mentioned in the prompt requirements.
+R3_Library.txt,A3,Reservation Status Enum,"Created a ReservationStatus enum with ACTIVE, CANCELLED, FULFILLED states not specified in the prompt."
+R3_Library.txt,A3,Loan Class Attributes,"Added specific attributes like borrowDate, dueDate, returnDate to Loan class that weren't explicitly mentioned in the prompt."
+R3_Library.txt,A4,Library Officer Missing,The reasoning acknowledges but omits the Library Officer class which is explicitly mentioned in the prompt as managing membership processes.
+R27_BiometricLogin.txt,A1,Unsupported Entity: LogService,"LogService class is introduced in reasoning but not explicitly mentioned in prompt, which only states logs should be stored and accessible."
+R27_BiometricLogin.txt,A1,Unsupported Entity: Settings,"Settings class is introduced in reasoning, while prompt only mentions settings menu but doesn't specify a dedicated class."
+R27_BiometricLogin.txt,A1,Unsupported Entity: LoginPage,"LoginPage class is introduced in reasoning but prompt only mentions login page as a location, not as a class."
+R27_BiometricLogin.txt,A3,Over-specific Customer attributes,"Reasoning specifies Customer attributes like username, password, biometricEnabled, pinCode that aren't explicitly defined in prompt."
+R27_BiometricLogin.txt,A3,Over-specific Device attributes,"Reasoning specifies Device attributes like deviceId, platform that aren't explicitly defined in prompt."
+R11_FootballTeam.txt,A3,Over-specific TeamRole Enum,Created TeamRole enum with FIRST_ELEVEN and SPARE values not mentioned in prompt. Prompt only states system can list first eleven and spare team.
+R11_FootballTeam.txt,A3,Over-specific PositionType Enum,"Created PositionType enum when prompt simply lists positions as forward, midfield, and defense without suggesting enumeration."
+R11_FootballTeam.txt,A3,Over-specific distributeBall method,"Added distributeBall method to Midfielder class when prompt only states they distribute the ball, not that this is a callable method."
+R16_Cinema.txt,A3,Over-specific Attribute Types,"Reasoning specifies attribute types (Integer, String, Date, Time, Boolean) not mentioned in the prompt."
+R16_Cinema.txt,A3,Over-specific Method,The 'checkAvailability' method is invented without prompt support.
+R16_Cinema.txt,A3,Over-specific IDs,ID attributes for Show and Booking are invented without prompt support.
+R10_FileManager.txt,A3,Over-specific Document Methods,The reasoning assumes Document needs getters/setters though not explicitly mentioned in the prompt.
+R10_FileManager.txt,A3,Over-specific Editor Method,Added 'manage()' method to Editor class based on vague mention of 'file management task' in prompt.
+R10_FileManager.txt,A3,Over-specific Document-Editor Relationship,Extensive reasoning about multiplicity details not specified in prompt.
+R15_VideoRental.txt,A1,Unsupported Entity: ReturnHandler,"The reasoning mentions a 'ReturnHandler' class that isn't mentioned in the prompt, though it's ultimately not included in the final design."
+R15_VideoRental.txt,A1,Unsupported Entity: InventoryManager,"The reasoning introduces an 'InventoryManager' class that isn't mentioned in the prompt, though it's later removed from the final design."
+R15_VideoRental.txt,A3,Over-specific Attribute Types,"The reasoning specifies attribute types (String, double, Date, etc.) that aren't mentioned in the prompt."
+R15_VideoRental.txt,A3,Over-specific Methods,"The reasoning adds methods like 'getOutstandingLateFees()', 'hasUnpaidLateFees()', 'calculateLateFee()' that aren't explicitly mentioned in the prompt."
+R15_VideoRental.txt,A3,Over-specific Enum,The reasoning creates a 'statusType' enum with AVAILABLE and RENTED values that isn't specified in the prompt.
+R30_WalletApplication.txt,A1,Unsupported Entity: CheckoutPage,"The reasoning introduces a 'CheckoutPage' class that isn't explicitly mentioned in the prompt, which only refers to a checkout page as a location."
+R30_WalletApplication.txt,A1,Unsupported Entity: CardDetails,"The 'CardDetails' class is introduced in reasoning but not mentioned in prompt, which only states card information shouldn't be stored."
+R30_WalletApplication.txt,A1,Unsupported Entity: PaymentOption,The 'PaymentOption' interface is introduced in reasoning but not mentioned in the prompt.
+R30_WalletApplication.txt,A1,Unsupported Entity: PaymentResult,The 'PaymentResult' class is introduced in reasoning but not mentioned in the prompt.
+R30_WalletApplication.txt,A4,Missing Mobile Platforms,The reasoning acknowledges but doesn't model the Android and iOS applications that are explicitly required in the prompt.
+R30_WalletApplication.txt,A4,Missing Kiosk and Branch Systems,The reasoning acknowledges but doesn't model the kiosk and branch back-end communication systems mentioned in the prompt.
+R26_BlockCard.txt,A1,Unsupported Entity: AlertSystem,"The reasoning discusses an AlertSystem class that isn't explicitly mentioned in the prompt, though alerting functionality is implied."
+R26_BlockCard.txt,A3,Over-specific Customer attributes,The reasoning adds 'id' and 'name' attributes to Customer class which aren't specified in the prompt.
+R26_BlockCard.txt,A3,Over-specific Card attributes,The reasoning adds 'id' attribute to Card class which isn't specified in the prompt.
+R26_BlockCard.txt,A3,Over-specific Card method,The reasoning adds 'unblock()' method to Card class which isn't mentioned in the prompt requirements.
+R26_BlockCard.txt,A4,Missing menu placement,The reasoning doesn't address the requirement that 'Block Card' process should be under 'Cards' menu after 'My Cards' page.
+R21_SavingsAccount.txt,A1,Unsupported Entity: CustomerService,CustomerService is introduced in reasoning but not mentioned in the prompt.
+R21_SavingsAccount.txt,A1,Unsupported Entity: AccountService,AccountService is introduced in reasoning but not mentioned in the prompt.
+R21_SavingsAccount.txt,A4,Missed Mobile Platforms,Reasoning omits Android and iOS applications explicitly mentioned in the prompt.
+R21_SavingsAccount.txt,A3,Over-specific Customer Structure,"Customer is modeled as abstract with inheritance, but prompt only mentions customer types without implying inheritance."

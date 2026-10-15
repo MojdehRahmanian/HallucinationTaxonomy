@@ -1,0 +1,70 @@
+id,subcategory,description,detail
+R8_HotelReservation.txt,C1,Reservation date speculation,Repeatedly considers adding dates not in requirements
+R8_HotelReservation.txt,C3,Room reservation boolean flag,Adds reserved boolean to Room instead of proper relation
+R24_SetCommunicationPrefences.txt,C1,Speculative UI Modeling,Considered modeling UI classes then abandoned
+R23_SetPIN.txt,C1,Speculative UserSession class,Introduces then abandons UserSession tracking concept
+R23_SetPIN.txt,C1,Speculative Menu class,Introduces then abandons Menu class as 'overkill'
+R23_SetPIN.txt,C3,Composition misunderstanding,Incorrectly justifies User-Card composition relationship
+R9_BeWellApp.txt,C3,Composition misuse,Incorrect composition semantics for App relationships
+R9_BeWellApp.txt,C1,Speculative service classes,Introduced services without requirements evidence
+R25_ApplePay.txt,C1,Speculative Controller Class,Introduces then abandons ApplePayController
+R25_ApplePay.txt,C1,Wallet Representation Uncertainty,Considers Wallet as actor before settling on class
+R25_ApplePay.txt,C3,Relationship Semantics Confusion,Confusion about composition vs association semantics
+R5_ComputerGame2.txt,C1,Soldier class speculation,Introduces Soldier class then abandons it
+R5_ComputerGame2.txt,C1,Obstacle/LevelObject speculation,Proposes abstract classes then abandons them
+R5_ComputerGame2.txt,C1,Cover blown mechanism speculation,Multiple approaches considered but never resolved
+R5_ComputerGame2.txt,C3,Inconsistent relationship notation,Confuses aggregation and composition notation
+R20_Montitoring Pressure.txt,C1,Button class speculation,Introduces Button class then abandons it
+R20_Montitoring Pressure.txt,C1,Operator class speculation,Introduces then abandons Operator class
+R20_Montitoring Pressure.txt,C3,Composition without lifecycle dependency,Uses composition without justifying lifecycle tie
+R14_ATM.txt,C1,Speculative Location Attribute,Introduces 'location?' then never justifies or uses it
+R14_ATM.txt,C3,Composition vs Association Confusion,Uncertain about Transaction-CashCard relationship
+R13_CourseEnrollment.txt,C1,Speculative Department Class,Introduces Department without clear requirement
+R13_CourseEnrollment.txt,C3,Misuse of Association Class,Confusion about how to model Enrollment as association class
+R12_RentedCarGalleryManagementSystem.txt,C1,Speculative StoreAssistant class,Considers StoreAssistant class then correctly abandons
+R12_RentedCarGalleryManagementSystem.txt,C1,Speculative RentalReport class,Introduces then abandons without justification
+R12_RentedCarGalleryManagementSystem.txt,C3,Aggregation vs Composition confusion,Unclear reasoning about relationship semantics
+R17_TimberedHouse.txt,C1,Speculative Tool Ownership,Assumes tools are owned by carpenters without evidence
+R17_TimberedHouse.txt,C3,Composition Misuse,Incorrectly uses composition for tools without lifecycle tie
+R17_TimberedHouse.txt,C1,Multiplicity Confusion,Extended speculation about multiplicity notation
+R4_ComputerGame1.txt,C3,Token class relationship misspecification,Token class likely needs composition with Player
+R4_ComputerGame1.txt,C1,Speculative Token class,Introduces Token class but questions its necessity
+R7_SuperMarket.txt,C3,Incorrect composition semantics,Misuses composition for Store-Employee relationship
+R7_SuperMarket.txt,C1,Abandoned ShelfProduct concept,Introduces then abandons ShelfProduct class
+R7_SuperMarket.txt,C1,Speculative SaleTransaction,Introduces then abandons SaleTransaction class
+R29_PrepaidCardLoading.txt,C3,Incorrect Composition Semantics,Suggests composition without lifecycle dependency
+R29_PrepaidCardLoading.txt,C1,Speculative Exception Class,Mentions exception class then abandons it
+R19_Airport.txt,C3,Incorrect composition semantics,Misuses composition for relationships without lifecycle tie
+R19_Airport.txt,C1,Abandoned RouteSegment exploration,Introduces RouteSegment without clear justification
+R2_EmployeeManagementSystem.txt,C1,Speculative method design,Explores multiple retirement age implementations
+R2_EmployeeManagementSystem.txt,C3,Incorrect inheritance syntax,Employee < Employee <|-- Worker is invalid
+R6_AcademicProgram.txt,C1,Transcript Class Speculation,Considered then abandoned Transcript class without evidence
+R6_AcademicProgram.txt,C1,Enrollment Class Speculation,Considered then abandoned Enrollment class
+R6_AcademicProgram.txt,C3,Composition Misuse,Incorrectly used composition for AcademicProgram-Course
+R22_IPOApplication.txt,C3,Incorrect composition relationships,Misused composition for non-lifecycle dependencies
+R22_IPOApplication.txt,C1,Abandoned EmailContent relationships,Multiple relationship options considered then abandoned
+R28_Donation.txt,C3,Incorrect association direction,Uses arrows for associations that should be lines
+R1_Restaurant.txt,C1,Abandoned Schedule Class,Considers Schedule class then abandons without resolution
+R1_Restaurant.txt,C1,Speculative Section Modeling,Explores Section as class/enum but never resolves
+R1_Restaurant.txt,C3,Incorrect Restaurant Composition,Uses composition for entities that exist independently
+R1_Restaurant.txt,C1,Unresolved PointOfSaleSystem Access,Vacillates on how POS accesses other components
+R3_Library.txt,C1,Abandoned Library class,Proposed Library class but later abandoned
+R3_Library.txt,C1,Speculative Author class,Considered Author class but abandoned without justification
+R3_Library.txt,C3,Bidirectional association misrepresentation,Incorrectly claims unidirectional arrows show bidirectional
+R27_BiometricLogin.txt,C3,Incorrect composition relationship,Customer *-- Device uses composition incorrectly
+R27_BiometricLogin.txt,C1,Speculative BankingStaff class,Mentions BankingStaff but abandons without justification
+R11_FootballTeam.txt,C3,Incorrect association representation,Bidirectional association shown with two separate arrows
+R16_Cinema.txt,C1,Ticket class speculation,Introduces then abandons Ticket class without justification
+R16_Cinema.txt,C1,User class speculation,Introduces then abandons User class without justification
+R16_Cinema.txt,C1,Reminder enumeration speculation,Mentions enum for reminder then abandons it
+R10_FileManager.txt,C1,Speculative Document-Editor Relationship,Explores multiple relationship options without evidence
+R10_FileManager.txt,C3,Aggregation Misuse,Incorrectly uses aggregation for FileSystem-Document
+R15_VideoRental.txt,C3,Incorrect relationship notation,Uses --> for associations instead of proper UML notation
+R15_VideoRental.txt,C1,Speculative InventoryManager class,Introduces then abandons InventoryManager class
+R15_VideoRental.txt,C1,Speculative Payment class,Introduces then abandons Payment class
+R30_WalletApplication.txt,C1,Transaction class speculation,Introduces Transaction class then abandons it
+R30_WalletApplication.txt,C3,Composition misuse,Questions if Customer-Wallet is composition
+R26_BlockCard.txt,C3,Incorrect aggregation semantics,Confuses aggregation with composition semantics
+R26_BlockCard.txt,C1,Speculative AlertSystem,Introduces then abandons AlertSystem concept
+R21_SavingsAccount.txt,C3,Incorrect Composition Semantics,Uses composition without lifecycle dependency
+R21_SavingsAccount.txt,C1,Speculative Service Architecture,Introduces services not in requirements
