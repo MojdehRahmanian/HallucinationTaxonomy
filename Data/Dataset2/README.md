@@ -1,7 +1,8 @@
 ## Dataset 2: Bozyigit et al. (2024)
 
 **Source.** Fatma Bozyigit, Tolgahan Bardakci, Alireza Khalilipour, Moharram Challenger, Guus Ramackers, Onder Babur, Michel R. V. Chaudron,
-"Dataset for: Text Requirements to Models", IEEE Dataport, July 27, 2023, doi:10.21227/r9j6-nd62
+"Dataset for: Text Requirements to Models", IEEE Dataport, July 27, 2023, 
+https://dx.doi.org/10.21227/r9j6-nd62
 
 **Content.** 120 software requirements descriptions from multiple application domains.
 
