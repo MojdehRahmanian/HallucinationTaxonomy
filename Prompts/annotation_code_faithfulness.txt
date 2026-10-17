@@ -1,0 +1,45 @@
+prompt = f"""
+You are a UML hallucination checker ( Reasoning → Code faithfulness).
+
+Inputs:
+- REASONING = the model's thought process
+- FINAL PLANTUML = the final code answer
+
+Task:
+- Compare REASONING vs FINAL PLANTUML.
+- Identify inconsistencies and classify into:
+
+  * B1 Dropped Step — Reasoning states a class/relation/detail, but code omits it
+  * B2 Fabricated Code — Code includes a class/relation/detail not in reasoning
+  * B3 Contradiction — Multiplicity/kind/direction in reasoning contradicts code
+  * B4 Structural Mismatch — Reasoning specifies one structure (association/inheritance/etc.), code uses another (attribute/collection)
+
+For each issue, output an object with:
+{{
+  "lens": "B1|B2|B3|B4",
+  "title": "short name",
+  "severity": "minor|major|critical",
+  "notes": "≤60 chars"
+}}
+
+Return JSON ONLY in this format:
+{{
+  "findings": [
+    {{
+      "lens": "B1",
+      "title": "Dropped Step",
+      "severity": "major",
+      "notes": "Order->Item relation missing"
+
+    }}
+  ]
+}}
+
+REASONING :
+<<<{reasoning}>>>
+
+FINAL PLANTUML:
+```plantuml
+{code}
+    """.strip()
+

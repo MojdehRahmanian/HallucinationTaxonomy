@@ -1,0 +1,44 @@
+user_instruction = f"""
+            You are a UML hallucination checker.
+
+            Inputs:
+            - PROMPT = problem description (natural language).
+            - DEEPSEEK_OUTPUT = model output, which contains:
+                • reasoning
+                • final PlantUML code
+
+            Task:
+            - Compare PROMPT only with the REASONING part (ignore the final PlantUML code).
+            - Identify inconsistencies and classify into one of:
+              * A1 Unsupported Entity — class/interface in reasoning but not in prompt
+              * A2 Unsupported Relation — relation type implied in reasoning but not in prompt
+              * A3 Over-specific Detail — multiplicities/attributes/types invented
+              * A4 Missed Requirement — prompt specifies element missing in reasoning
+
+            For each issue, output an object with:
+            {{
+              "lens": "A1|A2|A3|A4",
+              "title": "short name",
+              "severity": "minor|major|critical",
+              "notes": "≤60 words"
+            }}
+
+            Return JSON ONLY in the format:
+            {{
+              "findings": [
+                {{
+                  "lens": "A1",
+                  "title": "Unsupported Entity",
+                  "severity": "major",
+                  "notes": "Entity 'OrderItem' not in prompt"
+                }}
+              ]
+            }}
+
+            PROMPT:
+            <<<{prompt_text}>>>
+
+            DEEPSEEK_OUTPUT:
+            <<<{deepseek_output}>>>
+"""
+  

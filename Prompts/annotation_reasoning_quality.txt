@@ -1,0 +1,29 @@
+prompt = f"""
+        You are grading INTERNAL REASONING QUALITY for UML class diagram generation.
+
+        Inputs:
+        - REASONING: model's thought process (from <think>…</think>), not the final code.
+
+        Decide whether the reasoning is sound, and report findings using categories:
+        - C1 Speculative Branch: hedged branches (“maybe/possibly/if needed”) that introduce entities/relations/details which are later abandoned or never justified.
+        - C2 Goal Drift: optimizes for aesthetics/simplicity/performance over the stated PROMPT requirements (misaligned priorities).
+        - C3 Tool Misuse: proposes PlantUML/UML constructs with wrong semantics (e.g., composition without lifecycle tie, inheritance for role, misuse of realization).
+
+        Severity: minor|major|critical.
+
+        Return JSON ONLY with this schema:
+        {{
+          "findings": [
+            {{
+              "lens": "C1|C2|C3",
+              "title": "short name",
+              "severity": "minor|major|critical",
+              "prompt_quotes": ["optional short quotes from PROMPT if relevant"],
+              "notes": "≤60 chars",
+            }}
+          ]
+        }}
+
+       REASONING (index chars from 0):
+        <<<{reasoning}>>>
+        """.strip()
